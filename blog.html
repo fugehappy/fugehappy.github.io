@@ -12,7 +12,21 @@
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
+	<style>
+		.s_form input[type=text]{
+			padding:2px 8px;
+			line-height: 20px;
+			color: #333;
+			vertical-align: middle;
+			border-radius: 3px;
+			outline: none;
+			border:0;
+			background:#eee;
+		}
+		.s_form input[type=text]:focus{
+			background:#fff;
+		}
+	</style>
   </head>
   <body>
       <div id="header">
@@ -25,14 +39,14 @@
 
       <section>
 		<h4>waiting...</h4>
-		<select>
+		<!--<select>
 			<option value="https://fugehappy.github.io/">blog</option>
 			<option value="https://fugehappy.github.io/leargit">about</option>
 			<option></option>
-		</select>
-		<form action="//www.baidu.com/s" method="get">
+		</select>-->
+		<form action="//www.baidu.com/s" method="get" class="s_form">
 			<input type="hidden" name="sitesearch" value="fugehappy.github.io" />
-			<input type="text" name="wd" />
+			<input type="text" name="wd" placeholder="Search"/>
 		</form>
       </section>
 
