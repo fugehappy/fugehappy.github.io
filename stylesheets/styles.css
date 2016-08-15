@@ -621,7 +621,6 @@ blockquote {
   padding: 0 0 0 20px;
   font-style: italic;
 }
-
 code {
   font-family: "Lucida Sans", Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
   color: #efefef;
@@ -806,46 +805,44 @@ section #title p {
   font-size: 18px;
   text-align: center;
 }
-section #title .credits {
+section  .credits {
   font-size: 11px;
   font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
   color: #696969;
   margin-top: -10px;
 }
-section #title .credits.left {
+section  .credits.left {
   float: left;
 }
-section #title .credits.right {
+section  .credits.right {
   float: right;
 }
 
 @media print, screen and (max-width: 720px) {
-  #title .credits {
+  section .credits {
     display: block;
     width: 100%;
     line-height: 30px;
     text-align: center;
   }
-  #title .credits .left {
+  section .credits.left {
     float: none;
     display: block;
   }
-  #title .credits .right {
+  section .credits.right {
     float: none;
-    display: block;
+    display: none;
   }
 }
 @media print, screen and (max-width: 480px) {
-  #header {
-    margin-top: -20px;
+  #header{
+	display:none;
   }
-
-  section {
-    margin-top: 40px;
+  section{
+	margin-top:0px;
   }
-
-  nav {
-    display: none;
+  section #title h1{
+	font-size:24px;
   }
 }
