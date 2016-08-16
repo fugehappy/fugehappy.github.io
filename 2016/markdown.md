@@ -8,23 +8,30 @@
 ### 三级标题
 
 2.列表
+
 有序列表
+
 1. 第一
 2. 第二
+
 无序列表
 * 第一
 * 第二
 
 3.引用
+
 >这儿是引用
 
 4.链接
+
 [fugehappy.github.io](https://github.com)
 
 5.图片
+
 ![github](https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3001304778,4021565056&amp;fm=96)
 
 6.粗体和斜体
+
 *我是斜体*
 **我是粗体**
 
@@ -39,6 +46,7 @@
 ***
 
 9.table
+
 | Tables        | Are           | Cool  |
 | ------------- |:-------------:| -----:|
 | col 1         | right-aligned | $1600 |
