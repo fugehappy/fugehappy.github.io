@@ -37,7 +37,8 @@
 
 7.代码框
 
-`
+`css
+
 .box{
   display:flex;
 }
