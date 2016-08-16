@@ -28,7 +28,7 @@
 
 5.图片
 
-![github](https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3001304778,4021565056&amp;fm=96)
+![github](http://mouapp.com/Mou_128.png)
 
 6.粗体和斜体
 
@@ -36,6 +36,7 @@
 **我是粗体**
 
 7.代码框
+
 `
 .box{
   display:flex;
@@ -43,6 +44,7 @@
 `
 
 8.分割线
+
 ***
 
 9.table
@@ -53,6 +55,7 @@
 | col 2         | centered      |   $12 |
 
 10.基本符号
+
 空白行表示另起一个段落
 
 
