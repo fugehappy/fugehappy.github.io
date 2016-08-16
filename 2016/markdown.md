@@ -37,12 +37,11 @@
 
 7.代码框
 
-`css
-
+```css
 .box{
   display:flex;
 }
-`
+```
 
 8.分割线
 
