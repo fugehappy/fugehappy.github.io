@@ -805,6 +805,9 @@ section #title p {
   font-size: 18px;
   text-align: center;
 }
+.italic{
+  font-style: italic;
+}
 section  .credits {
   font-size: 11px;
   font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -837,12 +840,12 @@ section  .credits.right {
 }
 @media print, screen and (max-width: 480px) {
   #header{
-	display:none;
+	display: none;
   }
   section{
-	margin-top:0px;
+	margin-top: 0px;
   }
   section #title h1{
-	font-size:24px;
+	font-size: 24px;
   }
 }
