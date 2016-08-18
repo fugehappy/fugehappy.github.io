@@ -6,7 +6,7 @@
     <title>Fugehappy.GitHub.io by fugehappy</title>
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/github-dark.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>-->
     <script src="javascripts/respond.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -26,30 +26,63 @@
 		.s_form input[type=text]:focus{
 			background:#fff;
 		}
+		.wrapper{
+			margin-top:70px;
+		}
+		.blogs-title{
+			text-align:center;
+			line-height:60px;
+		}
+		.blog-lists{
+			padding:0;
+		}
+		.blog-list{
+			padding:30px 0;
+			border-bottom:1px solid #eee;
+		}
+		.blog-list:last-child{
+			border-bottom:none;
+		}
 	</style>
   </head>
   <body>
-      <div id="header">
-        <nav>
-          <li class="fork"><a href="https://github.com/fugehappy">View On GitHub</a></li>
-        </nav>
-      </div><!-- end header -->
+    <div id="header" class="blogs-title">wonderful</div><!-- end header -->
 
     <div class="wrapper">
-
       <section>
-		<h4>waiting...</h4>
-		<!--<select>
-			<option value="https://fugehappy.github.io/">blog</option>
-			<option value="https://fugehappy.github.io/leargit">about</option>
-			<option></option>
-		</select>-->
 		<form action="//www.baidu.com/s" method="get" class="s_form">
 			<input type="hidden" name="sitesearch" value="fugehappy.github.io" />
 			<input type="text" name="wd" placeholder="Search"/>
 		</form>
       </section>
-
+	  
+	  <section class="blog-lists">
+	    <article class="blog-list">
+		  <header class="blog-title">
+		    <a href="###" title="">my first blog</a>
+		  </header>
+		  <div class="blog-content">
+		    main descriptions
+		  </div>
+		  <div class="blog-footer">
+		    <span class="date">2016-08-18 10:24</span>
+			<a href="###" class="full-article">View Details</a>
+		  </div>
+		</article>
+		
+		<article class="blog-list">
+		  <header class="blog-title">
+		    <a href="###" title="">my first blog</a>
+		  </header>
+		  <div class="blog-content">
+		    main descriptions
+		  </div>
+		  <div class="blog-footer">
+		    <span class="date">2016-08-18 10:24</span>
+			<a href="###" class="full-article">View Details</a>
+		  </div>
+		</article>
+	  </section>
     </div><!-- end wrapper -->
     
   </body>
