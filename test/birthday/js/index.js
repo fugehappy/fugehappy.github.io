@@ -1,4 +1,5 @@
 define(function(require, exports, module) {
+	var preload = require('preloadImg');
     var shake = require('shake');
 	var $ = require('fx');
 	window.onload = function() {
@@ -18,7 +19,20 @@ define(function(require, exports, module) {
 		function shakeEventDidOccur () {
 
 			//put your own code here etc.
-			alert('1!');
+			alert('shake!');
 		}
 	};
+	
+	//图片预加载
+    preload.init({
+		imgs: [
+			'./images/jinmao-load.png'
+		],
+		callback: function(o) {
+			$('.loading .bar').width(o.progress + '%');
+			setTimeout(function() {
+				$('.loading').remove()
+			}, 200)
+		}
+	})
 })
