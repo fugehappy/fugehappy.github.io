@@ -18,7 +18,7 @@ define(function(require, exports, module) {
 		function shakeEventDidOccur () {
 
 			//put your own code here etc.
-			alert('Shake!');
+			alert('1!');
 		}
 	};
 })
