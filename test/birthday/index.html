@@ -12,10 +12,76 @@
 body {
     background: #E9E9E9;
     color: #333;
-    font: 1em/1.3em "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif; /* 16px / 21px */
+    font: 1em/1.3em "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
     text-shadow: rgba(255,255,255,0.8) 0 1px 0;
     text-align: center;
 }
+
+.none {
+    -display: none
+}
+
+.page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%
+}
+
+.page1 .moveTel{
+	-webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+	-webkit-animation-name: shake;
+    animation-name: shake;
+	display: inline-block;
+}
+
+@-webkit-keyframes shake {
+    from {
+        -webkit-transform: none;
+        transform: none
+    }
+
+    15% {
+        -webkit-transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+        transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg)
+    }
+
+    30% {
+        -webkit-transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+        transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg)
+    }
+
+    45% {
+        -webkit-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+        transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg)
+    }
+
+    60% {
+        -webkit-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+        transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg)
+    }
+
+    75% {
+        -webkit-transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+        transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg)
+    }
+
+    to {
+        -webkit-transform: none;
+        transform: none
+    }
+}
+
+
+
+
+/*loading*/
 .loading {
     position: absolute;
     top: 0;
@@ -130,14 +196,13 @@ body {
 <script type="text/javascript" src="js/sea.js"></script>
 </head>
 <body>
-
-<h1>Shake to Undo</h1>
-<h2>for your mobile web app</h2>
-
-<p>Shake your iPhone/iPad to see a custom action.</p>
-<p>Works on iOS +4.2.1, Android 4.0.3 (default browser), Opera Mobile (Android), BlackBerry PlayBook 2.0</p>
-
-<p><a href="http://dev.w3.org/geo/api/spec-source-orientation">W3C DeviceOrientation Event Specification</a></p>
+<!--第一个场景-->
+<div class="page-wrapper">
+	<div class="page page1 none" data-pageid="1">
+		<span class="moveTel">手机</span>
+		<span class="btn none">btn</span>
+	</div>
+</div>
 <div class="loading">
 	<div class="jinmao-load anim-jinmao-load"></div>
 	<div class="progressbar_wrap">
