@@ -408,6 +408,7 @@ body {
 	text-align: center;
 	position: relative;
 	z-index: 10001;
+	margin: 0 auto;
 }
 
 .waiting {
