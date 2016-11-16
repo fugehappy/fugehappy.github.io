@@ -278,6 +278,11 @@ body {
 	overflow-y: scroll;
 	-webkit-overflow-scrolling: touch;
 }
+@media screen and (max-height: 568px){
+	.rule_content {
+		max-height: 200px;
+	}
+}
 .rule_title {
 	color: #391C50;
 	text-align: center;
