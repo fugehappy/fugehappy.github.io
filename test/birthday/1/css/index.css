@@ -280,7 +280,7 @@ body {
 }
 @media screen and (max-height: 568px){
 	.rule_content {
-		max-height: 100px;
+		max-height: 200px;
 	}
 }
 .rule_title {
