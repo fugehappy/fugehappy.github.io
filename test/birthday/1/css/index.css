@@ -266,7 +266,7 @@ body {
 .rule_msg {
 	background: #fff;
 	border-radius: 10px;
-	position: absolute;
+	position: fixed;
 	width: 90%;
 	left: 100%;
 	padding: 10px;
@@ -276,6 +276,7 @@ body {
 .rule_content {
 	max-height: 386px;
 	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
 }
 .rule_title {
 	color: #391C50;
