@@ -31,7 +31,8 @@ body {
 	margin-left: -158px;
 	background-image: url(../images/astrolabe@1.5x.png);
 	background-size: 100%;
-	transform: scale(0.8);	
+	-webkit-transform: scale(0.4);
+	transform: scale(0.4);	
 }
 @media screen and (max-width: 360px){
 	.wheels {
@@ -410,7 +411,8 @@ body {
 	position: relative;
 	z-index: 10001;
 	margin: 0 auto;
-	transform: scale(0.8);
+	-webkit-transform: scale(0.4);
+	transform: scale(0.4);
 }
 
 .waiting {
