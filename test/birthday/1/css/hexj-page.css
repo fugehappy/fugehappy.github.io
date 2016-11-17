@@ -1,0 +1,144 @@
+@charset "UTF-8"; 
+body{font-size: 12px;line-height: 16px;color: #333;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,img,p,section{margin:0;padding:0;-webkit-text-size-adjust:none;}
+img{max-width: 100%;}
+.cf:after,.cf:before{ display: table; content: " ";line-height:0;}
+.cf:after{clear: both;visibility:hidden;}
+.topMess{filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000); background: rgba(0,0,0,.5);position: fixed;top:0;padding: 10px;color: #fff;width: 100%;text-align: center;font-size: 14px;z-index: 10;}
+.fav-con{FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#8874e7,endColorStr=#200d3c);
+background: -ms-linear-gradient(top, #8874e7,  #200d3c);
+background:-moz-linear-gradient(top,#8874e7,#200d3c);
+background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#8874e7), to(#200d3c));
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#8874e7), to(#200d3c));
+background: -webkit-linear-gradient(top, #8874e7, #200d3c); 
+}
+.fav-con .headerTop{background: url(../images/balloon.png) no-repeat center;background-size: contain;height: 190px;position: relative;}
+.fav-con .headerTop .title{position: absolute;bottom: 23px;text-align: center;width: 100%;font-size: 24px;color: #f3e160;}
+.fav-con .proList{padding:15px 0;}
+.fav-con .proList .item{background: #fff;float: left;width: 47%;margin-left: 2%;margin-bottom: 2%;}
+.fav-con .proList .item .img{text-align: center;padding: 10px 0;}
+.fav-con .proList .item .img img{height: 170px;}
+.fav-con .proList .item .img .price{font-size: 16px;color: #b2b2b2;}
+.fav-con .proList .item .info{background: #ECEDEF;padding: 10px 15px 15px 15px;}
+.fav-con .proList .item .info h2 a{color: #333;font-size: 12px;}
+.fav-con .proList .item .info .newPrice{color: #391C50;font-weight: bold;padding: 10px 0;}
+.fav-con .proList .item .info .newPrice span{font-size: 18px;}
+.fav-con .proList .item .info .btn{background: url(../images/botton_8.png) no-repeat center;background-size: contain;height: 35px;line-height:35px;color: #fff;text-align: center;}
+.fav-con .proList .item .info .btn a{color: #fff;font-size: 12px;display: block;}
+.fav-con .title-bg{background: url(../images/title.png) no-repeat center;background-size: contain;height: 60px;line-height:55px;text-align: center;font-size: 24px;color: #f3e160;}
+.pro-img{text-align: center;padding: 25px 0;}
+.pro-img img{width: 130px;}
+.pro-name{padding: 15px 20px;}
+.pro-name h1{font-size: 16px;}
+.pro-name .newPrice{font-size: 16px;color: #391C50;font-weight: bold;padding: 15px 0;}
+.pro-name .newPrice span{font-size: 20px;}
+.pro-name .newPrice del{color: #999;padding-left: 15px;font-weight:normal;}
+.pro-name .btn{background: url(../images/botton_4.png) no-repeat center;background-size: contain;height: 60px;line-height:55px;color: #fff;text-align: center;font-size: 18px;margin-top: 20px;}
+.pro-name p{text-align: center;padding: 10px 0;font-size: 14px;color: #999;}
+.shareBox{background:url(../images/bg2.png) no-repeat center;background-size: cover;width: 100%;padding: 20px 0;}
+.shareBox .user{text-align: center;}
+.shareBox .user img{border-radius:100%;box-shadow: 0 20px 20px 0 rgba(0,0,0,0.50);border:4px solid #653175;width: 80px;vertical-align: middle;}
+.shareBox .user span{font-size: 15px;color: #FBEE53;letter-spacing: 0;text-shadow: 0 6px 6px rgba(0,0,0,0.50);padding-left: 10px;}
+.shareBox .tips{text-align: center;font-size: 14px;color: #fff;margin-top:20px ;line-height: 20px;padding: 0 20px;}
+.shareBox .list .item{float: left;width: 30%;text-align: center;margin-top: 30px;margin-left: 3%;}
+.shareBox .list .item .pro-bg{background: url(../images/Star4.png) no-repeat center;background-size: cover;height: 108px;}
+.shareBox .list .item .pro-bg img{width: 25px;margin-top: 19px;max-height: 60px;}
+.shareBox .list .item .btn{background: url(../images/botton_10.png) no-repeat center;background-size: contain;height: 34px;border: none;color: #fff;width: 100%;font-size: 14px;outline: none;text-align: center;}
+.shareBox .btn-d{padding: 25px 0;}
+.shareBox .btn-d .dr-bg{background: url(../images/botton_5.png) no-repeat center;background-size: contain;height:52px;border: none;color: #fff;width: 100%;font-size: 18px;outline: none;text-align: center;}
+.shareBox .btn-d .dr-bg:first-child{margin-bottom: 15px;}
+/*愿望流程*/
+.wish-flow{FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#8874E7,endColorStr=#200D3C);
+background: -ms-linear-gradient(top, #8874E7,  #200D3C);
+background:-moz-linear-gradient(top,#8874E7,#200D3C);
+background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#8874E7), to(#200D3C));
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#8874E7), to(#200D3C));
+background: -webkit-linear-gradient(top, #8874E7, #200D3C);
+padding: 25px 0; 
+}
+.wish-flow::before {content: '';position: absolute;top: 0;left:20px;height: 100%;width:2px;}
+.wish-flow{position: relative;}
+.wish-flow .item {position: relative;border-left: 2px solid #FBEE53;margin-left: 23px;color: #fff;}
+.wish-flow .item .before-icon {position: absolute;left: -9px;padding:0;width:16px;height:16px;border-radius:100%; background:#FBEE53;text-align:center;border:2px solid #fff;}
+.wish-flow .item .txt {position: relative;margin: -8px 0 35px 30px;padding: 10px;display: inline-block; width: 89%;}
+.wish-flow .item .txt .img{FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#FAC0FF,endColorStr=#8E5EAD);
+background: -ms-linear-gradient(top, #FAC0FF,  #8E5EAD);
+background:-moz-linear-gradient(top,#FAC0FF,#8E5EAD);
+background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#FAC0FF), to(#8E5EAD));
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FAC0FF), to(#8E5EAD));
+background: -webkit-linear-gradient(top, #FAC0FF, #8E5EAD); 
+padding: 20px;text-align: center;border-radius: 10px;width: 200px;margin: 15px 0;
+}
+.wish-flow .item .txt .img img{width: 70px;}
+.wish-flow .item .txt .time{font-size: 18px;color: #fff;margin-bottom: 15px;}
+.wish-flow .item .txt .ts{font-size: 14px;color: #fff;position: relative;}
+.wish-flow .item .txt .ts .fz{position: absolute;right: 10px;font-size: 18px;color: #FBEE53;}
+.wish-flow .item .txt .btn{background: url(../images/botton_9.png) no-repeat center;background-size: contain;height:40px;border: none;color: #fff;width: 126px;font-size: 18px;outline: none;text-align: center;margin-top: 15px;}
+.wish-flow .item .txt .ts.col-ts{color: #bfb7db;line-height: 18px;margin-top: 10px;}
+.wish-flow .item .txt .check-ad{font-size: 16px;color: #fbee53;display: block;margin-top: 10px;line-height: 20px;}
+.wish-flow .item:last-child{border: none;}
+
+.file-box{FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#8874E7,endColorStr=#200D3C);
+background: -ms-linear-gradient(top, #8874E7,  #200D3C);
+background:-moz-linear-gradient(top,#8874E7,#200D3C);
+background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#8874E7), to(#200D3C));
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#8874E7), to(#200D3C));
+background: -webkit-linear-gradient(top, #8874E7, #200D3C);
+padding: 15px 30px;overflow: hidden;
+}
+.file-box .txt{font-size: 14px;color: #fff;line-height: 1.6em;}
+.file-box .txt.fail{color: #FBB153;}
+.file-box h1{font-size: 16px;color: #FBEE53;letter-spacing: 0;text-shadow: 0 6px 6px rgba(0,0,0,0.50);text-align: center;padding: 20px 0 35px 0;}
+.file-box .up-img{FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#FAC0FF,endColorStr=#8E5EAD);
+background: -ms-linear-gradient(top, #FAC0FF,  #8E5EAD);
+background:-moz-linear-gradient(top,#FAC0FF,#8E5EAD);
+background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#FAC0FF), to(#8E5EAD));
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FAC0FF), to(#8E5EAD));
+background: -webkit-linear-gradient(top, #FAC0FF, #8E5EAD);
+height: 210px;width: 100%;margin: 0 auto; border-radius: 15px;
+box-shadow: 0 4px 4px 0 rgba(0,0,0,0.50);
+}
+.file-box .putTxt{border-bottom: 1px solid #a89fc7;padding: 10px 0;color: #fff;margin: 15px 0 10px 0;font-size: 14px;}
+.inPut{border: none;background: none;outline: none;color:#fff;ont-family: -apple-system-font,"Helvetica Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;}
+.inPut:focus{color: #fff;}
+.inPut input::-webkit-input-placeholder{color:#fff;}
+.listInfo .item{padding:15px 0 0 15%;}
+.listInfo .item span{display: block;color: #9387b4 ;font-size: 16px;}
+.listInfo .item .s-t{float: left;width: 40%;}
+.listInfo .item .l-t{float: left;width: 60%;}
+.file-box .subBtn{margin-top: 20px;outline: none;}
+.file-box .subBtn.alp-opa{opacity:0.5;ilter:"alpha(opacity=50)";-ms-filter:"alpha(opacity=50)";}
+.file-box .subBtn .btn{background: url(../images/botton_4.png) no-repeat center;background-size: contain;height: 60px;line-height:55px;color: #fff;text-align: center;border:none; width: 100%;font-size: 18px;}
+.up-img .imgBox{text-align: center;position: relative;}
+.up-img .imgBox .uploadImgBtn{position: absolute;top: -1px;left: -1px;overflow: hidden;width: 100%;height: 100%;cursor: pointer;}
+.up-img .imgBox .uploadImgBtn input[type=file]{width: 100%;height: 100%;font-size: 100px;opacity: 0;filter: alpha(opacity=0);cursor: pointer;}
+.up-img .imgBox .upBtn{width: 100%;height: 210px;display: block;color: #969696;cursor: pointer;overflow: hidden;}
+.up-img .imgBox .upBtn img{border-radius: 15px;max-width: 100%;height: 100%;}
+.up-img .imgBox .upBtn img.icon{opacity: 1;margin-top: 76px;width: 40px;height: 40px;}
+.upload-img.loading {background:url(../images/waiting.gif) no-repeat center;}
+.upload-img img {-webkit-transition: all 0.5s;transition: all 0.5s;opacity: 0; }
+.up-img .delBtn{position: absolute;right: -10px;top:-32px;display: none;}
+
+.failbox{position: fixed;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000); background:rgba(0,0,0,.6);border-radius: 15px;padding: 14px 0;width: 140px; text-align: center;color: #fff;left: 50%;margin-left: -70px;top: 45%;z-index: 105;font-size: 16px;}
+.fav-con .proList:after,.fav-con .proList:before,
+.shareBox .list:after,.shareBox .list:before,
+.listInfo .item:before,.listInfo .item:after{ display: table; content: " ";line-height:0;}
+.fav-con .proList:after,
+.shareBox .list:after,
+.listInfo .item:after{clear: both;visibility:hidden;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

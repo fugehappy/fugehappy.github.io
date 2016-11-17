@@ -383,6 +383,44 @@ define(function(require, exports, module) {
 	
 	
 	
+	var dialog = require('dialog');
+	
+	$('#btn').on('click',function(){
+		//dialog.tips('jia');
+		//dialog.tips('请输入您的真实姓名','animate');
+		//dialog.createMask();
+		//关闭遮罩
+		/*if(true){
+			var time3 = setTimeout(function(){
+				dialog.closeMask('.t_mask');
+				clearTimeout(time3);
+			},3000);		
+		}*/
+		var str ='<div class="tips_wrapper">'+
+					'<div class="desc">'+
+						'<span>请确认姓名和生日日期与身份证上信息一致，提交后将无法修改。若填写不正确，中奖后将无法领奖哟！</span>'+
+					'</div>'+
+					'<div class="tips_footer">'+
+						'<a href="###" class="button btn_bg1" id="checkBack">返回检查</a>'+
+						'<a href="###" class="button btn_bg2">确认提交</a>'+
+					'</div>'+
+				'</div>';
+		dialog.createMask();
+		dialog.tips2(str);
+		
+	})
+	
+	$('body').on('click','#checkBack',function(){
+		dialog.closeMask('.tip_info2');
+	})
+	
+	$('#btn2').on('click',function(){
+		dialog.tips('请输入您的真实姓名','animate');
+	})
+	
+	
+	
+	
 	
 	
 	
