@@ -58,7 +58,11 @@
 		autoheight();
 	    function autoheight() {
 	        var winheight = $(window).height();
-	        $(".file-box").css({"height":winheight});
+	        if(winheight<667){
+	        	$(".file-box").css({"height":"auto"});
+	        }else{
+	        	$(".file-box").css({"height":winheight});
+	        }
 	    };
 	</script>
 </body>

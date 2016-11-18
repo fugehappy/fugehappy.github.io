@@ -106,3 +106,111 @@ body {
 	margin: 0 auto;
 	padding: 20px;
 }
+
+/*完善信息*/
+.body-black-bg {
+	background: #200D3C;
+}
+.page1-title {
+	padding-top: 20px;
+}
+.page1-title h2{
+	font-size: 20px;
+	color: #FBEE53;
+	letter-spacing: 0;
+	text-shadow: 0 6px 6px rgba(0,0,0,0.50);
+	text-align: center;
+	line-height: 20px;
+	font-weight: normal;
+	margin-bottom: 20px;
+}
+.page1-title p{
+	color: #fff;
+	font-size: 14px;
+	width: 256px;
+	margin: 0 auto;
+	line-height: 1.5;
+}
+.fill-zone {
+	width: 302px;
+	height: 52px;
+	padding: 10px 0;
+	background-image: url(../images/botton_3.png);
+	background-size: 100%;
+	margin: 20px auto;
+	
+}
+
+.fill-zone label {
+	color: #fff;
+	font-size: 16px;
+	width: 80px;
+	height: 32px;
+	line-height: 30px;
+	margin-left: 20px;
+	margin-right: 10px;
+	display: inline-block;
+}
+.fill-tips {
+	color: #fff;
+	opacity: 0.6;
+	width: 302px;
+	margin: 0 auto;
+	padding-left: 20px;
+	font-size: 12px;
+	margin-top: -20px;
+	margin-bottom: 20px;
+}
+.fill-input {
+	display: inline-block;
+	height: 32px;
+	background: rgba(0,0,0,0);
+	outline: none;
+	border: none;
+	font-size: 16px;
+	padding: 0 20px;
+	width: 160px;
+	color: #fff;
+}
+.fill-submit {
+	text-align: center;
+}
+.fill-submit a{
+	background-image: url(../images/botton_4.png);
+	background-size: 100%;
+	display: inline-block;
+	width: 300px;
+	height: 50px;
+	line-height: 50px;
+	color: #fff;
+	font-size: 16px;
+}
+.page1-fill-text {
+	padding-top: 60px;
+}
+
+/*404*/
+.not-bg {
+	background: none;
+}
+.lost-page {
+	text-align: center;
+}
+.lost-page .pic {
+	margin-top: 100px;	
+	padding: 0 10%;
+}
+.lost-page .pic img {
+	width: auto;
+}
+.lost-page .reload {
+	background-image: url(../images/botton_7.png);
+	display: inline-block;
+	width: 100px;
+	height: 30px;
+	background-size: 100%;
+	line-height: 30px;
+	font-size: 16px;
+	color: #fff;
+	margin-top: 40px;
+}
