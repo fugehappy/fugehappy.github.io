@@ -15,6 +15,11 @@ body {
 	top: 178px;
 	bottom: 40px;
 }
+@media screen and (min-height: 500px) {
+	.wrapper { 
+		top: 200px;
+	}
+}
 .slogan {
 	width: 90%;
 	margin: 0 auto;
@@ -29,6 +34,9 @@ body {
 	margin-left: -158px;
 	background-image: url(../images/astrolabe@1.5x.png);
 	background-size: 100%;	
+}
+.wheels.wheels_shine {
+	background-image: url(../images/astrolabe.png);
 }
 @media screen and (max-width: 360px){
 	.wheels {
@@ -132,14 +140,14 @@ body {
 	}
 }
 .axle {
-	width: 108px;
-	height: 108px;
-	position: absolute;
-	z-index: 4;
-	left: 50%;
-	top: 50%;
-	margin-left: -54px;
-	margin-top: -54px;
+	width: 90px;
+    height: 90px;
+    position: absolute;
+    z-index: 4;
+    left: 50%;
+    top: 50%;
+    margin-left: -45px;
+    margin-top: -54px;
 }
 .axle .portrait,.axle .pre_realize,.axle .after_realize{
 	width: 100%;
@@ -194,14 +202,6 @@ body {
 	top: -30px;
 	margin-left: -10px;
 	z-index: 2;
-}
-@media screen and (max-width: 360px) {
-	.tel {
-		width: 14px;
-		height: 18px;
-		margin-left: -7px;
-		bottom: 286px;
-	}
 }
 .rule {
 	width: 31px;
@@ -271,7 +271,7 @@ body {
 }
 @media screen and (max-height: 568px){
 	.rule_content {
-		max-height: 210px;
+		max-height: 250px;
 	}
 }
 .rule_title {

@@ -356,7 +356,9 @@ define(function(require, exports, module) {
 	
 	//规则的弹出效果
 	$('.rule').on('click',function(){
-		$('.rule_msg').animate({
+		var mask = $('<div class="t_mask"></div>');
+		$("body").append(mask);
+		$('.rule_msg').css('zIndex',10009).animate({
 			'left':'50%',
 			'margin-left':'-45%'
 		});
@@ -367,6 +369,9 @@ define(function(require, exports, module) {
 		$('.rule_msg').animate({
 			'left':'100%',
 			'margin-left':'0'
+		},function(){
+			$('.rule_msg').css('zIndex',99);
+			$('.t_mask').remove();
 		});
 	})
 	
