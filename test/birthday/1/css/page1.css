@@ -172,6 +172,22 @@ body {
 	width: 160px;
 	color: #fff;
 }
+.fill-zone.fill-birth {
+	position: relative;
+}
+.fill-zone.fill-birth::after {
+	position: absolute;
+	right: 30px;
+	top: 22px;
+	display: block;
+	width: 20px;
+	height: 20px;
+	content: ">";
+	color: #fff;
+	transform: rotate(92deg);
+	font-size: 14px;
+	line-height: 20px;
+}
 .fill-submit {
 	text-align: center;
 }

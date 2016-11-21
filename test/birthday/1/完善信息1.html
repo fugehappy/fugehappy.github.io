@@ -13,8 +13,23 @@
 	<link rel="stylesheet" type="text/css" href="./css/style.css"/>
 	<link rel="stylesheet" type="text/css" href="./css/hexj-page.css"/>
 	<link rel="stylesheet" type="text/css" href="./css/page1.css"/>
-	<link rel="stylesheet" href="./js/dates/css/lCalendar.css">
-	<script type="text/javascript" src="./js/dates/js/lCalendar.min.js" ></script>
+	<link href="js/date/data.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js" ></script>
+	<script type="text/javascript" src="js/date/date.js" ></script>
+	<script type="text/javascript" src="js/date/iscroll.js" ></script>
+	<script type="text/javascript">
+	$(function(){
+		//开始时间
+		var date = new Date().getFullYear();
+		$('#beginTime').date({
+			beginyear: 1950,
+			endyear: date,
+			ensureBackFn:function(beTime){
+				console.log(beTime)
+			}
+		});	
+	});
+	</script>
 </head>
 
 <body class="body-black-bg">
@@ -28,9 +43,9 @@
 				<label>真实姓名</label>
 				<input class="fill-input" type="text"/>
 			</div>
-			<div class="fill-zone">
+			<div class="fill-zone fill-birth">
 				<label>生日日期</label>
-				<input class="fill-input" type="text" id="beginTime" data-lcalendar="2000-01-11,2016-05-29"/>
+				<input class="fill-input" type="text" id="beginTime" readonly="readonly"/>
 			</div>
 			<div class="fill-zone">
 				<label>手机号</label>
@@ -43,18 +58,6 @@
 			
 		</div>
 	</div>
-	<script type="text/javascript">
-	var date = '1900-01-01,' + new Date().toLocaleDateString().replace(/(\/)/g,'-');
-	
-	
-	document.getElementById('beginTime').setAttribute('data-lcalendar',date);
-	var calendar = new lCalendar();
-	calendar.init({
-		'trigger': '#beginTime',
-		'type': 'date'
-	});
-
-	
-	</script>
+	<div id="datePlugin"></div>
 </body>
 </html>

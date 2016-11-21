@@ -6,6 +6,7 @@ define(function(require, exports, module) {
 		 var swiper = new Swiper('.swiper-container', {
 			pagination: '.swiper-pagination',
 			paginationClickable: true,
+			autoplayDisableOnInteraction: false,
 			direction: 'vertical',
 			autoplay: 1500,
 		});
@@ -70,6 +71,12 @@ define(function(require, exports, module) {
 		obj.hide();
 		obj.parent().removeClass('star_bg2').addClass('star_bg1');
 		oImg.attr("src",origin);
+		//新增加
+		if($('.star_bg1').length>3){
+			$('.pre_realize').addClass('hide');
+			$('.portrait').removeClass('hide');
+			
+		}
 	})
 	
 	//摇动弹框出来
@@ -95,7 +102,7 @@ define(function(require, exports, module) {
 	}
 	
 	//星星收缩动画
-	function axleStart(type) {
+	function axleStart() {
 		var time,time1;
 		if(!pageDom.$wheels.hasClass('animation')){
 			pageDom.$wheels.addClass('animation');
@@ -103,32 +110,18 @@ define(function(require, exports, module) {
 			var time =setTimeout(function(){
 				pageDom.$wheels_wrap.css('opacity','0');
 				
-				if(type ==='pre'){
-					$('.pre_realize').addClass('scaleStart');
-					$('.tel').addClass('hide');
-					
-					$('.pre_realize').addClass('light_star');
-					
 
-					
-					
-					time1 =setTimeout(function(){
-						$('.dialog').removeClass('hide').addClass('dialog_open');
-						$('.dialog_wrap').hide();
-						$('.dialog_content').addClass('waiting');
-						
-						
-						//模拟网络延迟
-						setTimeout(function(){
-							$('.dialog_content').removeClass('waiting'); 
-							loadContent(type);
-							$('.dialog_wrap').addClass('dialog_wrap2').show();
-						},200);
-						
-						clearTimeout(time1);//清定时器
-					},1500);
-					
-				}else {
+				$('.pre_realize').addClass('scaleStart');
+				$('.tel').addClass('hide');
+				
+				$('.pre_realize').addClass('light_star');
+				
+				$('.wheels').addClass('wheels_shine');//新增
+				
+
+				
+				
+				time1 =setTimeout(function(){
 					$('.dialog').removeClass('hide').addClass('dialog_open');
 					$('.dialog_wrap').hide();
 					$('.dialog_content').addClass('waiting');
@@ -136,18 +129,14 @@ define(function(require, exports, module) {
 					
 					//模拟网络延迟
 					setTimeout(function(){
-						$('.dialog_content').removeClass('waiting'); 
-						loadContent(type);
-						$('.dialog_wrap').addClass('dialog_wrap1').show();
-						
-						
-						//设置弹出页面的礼物图片
-						
-						
-	
-					},2000);
+						$('.dialog_content').removeClass('waiting');				
+						loadContent('pre');
+						$('.dialog_wrap').addClass('dialog_wrap2').show();
+					},200);
 					
-				}
+					clearTimeout(time1);//清定时器
+				},1500);
+					
 				
 				clearTimeout(time);//清定时器
 				
@@ -159,6 +148,10 @@ define(function(require, exports, module) {
 	//根据类型加载不同的弹框内容
 	function loadContent(type){
 		$('.dialog_wrap').html('');
+		/*if(str&&typeof str==='string'){
+			$('.dialog_wrap').append(str);
+		}*/
+		
 		var str ='';
 		if(type==='start'){
 			str ='<div class="dialog_main">'+
@@ -218,7 +211,7 @@ define(function(require, exports, module) {
 							'<img src="images/tips/tips3.png">'+
 						'</div>'+
 						'<p class="dialog_tips">心盘尚未完成，请至少许下3个心愿</p>'+
-						'<div class="btnChange">'+
+						'<div class="btnClose">'+
 							'<span>去许愿</span>'+
 						'</div>'+
 					'</div>'+
@@ -227,7 +220,7 @@ define(function(require, exports, module) {
 		//swing('unaward');//未中奖
 		//swing('success');//完善信息-提交成功
 		//swing('unfinished');//心盘尚未满3个
-		//swing('done');//已经参加，明年再来
+		//swing('done');//不要贪心哟，已经许下了6个愿望
 		//swing('timeout');//时间不到
 		}else if(type==='unaward'){
 			str ='<div class="dialog_main">'+
@@ -261,7 +254,7 @@ define(function(require, exports, module) {
 						'</div>'+
 						'<p class="dialog_tips">不要太贪心哟~已经许下6个愿望了！</p>'+
 						'<p class="dialog_tips1">之前的心愿不满意? 删掉可以再玩哦</p>'+
-						'<div class="btnChange">'+
+						'<div class="btnClose">'+
 							'<span>知道了</span>'+
 						'</div>'+
 					'</div>'+
@@ -274,7 +267,7 @@ define(function(require, exports, module) {
 							'<img src="images/tips/tips2.png">'+
 						'</div>'+
 						'<p class="dialog_tips">星盘魔力不足，请在生日前30天内来许愿。</p>'+
-						'<div class="btnChange">'+
+						'<div class="btnClose">'+
 							'<span>知道了</span>'+
 						'</div>'+
 					'</div>'+
@@ -285,12 +278,41 @@ define(function(require, exports, module) {
 		}
 	}
 	
-	//已加入
+	//礼物加入和取消
 	$('.dialog_wrap').on('click','.dialog_pic',function(){
 		var obj =$(this).find('.s_mask');
 		if(obj.hasClass('hide')){
+			if($('.star_bg1').length!==0){
+			
+				$($('.star_bg1')[0]).find('img').attr('src',$(this).find('img').attr('src'));
+				$($('.star_bg1')[0]).find('.wheel_list').show();
+				$($('.star_bg1')[0]).removeClass('star_bg1').addClass('star_bg2');
+				
+			}else {
+				swing('done');
+				alert('添加心愿已经满了，删除后再添加');
+				
+			}
+			if($('.star_bg1').length<=3){
+				$('.portrait').addClass('hide');
+				$('.pre_realize').removeClass('hide');
+			}
 			obj.removeClass('hide');
+			
 		}else{
+			//取消礼物
+			var selectImg = $(this).find('img').attr('src');
+			alert(selectImg);
+			$('.wheel').each(function(i){
+			
+				var addImg = $('.star_bg2').eq(i).find('img').attr('src');
+				if(selectImg===addImg){
+					$('.wheel').eq(i).removeClass('star_bg2').addClass('star_bg1');
+					$('.wheel').eq(i).find('.wheel_list').hide();
+				}
+				
+			})
+			
 			obj.addClass('hide');
 		}
 		
@@ -310,9 +332,24 @@ define(function(require, exports, module) {
 	//添加礼物
 	var imgArr =[];
 	
+	//弹出框关闭
+	$('.dialog_wrap').on('click','.btnClose span',function(){
+		$('.wheels_wrap').css('opacity',1);
+		$('.wheels').removeClass('animation');
+		$('.dialog').addClass('hide').removeClass('dialog_open');
+	})
+	
 	//对话框下再次摇一摇
 	$('.dialog_wrap').on('click','.btnChange span',function(){
+		
+		//切换图片
 		$('.dialog_pic').each(function(i){
+			$(this).find('.s_mask').addClass('hide');
+		})
+		$('.dialog_pic').eq(0).find('img').attr('src','images/pro/3.png');
+		$('.dialog_pic').eq(1).find('img').attr('src','images/pro/4.png');
+		
+		/*$('.dialog_pic').each(function(i){
 			if(!$(this).find('.s_mask').hasClass('hide')){
 				imgArr.push($(this).find('img').attr('src'));
 			}
@@ -332,17 +369,17 @@ define(function(require, exports, module) {
 		if(length >=3){
 			$('.axle .portrait').addClass('hide');
 			$('.axle .pre_realize').removeClass('hide');
-		}
-		if($('.wheels_wrap .star_bg2')){}
+		}*/
+
 		//关闭
-		$('.s_mask').addClass('hide');
-		$('.wheels_wrap').css('opacity',1);
-		$('.wheels').removeClass('animation');
-		$('.dialog').addClass('hide').removeClass('dialog_open');
+		//$('.s_mask').addClass('hide');
+		//$('.wheels_wrap').css('opacity',1);
+		//$('.wheels').removeClass('animation');
+		//$('.dialog').addClass('hide').removeClass('dialog_open');
 	})
 	
 	//去重复
-	Array.prototype.unique = function(){
+	/*Array.prototype.unique = function(){
 		var res = [];
 		var json = {};
 		for(var i = 0; i < this.length; i++){
@@ -352,7 +389,7 @@ define(function(require, exports, module) {
 			}
 		}
 		return res;
-	}
+	}*/
 	
 	//规则的弹出效果
 	$('.rule').on('click',function(){
@@ -379,6 +416,7 @@ define(function(require, exports, module) {
 	$('.icon-msg').on('click',function(){
 		var obj = $('.alert_msg');
 		if(obj.hasClass('hide')){
+			init_screen();
 			obj.removeClass('hide');
 		}else {
 			obj.addClass('hide');
@@ -420,8 +458,145 @@ define(function(require, exports, module) {
 	})
 	
 	$('#btn2').on('click',function(){
-		dialog.tips('请输入您的真实姓名','animate');
+		dialog.tips('请输入您的真实姓名,请再次确认重新输入','animate');
 	})
+	
+	$('#btn3').on('click',function(){
+		//dialog.tips('jia');
+		//dialog.tips('请输入您的真实姓名','animate');
+		//dialog.createMask();
+		//关闭遮罩
+		/*if(true){
+			var time3 = setTimeout(function(){
+				dialog.closeMask('.t_mask');
+				clearTimeout(time3);
+			},3000);		
+		}*/
+		var str ='<div class="tips_wrapper">'+
+					'<h3 class="title">已提交</h3>'+
+					'<div class="desc">'+
+						'<span>请确认姓名和生日日期与身份证上信息一致，提交后将无法修改。若填写不正确，中奖后将无法领奖哟！</span>'+
+					'</div>'+
+					'<div class="desc_one">'+
+						'<span>请确认姓名和生日日期与身份证上信息一致，提交后将无法修改。若填写不正确，中奖后将无法领奖哟！</span>'+
+					'</div>'+
+					'<div class="tips_footer">'+
+						'<a href="###" class="button btn_bg1" id="checkBack">返回检查</a>'+
+						'<a href="###" class="button btn_bg2">确认提交</a>'+
+					'</div>'+
+				'</div>';
+		dialog.createMask();
+		dialog.tips2(str);
+		
+	})
+	
+	$('#btn4').on('click',function(){
+		var str ='<div class="tips_wrapper">'+
+					'<div class="desc">'+
+						'<span>优惠码将以短信方式发送到183****22，请注意查收。</span>'+
+					'</div>'+
+					'<div class="desc_one">'+
+						'<span>所有奖品（包括半价优惠区产品）都需前往成都千机网各门店自提，不支持快递配送，敬请谅解。</span>'+
+					'</div>'+
+					'<div class="tips_footer">'+
+						'<a href="###" class="button btn_bg1" id="checkBack">查看地址</a>'+
+						'<a href="###" class="button btn_bg2">好滴！</a>'+
+					'</div>'+
+				'</div>';
+		dialog.createMask();
+		dialog.tips2(str);
+		
+	})
+	
+	$('#btn5').on('click',function(){
+		var str ='<div class="tips_wrapper">'+
+					'<div class="desc_two">'+
+						'<span>确定要领取此优惠码吗？</span>'+
+					'</div>'+
+					'<div class="desc_two">'+
+						'<span>你只有一次领取机会哟～</span>'+
+					'</div>'+
+					'<div class="tips_footer1">'+
+						'<a href="###" class="button btn_bg1">再考虑看看</a><br/>'+
+						'<a href="###" class="button btn_bg2">确认领取</a>'+
+					'</div>'+
+				'</div>';
+		dialog.createMask();
+		dialog.tips2(str);
+		
+	})
+	
+	//送祝福
+	$('#btn6').on('click',function(){
+		var str ='<div class="tips_wrapper">'+
+					'<h4 class="tips_title">说出你的祝福</h4>'+
+					'<div class="tips_area"><textarea></textarea></div>'+
+					'<div class="tips_footer">'+
+						'<a href="###" class="button btn_bg2">发送</a>'+
+					'</div>'+
+					'<span class="close"></span>'+
+				'</div>';
+		dialog.createMask();
+		dialog.tips2(str);
+		
+	})
+	
+	
+	//考虑数据的交互，多久请求一下数据库
+	$(document).ready(function () {
+		//setInterval(startRequest,10000);
+	});
+	
+	
+	function startRequest() {
+		html='<div class="msg_item">'+
+				'<img src="images/pro/portrait.png">'+
+				'<span>大叔123，生日快乐哟！</span>'+
+			'</div>';
+		html+='<div class="msg_item">'+
+				'<img src="images/pro/portrait.png">'+
+				'<span>大叔123，生日快乐哟！</span>'+
+			'</div>';
+		$(".msg_items").append(html);
+		init_screen();
+	}
+	
+	function init_screen() {
+		
+		var _top = 0;
+		$(".msg_items").find(".msg_item").show().each(function () {
+			var _left = $(window).width() - $(this).width()+220;
+			var _height = $(window).height()+100;
+
+			_top = _top + 36;
+			if (_top >= _height - 120) { 
+				_top = 40;
+			}
+			$(this).css({left: _left, top: _top});
+			var time = 10000;
+			if ($(this).index() % 2 == 0) {
+				time = 12000;
+			}
+			 if ($(this).index() % 3 == 0) {
+				time = 14000;
+			}
+			if ($(this).index() % 4 == 0) {
+				time = 16000;
+			}
+			if ($(this).index() % 5 == 0) {
+				time = 18000;
+			}
+			if ($(this).index() % 7 == 0) {
+				time = 20000;
+			}
+			if ($(this).index() % 8 == 0) {
+				time = 23000;
+			}
+			$(this).animate({left: "-" + _left + "px"}, time, function () {
+			});
+		});
+	}
+
 	
 	
 	

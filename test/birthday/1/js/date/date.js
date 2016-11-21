@@ -23,7 +23,7 @@
         var goloVal;
         $.fn.date.defaultOptions = {
             beginyear: 2000,                 //日期--年--份开始
-            endyear: 2030,                   //日期--年--份结束
+            endyear: 2020,                   //日期--年--份结束
             beginmonth: 1,                   //日期--月--份结束
             endmonth: 12,                    //日期--月--份结束
             beginday: 1,                     //日期--日--份结束
@@ -39,8 +39,15 @@
             show: true,
             ensureBackFn: null
         }
+		
+		
         //用户选项覆盖插件默认选项   
         var opts = $.extend(true, {}, $.fn.date.defaultOptions, options);
+		
+		//初始化时对年的计算进行修正
+		if(parseInt(opts.beginyear)<2000){
+			initY = initY + (2000 - parseInt(opts.beginyear));
+		}
         if (opts.theme === "datetime") { datetime = true; }
         if (!opts.show) {
             that.unbind('click');
@@ -69,6 +76,7 @@
             dayScroll.refresh();
 
             resetInitDete();
+			
             yearScroll.scrollTo(0, initY * 40, 100, true);
             monthScroll.scrollTo(0, initM * 40 - 40, 100, true);
             dayScroll.scrollTo(0, initD * 40 - 40, 100, true);
@@ -91,9 +99,14 @@
             indexD = 1;
         }
         function resetInitDete() {
-            if (opts.curdate) { return false; }
-            else if (that.val() === "") { return false; }
-            initY = parseInt(that.val().substr(2, 2));
+			/*修复总是从1开始*/
+            if (opts.curdate) {indexD = initD;return false; }
+            else if (that.val() === "") { indexD = initD;return false; }
+            //initY = parseInt(that.val().substr(2, 2));
+			/*修复年的计算问题*/
+			
+			initY = parseInt(that.val().substr(0, 4)) - parseInt(opts.beginyear);
+			
             initM = parseInt(that.val().substr(5, 2));
             initD = parseInt(that.val().substr(8, 2));
 
@@ -140,7 +153,7 @@
             $("#datecancle").click(function () {
                 $("#datePage").hide();
                 $("#dateshadow").hide();
-                if ($.isFunction(Ncallback)) {
+                if (Ncallback&&$.isFunction(Ncallback)) {
                     Ncallback(false);
                 }
             });
@@ -157,9 +170,14 @@
                 snap: "li", vScrollbar: false,
                 onScrollEnd: function () {
                     indexY = (this.y / 40) * (-1) + 1;
-                    opts.endday = checkdays(strY, strM);
+					/*添加联动*/
+					var strY = $("#yearwrapper ul li:eq(" + indexY + ")").html().substr(0, $("#yearwrapper ul li:eq(" + indexY + ")").html().length - 1);
+					var strM = $("#monthwrapper ul li:eq(" + indexM + ")").html().substr(0, $("#monthwrapper ul li:eq(" + indexM + ")").html().length - 1)
+					
+					opts.endday = checkdays(strY, strM);
+					
                     $("#daywrapper ul").html(createDAY_UL());
-
+					
                     dayScroll.refresh();
                 }
             });
@@ -168,8 +186,13 @@
                 onScrollEnd: function () {
                     //console.log(this.y);
                     indexM = (this.y / 40) * (-1) + 1;
+					/*添加联动*/
+					var strY = $("#yearwrapper ul li:eq(" + indexY + ")").html().substr(0, $("#yearwrapper ul li:eq(" + indexY + ")").html().length - 1);
+					var strM = $("#monthwrapper ul li:eq(" + indexM + ")").html().substr(0, $("#monthwrapper ul li:eq(" + indexM + ")").html().length - 1)
+
                     opts.endday = checkdays(strY, strM);
                     $("#daywrapper ul").html(createDAY_UL());
+					
                     dayScroll.refresh();
                 }
             });
@@ -297,12 +320,22 @@
         //创建 --月-- 列表
         function createMONTH_UL() {
             var str = "<li>&nbsp;</li>";
-            for (var i = opts.beginmonth; i <= opts.endmonth; i++) {
-                if (i < 10) {
-                    i = "0" + i
-                }
-                str += '<li>' + i + '月</li>'
-            }
+			//var num = parseInt(opts.endyear)-parseInt(opts.beginyear);
+			//alert(num);
+			/*if(indexY===1||indexY ===num){
+				alert(1);
+			}else{
+				
+			}*/
+			
+			for (var i = opts.beginmonth; i <= opts.endmonth; i++) {
+				if (i < 10) {
+					i = "0" + i
+				}
+				str += '<li>' + i + '月</li>'
+			}
+
+            
             return str + "<li>&nbsp;</li>";;
         }
         //创建 --日-- 列表
@@ -310,6 +343,9 @@
             $("#daywrapper ul").html("");
             var str = "<li>&nbsp;</li>";
             for (var i = opts.beginday; i <= opts.endday; i++) {
+				if (i < 10) {
+                    i = "0" + i
+                }
                 str += '<li>' + i + '日</li>'
             }
             return str + "<li>&nbsp;</li>";;
