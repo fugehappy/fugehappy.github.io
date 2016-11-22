@@ -302,7 +302,7 @@ define(function(require, exports, module) {
 		}else{
 			//取消礼物
 			var selectImg = $(this).find('img').attr('src');
-			alert(selectImg);
+			//alert(selectImg);
 			$('.wheel').each(function(i){
 			
 				var addImg = $('.star_bg2').eq(i).find('img').attr('src');
@@ -312,6 +312,11 @@ define(function(require, exports, module) {
 				}
 				
 			})
+			//新增
+			if($('.star_bg2').length<3){
+				$('.portrait').removeClass('hide');
+				$('.pre_realize').addClass('hide');
+			}
 			
 			obj.addClass('hide');
 		}
@@ -325,12 +330,6 @@ define(function(require, exports, module) {
 		$('.wheels').removeClass('animation');
 		$('.dialog').addClass('hide').removeClass('dialog_open');
 	})
-	
-	//礼物
-	var giftArr =['1.png','2.png','3.png','4.png','5.png','6.png'];
-	
-	//添加礼物
-	var imgArr =[];
 	
 	//弹出框关闭
 	$('.dialog_wrap').on('click','.btnClose span',function(){
@@ -349,27 +348,6 @@ define(function(require, exports, module) {
 		$('.dialog_pic').eq(0).find('img').attr('src','images/pro/3.png');
 		$('.dialog_pic').eq(1).find('img').attr('src','images/pro/4.png');
 		
-		/*$('.dialog_pic').each(function(i){
-			if(!$(this).find('.s_mask').hasClass('hide')){
-				imgArr.push($(this).find('img').attr('src'));
-			}
-			
-		});
-		
-		if(imgArr.length!=0){
-			imgArr = imgArr.unique();
-			var len= Math.min(imgArr.length,6);
-			for(var i=0;i<len;i++){
-				$($('.wheel')[i]).removeClass('star_bg1').addClass('star_bg2');
-				$($('.wheel')[i]).find('img').attr('src',imgArr[i]);
-				$($('.wheel')[i]).find('.wheel_list').show();
-			}
-		}
-		var length = $('.wheels_wrap .star_bg2').length;
-		if(length >=3){
-			$('.axle .portrait').addClass('hide');
-			$('.axle .pre_realize').removeClass('hide');
-		}*/
 
 		//关闭
 		//$('.s_mask').addClass('hide');
@@ -378,18 +356,6 @@ define(function(require, exports, module) {
 		//$('.dialog').addClass('hide').removeClass('dialog_open');
 	})
 	
-	//去重复
-	/*Array.prototype.unique = function(){
-		var res = [];
-		var json = {};
-		for(var i = 0; i < this.length; i++){
-			if(!json[this[i]]){
-				res.push(this[i]);
-				json[this[i]] = 1;
-			}
-		}
-		return res;
-	}*/
 	
 	//规则的弹出效果
 	$('.rule').on('click',function(){
@@ -416,10 +382,13 @@ define(function(require, exports, module) {
 	$('.icon-msg').on('click',function(){
 		var obj = $('.alert_msg');
 		if(obj.hasClass('hide')){
-			init_screen();
 			obj.removeClass('hide');
+			setBarrager();//出现弹幕
 		}else {
 			obj.addClass('hide');
+			$.fn.barrager.removeAll();
+			clearInterval(looper);
+			$('.msg_contents').html();
 		}
 	})
 	
@@ -528,7 +497,7 @@ define(function(require, exports, module) {
 	
 	//送祝福
 	$('#btn6').on('click',function(){
-		var str ='<div class="tips_wrapper">'+
+		var str ='<div class="tips_wrapper tips_bg">'+
 					'<h4 class="tips_title">说出你的祝福</h4>'+
 					'<div class="tips_area"><textarea></textarea></div>'+
 					'<div class="tips_footer">'+
@@ -542,60 +511,77 @@ define(function(require, exports, module) {
 	})
 	
 	
-	//考虑数据的交互，多久请求一下数据库
-	$(document).ready(function () {
-		//setInterval(startRequest,10000);
-	});
-	
-	
-	function startRequest() {
-		html='<div class="msg_item">'+
-				'<img src="images/pro/portrait.png">'+
-				'<span>大叔123，生日快乐哟！</span>'+
-			'</div>';
-		html+='<div class="msg_item">'+
-				'<img src="images/pro/portrait.png">'+
-				'<span>大叔123，生日快乐哟！</span>'+
-			'</div>';
-		$(".msg_items").append(html);
-		init_screen();
-	}
-	
-	function init_screen() {
+	//弹幕
+	var looper=null;
+	function setBarrager() {
+		var data=[{ 
+			img:'images/pro/portrait.png',
+			info:'大叔生日快乐', //文字 
+			href:'javascript:;', //链接 
+			close:false, //显示关闭按钮 
+			speed:6, //延迟,单位秒,默认6   
+		},
+		{ 
+			img:'images/pro/portrait.png',
+			info:'大叔，生日快乐哟！', //文字 
+			href:'javascript:;', //链接  
+			close:false, //显示关闭按钮 
+			speed:6, //延迟,单位秒,默认6  
+		},
+		{ 
+		   img:'images/pro/portrait.png',
+		   info:'大叔，生日快乐哟！', //文字 
+		   href:'javascript:;', //链接 
+		   close:false, //显示关闭按钮 
+		   speed:6, //延迟,单位秒,默认6  
+		},
+		{ 
+			img:'images/pro/portrait.png',
+			info:'大叔，生日快乐哟！', //文字 
+			href:'javascript:;', //链接 
+			close:false, //显示关闭按钮 
+			speed:6, //延迟,单位秒,默认6  
+		},
+		{ 
+			img:'images/pro/portrait.png',
+			info:'大叔，生日快乐哟！大叔，生日快乐哟！大叔，生日快乐哟！大叔，生日快乐哟！', //文字 
+			href:'javascript:;', //链接 
+			close:false, //显示关闭按钮 
+			speed:6, //延迟,单位秒,默认6  
+		}];
+		//每条弹幕发送间隔
+		var looper_time=2*1000;
+		var items=data;
+		//弹幕总数
+		var total=data.length;
+		//是否首次执行
+		var run_once=true;
 		
-		var _top = 0;
-		$(".msg_items").find(".msg_item").show().each(function () {
-			var _left = $(window).width() - $(this).width()+220;
-			var _height = $(window).height()+100;
-
-			_top = _top + 36;
-			if (_top >= _height - 120) { 
-				_top = 40;
+		//弹幕索引
+		var index=0;
+		clearInterval(looper);
+		$('.msg_contents').html();
+		//先执行一次
+		barrager1();
+		function  barrager1(){
+			if(run_once){
+				//如果是首次执行,则设置一个定时器,并且把首次执行置为false
+				looper=setInterval(barrager1,looper_time);                
+				run_once=false;
 			}
-			$(this).css({left: _left, top: _top});
-			var time = 10000;
-			if ($(this).index() % 2 == 0) {
-				time = 12000;
+			//发布一个弹幕
+			$('.msg_contents').barrager(items[index]);
+			//索引自增
+			index++;
+			//所有弹幕发布完毕，清除计时器。
+			if(index == total){		 
+				clearInterval(looper);
+				return false;
 			}
-			 if ($(this).index() % 3 == 0) {
-				time = 14000;
-			}
-			if ($(this).index() % 4 == 0) {
-				time = 16000;
-			}
-			if ($(this).index() % 5 == 0) {
-				time = 18000;
-			}
-			if ($(this).index() % 7 == 0) {
-				time = 20000;
-			}
-			if ($(this).index() % 8 == 0) {
-				time = 23000;
-			}
-			$(this).animate({left: "-" + _left + "px"}, time, function () {
-			});
-		});
+		}	
 	}
+	
+	       
 
 	
 	

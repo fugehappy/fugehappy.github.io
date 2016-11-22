@@ -1,4 +1,261 @@
 @charset "UTF-8"; 
+.dialog, .dialog_overlay {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+.dialog {
+	position: fixed;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	z-index: 9999;
+}
+.dialog_overlay {
+	position: absolute;
+	z-index: 10000;
+	background: rgba(55, 58, 71, 0.9);
+	opacity: 0;
+	pointer-events: none;
+}
+.dialog_open .dialog_overlay {
+	opacity: 0.9;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+	-webkit-backface-visibility: hidden;
+}
+.dialog.dialog_open .dialog_content, .dialog.dialog_close .dialog_content {
+	-webkit-animation-duration: 0.4s;
+	animation-duration: 0.4s;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+.dialog_open {
+	-webkit-animation-name: anim-open;
+	animation-name: anim-open;
+	-webkit-animation-timing-function: cubic-bezier(0.6,0,0.4,1);
+	animation-timing-function: cubic-bezier(0.6,0,0.4,1);
+}
+.dialog_content {
+	width: 70%;
+	max-width: 560px;
+	min-width: 290px;
+	text-align: center;
+	position: relative;
+	z-index: 10001;
+	margin: 0 auto;
+	-webkit-transform: scale(0.8);
+	transform: scale(0.8);
+}
+
+.waiting {
+	background: url(../images/waiting.gif) no-repeat  center center;
+	height: 120px;
+	background-size: 50px 50px;
+}
+.dialog_wrap1 {
+	background: url(../images/bombbox.png) no-repeat center top;
+	background-size: 100% auto;
+	padding-top: 88px;
+}
+.dialog_wrap2 {
+	background: url(../images/bombbox_2.png) no-repeat center top;
+	background-size: 100% auto;
+	padding-top: 88px;
+}
+.dialog_main {
+	background: #fff;
+	margin-top: 56px;
+	border-radius: 4px 4px 20px 20px;
+	padding: 0 10px;
+	position: relative;
+}
+.dialog_wrap2 .dialog_main{
+	margin-top: 38px;
+} 
+.dialog_main h3{
+	margin: 0 0 10px 0;
+	font-size: 18px;
+	color: #391C50;
+}
+.dialog_items {
+	overflow: hidden;
+}
+.dialog_item {
+	width: 48%;
+}
+.dialog_item:first-child {
+	float: left;
+}
+.dialog_item:last-child {
+	float: right;
+}
+.dialog_pic {
+	position: relative;
+	background: #FFF;
+	border: 1px solid #7E5A97;
+	border-radius: 10px;
+	min-height: 134px;
+}
+.s_mask {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: rgba(150,35,192,0.50);
+	border-radius: 10px;
+}
+.dialog_item .icon {
+	position: relative;
+	width: 80px;
+	height: 80px;
+	margin: 15px auto 5px auto;
+}
+.s_mask .txt {
+	color: #fff;
+	font-size: 18px;
+}
+.dialog_item .pro_title {
+	font-size: 14px;
+	text-align: left;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	word-break: break-all;
+	overflow: hidden;
+}
+.success .line_short {
+	width: 25px;
+	height: 5px;
+	position: absolute;
+	left: 14px;
+	top: 46px;
+	border-radius: 4px;
+	background-color: #fff;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	transform: rotate(45deg);
+	-webkit-animation: success_short_Animation .65s;
+	-moz-animation: success_short_Animation .65s;
+	animation: success_short_Animation .65s;
+}
+.success .line_long {
+	width: 47px;
+	height: 5px;
+	position: absolute;
+	right: 8px;
+	top: 38px;
+	border-radius: 4px;
+	background-color: #fff;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	-webkit-animation: success_long_Animation .65s;
+	-moz-animation: success_long_Animation .65s;
+	animation: success_long_Animation .65s;
+}
+.btnChange ,.getAward,.btnClose{
+	padding-bottom: 20px;
+}
+.btnChange>span ,.btnClose>span {
+	color: #fff;
+	display: inline-block;
+	width: 200px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 18px;
+	background: url(../images/botton_change.png);
+	background-size: 100%;
+}
+.dialog_award img {
+	width: 140px;
+	height: 140px;
+}
+.getAward a{
+	color: #fff;
+	display: inline-block;
+	width: 200px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 18px;
+	background: url(../images/botton_change.png);
+	background-size: 100%;
+}
+.dialog .close {
+	width: 30px;
+	height: 30px;
+	background: url(../images/ic_close2.png);
+	background-size: 100%;	
+	position: absolute;	
+	bottom: -50px;
+	left: 50%;
+	margin-left: -10px;		
+}
+
+.dialog .txt_award {
+	font-size: 14px;
+	color: #333;
+}
+.dialog_tips {
+	font-size: 16px;
+	color: #333;
+}
+.dialog_tips1 {
+	font-size: 12px;
+	color: #999;
+	margin-top: 0;
+}
+.dialog_tips2 {
+	padding-bottom: 20px;
+	color: #333;
+}
+.dialog_tips2 a{
+	color: #C590D6;
+	font-size: 16px;
+}
+.state_pic {
+	min-height: 50px;
+	text-align: center;
+}
+.state_pic img {
+	width: 50%;
+}
+
+/*顶部提示信息*/
+.top_tips {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	text-align: center;
+	height: 40px;
+	background: rgba(0,0,0,0.4);
+	color: #fff;
+	font-size: 14px;
+	line-height: 40px;
+	overflow: hidden;
+	padding: 0 10px;
+}
+.top_tips >a,.top_tips >span {
+	display: inline-block;
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	text-align: center;
+}
+.top_tips a.re_certify {
+	color: #FBB153;
+}
+.top_tips span.no_certify {
+	color: #FBEE53;
+}
+
 /*对话框样式*/
 .t_mask {
 	position: fixed;
@@ -13,7 +270,7 @@
 	text-align: center;
 	color: #fff;
 	border-radius: 10px;
-	position: absolute;
+	position: fixed;
 	background: #000;
 	line-height: 40px;
 	width: 60%;
@@ -28,7 +285,7 @@
 .tip_info2 {
 	color: #666;
 	border-radius: 10px;
-	position: absolute;
+	position: fixed;
 	background: #fff;
 	line-height: 1.2;
 	width: 82%;
@@ -36,7 +293,8 @@
 	margin-left: -41%;
 	left: 50%;
 	word-wrap: break-word;
-	top: 20%;
+	top: 50%;
+	margin-top: -25%;
 	font-size: 14px;
 	z-index: 10009;
 }
@@ -107,11 +365,14 @@
 	color: #B884CD;
 	padding-left: 8px;
 	font-size: 18px;
+	margin: 0;
+	margin-bottom: 8px;
 }
 .tips_wrapper .tips_area{
-	width: 80%;
+	width: 100%;
 	height: 100px;
 	margin: 0 auto;
+	padding-bottom: 10px;
 }
 .tips_wrapper .tips_area textarea {
 	width: 100%;
@@ -131,4 +392,9 @@
 	bottom: -60px;
 	left: 50%;
 	margin-left: -15px;	
+}
+
+.tips_wrapper.tips_bg {
+	background: #f7f7f7;
+	padding: 10px;
 }
