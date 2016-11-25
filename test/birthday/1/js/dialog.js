@@ -54,5 +54,27 @@ define(function(require, exports, module) {
 		
 	}
 	
+	/*
+	*创建遮罩2
+	*/
+	UI.createMask2 = function(){
+		if(!$) return false;
+		var mask = $('<div class="mask_lay"></div>');
+		$("body").append(mask);
+	}
+	
+	/*
+	*关闭遮罩2
+	*/
+	UI.closeMask = function(){
+		if(!$) return false;
+		$('.mask_lay').animate({
+			opacity: 0,
+		},50,function(){
+			$('.mask_lay').remove();
+		});
+		
+	}
+	
 	module.exports = UI;
 })

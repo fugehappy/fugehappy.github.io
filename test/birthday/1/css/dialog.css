@@ -41,15 +41,12 @@
 	animation-timing-function: cubic-bezier(0.6,0,0.4,1);
 }
 .dialog_content {
-	width: 70%;
+	width: 80%; 
 	max-width: 560px;
-	min-width: 290px;
 	text-align: center;
 	position: relative;
 	z-index: 10001;
 	margin: 0 auto;
-	-webkit-transform: scale(0.8);
-	transform: scale(0.8);
 }
 
 .waiting {
@@ -57,7 +54,7 @@
 	height: 120px;
 	background-size: 50px 50px;
 }
-.dialog_wrap1 {
+/*.dialog_wrap1 {
 	background: url(../images/bombbox.png) no-repeat center top;
 	background-size: 100% auto;
 	padding-top: 88px;
@@ -66,24 +63,32 @@
 	background: url(../images/bombbox_2.png) no-repeat center top;
 	background-size: 100% auto;
 	padding-top: 88px;
+}*/
+.dialog_topImg img {
+	display: block;
+	vertical-align: bottom;
+	font-size: 0;
+	line-height: 0;
 }
 .dialog_main {
 	background: #fff;
-	margin-top: 56px;
-	border-radius: 4px 4px 20px 20px;
+	border-radius: 0 0 20px 20px;
 	padding: 0 10px;
 	position: relative;
 }
 .dialog_wrap2 .dialog_main{
-	margin-top: 38px;
+	/*margin-top: 38px;*/
 } 
 .dialog_main h3{
 	margin: 0 0 10px 0;
-	font-size: 18px;
+	font-size: 14px;
 	color: #391C50;
+	background: #fff;
 }
 .dialog_items {
 	overflow: hidden;
+    margin: 0 auto;
+
 }
 .dialog_item {
 	width: 48%;
@@ -98,8 +103,13 @@
 	position: relative;
 	background: #FFF;
 	border: 1px solid #7E5A97;
+	border-radius: 4px;
+	height: 112px;
+}
+.dialog_pic img {
 	border-radius: 10px;
-	min-height: 134px;
+	width: auto;
+	height: 100%;
 }
 .s_mask {
 	position: absolute;
@@ -108,7 +118,7 @@
 	left: 0;
 	top: 0;
 	background: rgba(150,35,192,0.50);
-	border-radius: 10px;
+	border-radius: 4px;
 }
 .dialog_item .icon {
 	position: relative;
@@ -118,7 +128,12 @@
 }
 .s_mask .txt {
 	color: #fff;
-	font-size: 18px;
+	font-size: 14px;   
+    width: 100%;
+	position: absolute;
+    text-align: center;
+    left: 0;
+	bottom: 0px;
 }
 .dialog_item .pro_title {
 	font-size: 14px;
@@ -165,36 +180,35 @@
 .btnChange>span ,.btnClose>span {
 	color: #fff;
 	display: inline-block;
-	width: 200px;
-	height: 50px;
-	line-height: 50px;
-	font-size: 18px;
-	background: url(../images/botton_change.png);
+	width: 141px;
+    height: 32px;
+    line-height: 32px;
+	font-size: 14px;
+	background: url(../images/botton_8.png);
 	background-size: 100%;
 }
 .dialog_award img {
-	width: 140px;
-	height: 140px;
+	width: 100px;
+	height: 100px;
 }
 .getAward a{
 	color: #fff;
 	display: inline-block;
-	width: 200px;
-	height: 50px;
-	line-height: 50px;
-	font-size: 18px;
+	width: 170px;
+    height: 40px;
+    line-height: 40px;
+	font-size: 16px;
 	background: url(../images/botton_change.png);
 	background-size: 100%;
 }
 .dialog .close {
-	width: 30px;
-	height: 30px;
-	background: url(../images/ic_close2.png);
+	width: 22px;
+	height: 22px;
+	background: url(../images/icon_closed_02.png);
 	background-size: 100%;	
 	position: absolute;	
-	bottom: -50px;
-	left: 50%;
-	margin-left: -10px;		
+	right: 0;
+    top: 0;		
 }
 
 .dialog .txt_award {
@@ -317,6 +331,7 @@
 	color: #666;
 	line-height: 1.5;
 	margin-bottom: 10px;
+	word-break: break-all;
 }
 .tips_footer {
 	text-align: center;
@@ -383,6 +398,11 @@
 	font-size: 18px;
 	color: #B884CD;
 }
+textarea::-webkit-input-placeholder {
+	color: #B884CD;
+	font-size: 14px;
+	opacity: 0.6;
+}
 .tips_wrapper .close {
 	position: absolute;
 	width: 30px;
@@ -397,4 +417,15 @@
 .tips_wrapper.tips_bg {
 	background: #f7f7f7;
 	padding: 10px;
+}
+
+.mask_lay {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10050;
+	background: url(../images/waiting.gif) no-repeat  center center;
+	background-size: 50px 50px;
 }

@@ -45,7 +45,7 @@ define(function(require, exports, module) {
 	
 	var pageDom = {
 		$wheels: $('.screen .wheels'),
-		$wheels_wrap: $('.screen .wheels_wrap')
+		$wheels_wrap: $('.screen .wheels_items')
 	}
 	
 	$('.axle .portrait').on('click',function(){
@@ -99,6 +99,8 @@ define(function(require, exports, module) {
 				},2000);
 			}
 		},200);
+		
+		
 	}
 	
 	//星星收缩动画
@@ -116,7 +118,7 @@ define(function(require, exports, module) {
 				
 				$('.pre_realize').addClass('light_star');
 				
-				$('.wheels').addClass('wheels_shine');//新增
+				$('.wheels_shine').removeClass('hide');//新增
 				
 
 				
@@ -154,7 +156,8 @@ define(function(require, exports, module) {
 		
 		var str ='';
 		if(type==='start'){
-			str ='<div class="dialog_main">'+
+			str ='<div class="dialog_topImg"><img src="images/bombbox.png"/></div>'+
+				'<div class="dialog_main">'+			
 				'<h3>点击心仪的礼物加入心愿单</h3>'+
 				'<div class="dialog_items">'+
 					'<div class="dialog_item">'+
@@ -191,12 +194,14 @@ define(function(require, exports, module) {
 				'<div class="btnChange">'+
 					'<span>再摇摇，换一批</span>'+
 				'</div>'+
-				'<i class="close"></i>'+
-			'</div>';
+			'</div>'+
+			'<i class="close"></i>';
 			$('.dialog_wrap').append(str);
+			dialog.tips('请输入您的真实姓名,请再次确认重新输入','animate');
 			
 		}else if(type==='pre'){
-			str ='<div class="dialog_main">'+
+			str ='<div class="dialog_topImg"><img src="images/bombbox_2.png"/></div>'+
+				'<div class="dialog_main">'+
 					'<div class="dialog_award"><img src="./images/pro/1.png"></div>'+
 					'<p class="txt_award">心愿成真！星盘认证你为今日幸运星！XXXX是你的啦！</p>'+
 					'<div class="getAward">'+
@@ -205,7 +210,8 @@ define(function(require, exports, module) {
 				'</div>';
 			$('.dialog_wrap').append(str);
 		}else if(type==='unfinished'){
-			str ='<div class="dialog_main">'+
+			str ='<div class="dialog_topImg"><img src="images/bombbox.png"/></div>'+
+				'<div class="dialog_main">'+
 					'<div class="dialog_state">'+
 						'<div class="state_pic">'+
 							'<img src="images/tips/tips3.png">'+
@@ -223,7 +229,8 @@ define(function(require, exports, module) {
 		//swing('done');//不要贪心哟，已经许下了6个愿望
 		//swing('timeout');//时间不到
 		}else if(type==='unaward'){
-			str ='<div class="dialog_main">'+
+			str ='<div class="dialog_topImg"><img src="images/bombbox.png"/></div>'+
+				'<div class="dialog_main">'+
 					'<div class="dialog_state">'+
 						'<div class="state_pic">'+
 							'<img src="images/tips/tips0.png">'+
@@ -236,7 +243,8 @@ define(function(require, exports, module) {
 				'</div>';
 			$('.dialog_wrap').append(str);
 		}else if(type==='success'){
-			str ='<div class="dialog_main">'+
+			str ='<div class="dialog_topImg"><img src="images/bombbox.png"/></div>'+
+				'<div class="dialog_main">'+
 					'<div class="dialog_state">'+
 						'<div class="state_pic">'+
 							'<img src="images/tips/tips4.png">'+
@@ -247,7 +255,8 @@ define(function(require, exports, module) {
 			$('.dialog_wrap').append(str);
 			//xuyaoguanbi
 		}else if(type==='done'){
-			str ='<div class="dialog_main">'+
+			str ='<div class="dialog_topImg"><img src="images/bombbox.png"/></div>'+
+				'<div class="dialog_main">'+
 					'<div class="dialog_state">'+
 						'<div class="state_pic">'+
 							'<img src="images/tips/tips1.png">'+
@@ -261,7 +270,8 @@ define(function(require, exports, module) {
 				'</div>';
 			$('.dialog_wrap').append(str);
 		}else if(type==='timeout'){
-			str ='<div class="dialog_main">'+
+			str ='<div class="dialog_topImg"><img src="images/bombbox.png"/></div>'+
+				'<div class="dialog_main">'+
 					'<div class="dialog_state">'+
 						'<div class="state_pic">'+
 							'<img src="images/tips/tips2.png">'+
@@ -287,7 +297,7 @@ define(function(require, exports, module) {
 				$($('.star_bg1')[0]).find('img').attr('src',$(this).find('img').attr('src'));
 				$($('.star_bg1')[0]).find('.wheel_list').show();
 				$($('.star_bg1')[0]).removeClass('star_bg1').addClass('star_bg2');
-				
+				//dialog.tips('请输入您的真实姓名,请再次确认重新输入','animate');
 			}else {
 				swing('done');
 				alert('添加心愿已经满了，删除后再添加');
@@ -498,8 +508,7 @@ define(function(require, exports, module) {
 	//送祝福
 	$('#btn6').on('click',function(){
 		var str ='<div class="tips_wrapper tips_bg">'+
-					'<h4 class="tips_title">说出你的祝福</h4>'+
-					'<div class="tips_area"><textarea></textarea></div>'+
+					'<div class="tips_area"><textarea placeholder="说出你的祝福"></textarea></div>'+
 					'<div class="tips_footer">'+
 						'<a href="###" class="button btn_bg2">发送</a>'+
 					'</div>'+
@@ -548,7 +557,22 @@ define(function(require, exports, module) {
 			href:'javascript:;', //链接 
 			close:false, //显示关闭按钮 
 			speed:6, //延迟,单位秒,默认6  
-		}];
+		},
+		{ 
+			img:'images/pro/portrait.png',
+			info:'大叔，生日快乐哟！', //文字 
+			href:'javascript:;', //链接 
+			close:false, //显示关闭按钮 
+			speed:6, //延迟,单位秒,默认6  
+		},
+		{ 
+			img:'images/pro/portrait.png',
+			info:'大叔，生日快乐哟！大叔，生日快乐哟！大叔，生日快乐哟！大叔，生日快乐哟！', //文字 
+			href:'javascript:;', //链接 
+			close:false, //显示关闭按钮 
+			speed:6, //延迟,单位秒,默认6  
+		}
+		];
 		//每条弹幕发送间隔
 		var looper_time=2*1000;
 		var items=data;
