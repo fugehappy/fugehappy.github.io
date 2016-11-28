@@ -242,18 +242,19 @@
 
 /*顶部提示信息*/
 .top_tips {
-	position: fixed;
+	position: absolute;
 	left: 0;
 	top: 0;
 	width: 100%;
 	text-align: center;
-	height: 40px;
+	height: 30px;
 	background: rgba(0,0,0,0.4);
 	color: #fff;
 	font-size: 14px;
-	line-height: 40px;
+	line-height: 30px;
 	overflow: hidden;
 	padding: 0 10px;
+	z-index: 100;
 }
 .top_tips >a,.top_tips >span {
 	display: inline-block;

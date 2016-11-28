@@ -12,12 +12,14 @@
         var nowdate = new Date();
         var indexY = 1, indexM = 1, indexD = 1;
         var indexH = 1, indexI = 1, indexS = 0;
-        var initY = parseInt((nowdate.getYear() + "").substr(1, 2));
+        var initY = parseInt((nowdate.getFullYear() + ""));
         var initM = parseInt(nowdate.getMonth() + "") + 1;
         var initD = parseInt(nowdate.getDate() + "");
         var initH = parseInt(nowdate.getHours());
         var initI = parseInt(nowdate.getMinutes());
         var initS = parseInt(nowdate.getYear());
+		var initMonth = parseInt(nowdate.getMonth() + "") + 1;
+		var initDay = parseInt(nowdate.getDate() + "");
         var yearScroll = null, monthScroll = null, dayScroll = null;
         var HourScroll = null, MinuteScroll = null, SecondScroll = null;
         var goloVal;
@@ -37,17 +39,23 @@
             mode: null,                       //操作模式（滑动模式）
             event: "click",                    //打开日期插件默认方式为点击后后弹出日期 
             show: true,
-            ensureBackFn: null
+            ensureBackFn: null,
+			flag: false                        //新增开关
         }
 		
 		
         //用户选项覆盖插件默认选项   
         var opts = $.extend(true, {}, $.fn.date.defaultOptions, options);
 		
+		var originalY = initY - parseInt(opts.beginyear) + 1;
+		var originalM = parseInt(nowdate.getMonth() + "") + 1;;
+
 		//初始化时对年的计算进行修正
-		if(parseInt(opts.beginyear)<2000){
+		initY = originalY;
+		
+		/*if(parseInt(opts.beginyear)<2000){
 			initY = initY + (2000 - parseInt(opts.beginyear));
-		}
+		}*/
         if (opts.theme === "datetime") { datetime = true; }
         if (!opts.show) {
             that.unbind('click');
@@ -143,6 +151,7 @@
 
                 $("#datePage").hide();
                 $("#dateshadow").hide();
+				opts.flag = false;//关闭
                 if (opts.ensureBackFn != null || $.isFunction(opts.ensureBackFn)) {
                     return opts.ensureBackFn(goloVal);
                 }
@@ -153,6 +162,7 @@
             $("#datecancle").click(function () {
                 $("#datePage").hide();
                 $("#dateshadow").hide();
+				opts.flag = false;//关闭
                 if (Ncallback&&$.isFunction(Ncallback)) {
                     Ncallback(false);
                 }
@@ -163,35 +173,57 @@
             $("#dateshadow").show();
         }
         //日期滑动
+		
         function init_iScrll(intoValue) {
-            var strY = $("#yearwrapper ul li:eq(" + indexY + ")").html().substr(0, $("#yearwrapper ul li:eq(" + indexY + ")").html().length - 1);
-            var strM = $("#monthwrapper ul li:eq(" + indexM + ")").html().substr(0, $("#monthwrapper ul li:eq(" + indexM + ")").html().length - 1)
-            yearScroll = new iScroll("yearwrapper", {
+			var strY = $("#yearwrapper ul li:eq(" + indexY + ")").html().substr(0, $("#yearwrapper ul li:eq(" + indexY + ")").html().length - 1);
+			var strM = $("#monthwrapper ul li:eq(" + indexM + ")").html().substr(0, $("#monthwrapper ul li:eq(" + indexM + ")").html().length - 1);
+
+			yearScroll = new iScroll("yearwrapper", {
                 snap: "li", vScrollbar: false,
                 onScrollEnd: function () {
-                    indexY = (this.y / 40) * (-1) + 1;
-					/*添加联动*/
-					var strY = $("#yearwrapper ul li:eq(" + indexY + ")").html().substr(0, $("#yearwrapper ul li:eq(" + indexY + ")").html().length - 1);
-					var strM = $("#monthwrapper ul li:eq(" + indexM + ")").html().substr(0, $("#monthwrapper ul li:eq(" + indexM + ")").html().length - 1)
+                    indexY = Math.ceil((this.y / 40) * (-1)) + 1;
 					
+					//修订联动
+					if(opts.flag){
+						strY = $("#yearwrapper ul li:eq(" + indexY + ")").html().substr(0, $("#yearwrapper ul li:eq(" + indexY + ")").html().length - 1);
+						strM = $("#monthwrapper ul li:eq(" + indexM + ")").html().substr(0, $("#monthwrapper ul li:eq(" + indexM + ")").html().length - 1);
+					}
 					opts.endday = checkdays(strY, strM);
 					
-                    $("#daywrapper ul").html(createDAY_UL());
+					if(indexY===originalY){
+						$("#monthwrapper ul").html(createMONTH_UL(1));
+						$("#daywrapper ul").html(createDAY_UL(1));
+					}else{
+						$("#monthwrapper ul").html(createMONTH_UL());
+						$("#daywrapper ul").html(createDAY_UL());
+					}
+                    
 					
-                    dayScroll.refresh();
+					monthScroll.refresh();
+					dayScroll.refresh();
+					
                 }
             });
             monthScroll = new iScroll("monthwrapper", {
                 snap: "li", vScrollbar: false,
                 onScrollEnd: function () {
                     //console.log(this.y);
-                    indexM = (this.y / 40) * (-1) + 1;
-					/*添加联动*/
-					var strY = $("#yearwrapper ul li:eq(" + indexY + ")").html().substr(0, $("#yearwrapper ul li:eq(" + indexY + ")").html().length - 1);
-					var strM = $("#monthwrapper ul li:eq(" + indexM + ")").html().substr(0, $("#monthwrapper ul li:eq(" + indexM + ")").html().length - 1)
-
+                    indexM = Math.ceil((this.y / 40) * (-1)) + 1;
+					
+					
+					//修订联动
+					if(opts.flag){
+						strY = $("#yearwrapper ul li:eq(" + indexY + ")").html().substr(0, $("#yearwrapper ul li:eq(" + indexY + ")").html().length - 1);
+						strM = $("#monthwrapper ul li:eq(" + indexM + ")").html().substr(0, $("#monthwrapper ul li:eq(" + indexM + ")").html().length - 1);
+					}
+					
                     opts.endday = checkdays(strY, strM);
-                    $("#daywrapper ul").html(createDAY_UL());
+					if(indexY===originalY&&indexM===originalM){
+						$("#daywrapper ul").html(createDAY_UL(1));
+					}else{
+						$("#daywrapper ul").html(createDAY_UL());
+					}
+                    
 					
                     dayScroll.refresh();
                 }
@@ -200,11 +232,16 @@
                 snap: "li", vScrollbar: false,
                 onScrollEnd: function () {
                     if (intoValue == 0) {
-                        indexD = (this.y / 40) * (-1) + 1;
+                        indexD = Math.ceil((this.y / 40) * (-1)) + 1;
                     }
+
+					opts.flag = true;
+
                     intoValue = 0;
                 }
             });
+			
+			
             
         }
         function showdatetime() {
@@ -254,8 +291,8 @@
         function createUL() {
             CreateDateUI();
             $("#yearwrapper ul").html(createYEAR_UL());
-            $("#monthwrapper ul").html(createMONTH_UL());
-            $("#daywrapper ul").html(createDAY_UL());
+            $("#monthwrapper ul").html(createMONTH_UL(1));
+            $("#daywrapper ul").html(createDAY_UL(1));
         }
         function CreateDateUI() {
             var str = '' +
@@ -318,36 +355,49 @@
             return str + "<li>&nbsp;</li>";;
         }
         //创建 --月-- 列表
-        function createMONTH_UL() {
+        function createMONTH_UL(arg) {
             var str = "<li>&nbsp;</li>";
-			//var num = parseInt(opts.endyear)-parseInt(opts.beginyear);
-			//alert(num);
-			/*if(indexY===1||indexY ===num){
-				alert(1);
-			}else{
-				
-			}*/
 			
-			for (var i = opts.beginmonth; i <= opts.endmonth; i++) {
-				if (i < 10) {
-					i = "0" + i
+			if(typeof arg!=='undefined'){
+				for (var i = opts.beginmonth; i <= initMonth; i++) {
+					if (i < 10) {
+						i = "0" + i
+					}
+					str += '<li>' + i + '月</li>'
 				}
-				str += '<li>' + i + '月</li>'
+			}else{
+				for (var i = opts.beginmonth; i <= opts.endmonth; i++) {
+					if (i < 10) {
+						i = "0" + i
+					}
+					str += '<li>' + i + '月</li>'
+				}
 			}
-
             
             return str + "<li>&nbsp;</li>";;
         }
         //创建 --日-- 列表
-        function createDAY_UL() {
+        function createDAY_UL(arg) {
             $("#daywrapper ul").html("");
             var str = "<li>&nbsp;</li>";
-            for (var i = opts.beginday; i <= opts.endday; i++) {
-				if (i < 10) {
-                    i = "0" + i
-                }
-                str += '<li>' + i + '日</li>'
-            }
+			if(typeof arg!=='undefined'){
+				for (var i = opts.beginday; i <= initDay; i++) {
+					if (i < 10) {
+						i = "0" + i
+					}
+					str += '<li>' + i + '日</li>';
+				}
+			}else{
+				for (var i = opts.beginday; i <= opts.endday; i++) {
+					if (i < 10) {
+						i = "0" + i
+					}
+					str += '<li>' + i + '日</li>';
+				}
+			}
+			
+
+            
             return str + "<li>&nbsp;</li>";;
         }
         //创建 --时-- 列表

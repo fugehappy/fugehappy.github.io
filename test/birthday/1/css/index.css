@@ -9,21 +9,17 @@ body {
 	position: relative;
 }
 .wrapper {
-	position: fixed;
+	position: absolute;
 	width: 100%;
 	left: 0;
-	top: 178px;
+	top: 35%;
 	bottom: 40px;
-}
-@media screen and (min-height: 500px) {
-	.wrapper { 
-		top: 230px;
-	}
 }
 .slogan {
 	width: 90%;
 	margin: 0 auto;
-	padding-top: 20px;
+	padding-top: 30px;
+	max-width: 327px;
 }
 .wheels {
 	width: 316px;
@@ -216,14 +212,8 @@ body {
 	background-image: url(../images/icon_rule.png);
 	background-size: 100%;
 	right: 16px;
-	top: 200px;
-	position: fixed;
+	position: absolute;
 	z-index: 99;
-}
-@media screen and (max-height: 500px) {
-	.rule {
-		top: 170px;
-	}
 }
 .icon-msg {
 	width: 22px;
@@ -368,7 +358,7 @@ body {
 
 /*swiper*/
 .swiper-flow {
-	position: fixed;
+	position: absolute;
 	bottom: 0;
 	left: 0;
 	width: 100%;
