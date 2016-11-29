@@ -1,9 +1,10 @@
 define(function(require, exports, module) {
 	var shake = require('shake');
 	var $ = require('fx');
-	var swiperJS = require('swiper');
+	require('swiper');//加载
 	$(function(){
-		 var swiper = new Swiper('.swiper-container', {
+		//文字滚动
+		var swiper = new Swiper('.swiper-container', {
 			pagination: '.swiper-pagination',
 			paginationClickable: true,
 			autoplayDisableOnInteraction: false,
@@ -11,6 +12,18 @@ define(function(require, exports, module) {
 			autoplay: 1500,
 		});
 	})
+	
+	//判断手机横竖屏状态：
+	window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function() {
+        if (window.orientation === 180 || window.orientation === 0) { 
+			if(!$('.toast').hasClass('hide')){
+			   $('.toast').addClass('hide');
+			}
+        } 
+        if (window.orientation === 90 || window.orientation === -90 ){ 
+           $('.toast').removeClass('hide');
+        }  
+    }, false); 
 	
 	//处理摇动
 	function triggerShake() {
@@ -53,9 +66,10 @@ define(function(require, exports, module) {
 		//swing('success');//完善信息-提交成功
 		//swing('unfinished');//心盘尚未满3个
 		//swing('done');//不要贪心哟，已经许下了6个愿望
+		swing('error');//时间不到
 		//swing('timeout');//时间不到
 		
-		swing('start');//摇一摇
+		//swing('start');//摇一摇
 	
 	})
 	
@@ -98,9 +112,7 @@ define(function(require, exports, module) {
 					clearTimeout(time);
 				},2000);
 			}
-		},200);
-		
-		
+		},200);	
 	}
 	
 	//星星收缩动画
@@ -138,8 +150,7 @@ define(function(require, exports, module) {
 					
 					clearTimeout(time1);//清定时器
 				},1500);
-					
-				
+
 				clearTimeout(time);//清定时器
 				
 			},600);
@@ -223,11 +234,6 @@ define(function(require, exports, module) {
 					'</div>'+
 				'</div>';
 			$('.dialog_wrap').append(str);
-		//swing('unaward');//未中奖
-		//swing('success');//完善信息-提交成功
-		//swing('unfinished');//心盘尚未满3个
-		//swing('done');//不要贪心哟，已经许下了6个愿望
-		//swing('timeout');//时间不到
 		}else if(type==='unaward'){
 			str ='<div class="dialog_topImg"><img src="images/bombbox.png"/></div>'+
 				'<div class="dialog_main">'+
@@ -279,6 +285,20 @@ define(function(require, exports, module) {
 						'<p class="dialog_tips">星盘魔力不足，请在生日前30天内来许愿。</p>'+
 						'<div class="btnClose">'+
 							'<span>知道了</span>'+
+						'</div>'+
+					'</div>'+
+				'</div>';
+			$('.dialog_wrap').append(str);
+		}else if(type==='error'){
+			str ='<div class="dialog_topImg"><img src="images/bombbox.png"/></div>'+
+				'<div class="dialog_main">'+
+					'<div class="dialog_state">'+
+						'<div class="state_pic">'+
+							'<img src="images/tips/error.png">'+
+						'</div>'+
+						'<p class="dialog_tips">喔，加载出错啦！</p>'+
+						'<div class="btnChange">'+
+							'<span>再摇摇，换一批</span>'+
 						'</div>'+
 					'</div>'+
 				'</div>';
@@ -402,22 +422,20 @@ define(function(require, exports, module) {
 		}
 	})
 	
+	$('.alert_close').click(function(){
+		var obj = $('.alert_msg');
+		obj.addClass('hide');
+		$.fn.barrager.removeAll();
+		clearInterval(looper);
+		$('.msg_contents').html();
+	})
+	
 	
 	
 	
 	var dialog = require('dialog');
 	
 	$('#btn').on('click',function(){
-		//dialog.tips('jia');
-		//dialog.tips('请输入您的真实姓名','animate');
-		//dialog.createMask();
-		//关闭遮罩
-		/*if(true){
-			var time3 = setTimeout(function(){
-				dialog.closeMask('.t_mask');
-				clearTimeout(time3);
-			},3000);		
-		}*/
 		var str ='<div class="tips_wrapper">'+
 					'<div class="desc">'+
 						'<span>请确认姓名和生日日期与身份证上信息一致，提交后将无法修改。若填写不正确，中奖后将无法领奖哟！</span>'+
@@ -441,16 +459,6 @@ define(function(require, exports, module) {
 	})
 	
 	$('#btn3').on('click',function(){
-		//dialog.tips('jia');
-		//dialog.tips('请输入您的真实姓名','animate');
-		//dialog.createMask();
-		//关闭遮罩
-		/*if(true){
-			var time3 = setTimeout(function(){
-				dialog.closeMask('.t_mask');
-				clearTimeout(time3);
-			},3000);		
-		}*/
 		var str ='<div class="tips_wrapper">'+
 					'<h3 class="title">已提交</h3>'+
 					'<div class="desc">'+
@@ -604,25 +612,5 @@ define(function(require, exports, module) {
 			}
 		}	
 	}
-	
-	       
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		
 })

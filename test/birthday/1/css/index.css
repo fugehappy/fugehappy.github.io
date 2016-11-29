@@ -223,7 +223,7 @@ body {
 	position: fixed;
 	right: 16px;
 	bottom: 80px;
-	z-index: 1009;
+	z-index: 999;
 }
 .icon-msg span{
 	position: absolute;
