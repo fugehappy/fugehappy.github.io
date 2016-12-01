@@ -2,33 +2,35 @@ define(function(require, exports, module) {
 	var preload = require('preloadImg');
 	var shake = require('shake');
 	var $ = require('fx');
-	function triggerShake() {
-		if(!$('.moveTel').hasClass('none')) {
-			//create a new instance of shake.js.
-			var myShakeEvent = new Shake({
-				threshold: 15
-			});
+	function triggerShake() {		
+		//create a new instance of shake.js.
+		var myShakeEvent = new Shake({
+			threshold: 15
+		});
 
-			// start listening to device motion
-			myShakeEvent.start();
+		// start listening to device motion
+		myShakeEvent.start();
 
-			// register a shake event
-			window.addEventListener('shake', shakeEventDidOccur, false);
-		}
+		// register a shake event
+		window.addEventListener('shake', shakeEventDidOccur, false);		
 	}
 	
 	function shakeEventDidOccur () {
 
 		//put your own code here etc.
-		$('.moveTel').addClass('none');
+		if(index == 6){
+			myShakeEvent.end();
+			return false;
+		}
 		var arr=['1','2','3','4'];
 		var i=Math.floor(Math.random()*5);
-		//
 		alert(arr[i]);
+		index++;
 	}	
 	
+	//所有的资源加载完毕才开启玩摇一摇功能
+	var index = 0;
 	window.onload = function() {
-
 		triggerShake();
 	};
 	
@@ -39,8 +41,11 @@ define(function(require, exports, module) {
 		],
 		callback: function(o) {
 			$('.loading .bar').width(o.progress + '%');
+			$('.progress-text').html(o.progress+'%,玩命加载中...');
 			setTimeout(function() {
-				$('.loading').remove()
+				$('.loading').remove();
+				$('.page1').removeClass('none');
+				
 			}, 200)
 		}
 	});

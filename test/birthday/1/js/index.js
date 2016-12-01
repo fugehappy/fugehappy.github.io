@@ -5,23 +5,28 @@ define(function(require, exports, module) {
 	$(function(){
 		//文字滚动
 		var swiper = new Swiper('.swiper-container', {
-			pagination: '.swiper-pagination',
-			paginationClickable: true,
 			autoplayDisableOnInteraction: false,
 			direction: 'vertical',
 			autoplay: 1500,
+			loop: true
 		});
 	})
+	
+	var myShakeEvent = new Shake({
+		threshold: 15
+	});
 	
 	//判断手机横竖屏状态：
 	window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function() {
         if (window.orientation === 180 || window.orientation === 0) { 
 			if(!$('.toast').hasClass('hide')){
 			   $('.toast').addClass('hide');
+			   myShakeEvent.stop();
 			}
         } 
         if (window.orientation === 90 || window.orientation === -90 ){ 
            $('.toast').removeClass('hide');
+		   myShakeEvent.start();
         }  
     }, false); 
 	
@@ -29,15 +34,14 @@ define(function(require, exports, module) {
 	function triggerShake() {
 		if(!$('.moveTel').hasClass('none')) {
 			//create a new instance of shake.js.
-			var myShakeEvent = new Shake({
-				threshold: 15
-			});
-
+			
 			// start listening to device motion
 			myShakeEvent.start();
 
 			// register a shake event
 			window.addEventListener('shake', shakeEventDidOccur, false);
+		}else {
+			myShakeEvent.stop();
 		}
 	}
 	
@@ -66,10 +70,10 @@ define(function(require, exports, module) {
 		//swing('success');//完善信息-提交成功
 		//swing('unfinished');//心盘尚未满3个
 		//swing('done');//不要贪心哟，已经许下了6个愿望
-		swing('error');//时间不到
+		//swing('error');//时间不到
 		//swing('timeout');//时间不到
 		
-		//swing('start');//摇一摇
+		swing('start');//摇一摇
 	
 	})
 	
@@ -332,15 +336,15 @@ define(function(require, exports, module) {
 		}else{
 			//取消礼物
 			var selectImg = $(this).find('img').attr('src');
+			var defaultImg = $($('.wheel')[0]).find('img').attr('data-origin');
 			//alert(selectImg);
 			$('.wheel').each(function(i){
-			
-				var addImg = $('.star_bg2').eq(i).find('img').attr('src');
+				var addImg = $(this).find('img').attr('src');
 				if(selectImg===addImg){
+					$('.wheel').eq(i).find('img').attr('src',defaultImg);
 					$('.wheel').eq(i).removeClass('star_bg2').addClass('star_bg1');
 					$('.wheel').eq(i).find('.wheel_list').hide();
 				}
-				
 			})
 			//新增
 			if($('.star_bg2').length<3){
