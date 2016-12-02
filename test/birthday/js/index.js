@@ -19,7 +19,7 @@ define(function(require, exports, module) {
 
 		//put your own code here etc.
 		if(index == 6){
-			alert('end');
+			alert('end~');
 			myShakeEvent.stop();
 			return false;
 		}
