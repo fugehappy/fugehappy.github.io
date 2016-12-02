@@ -2,12 +2,12 @@ define(function(require, exports, module) {
 	var preload = require('preloadImg');
 	var shake = require('shake');
 	var $ = require('fx');
+	//create a new instance of shake.js.
+	var myShakeEvent = new Shake({
+		threshold: 15
+	});
 	function triggerShake() {		
-		//create a new instance of shake.js.
-		var myShakeEvent = new Shake({
-			threshold: 15
-		});
-
+		
 		// start listening to device motion
 		myShakeEvent.start();
 
@@ -22,11 +22,11 @@ define(function(require, exports, module) {
 			myShakeEvent.end();
 			return false;
 		}
-		var arr=['1','2','3','4'];
+		var arr=['1','2','3','4','5'];
 		var i=Math.floor(Math.random()*5);
 		alert(arr[i]);
 		index++;
-	}	
+	}
 	
 	//所有的资源加载完毕才开启玩摇一摇功能
 	var index = 0;
