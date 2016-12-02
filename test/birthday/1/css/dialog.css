@@ -450,17 +450,17 @@ textarea::-webkit-input-placeholder {
     top: 0;
     left: 0;
 	z-index: 10100;
-	pointer-events: none;
 }
 .toast .toast_cont{
 	position: fixed;
     z-index: 10101;
     width: 15.6em;
-    min-height: 7.6em;
+    height: 7.6em;
 	line-height: 7.6em;
-    top: 180px;
+    top: 50%;
     left: 50%;
     margin-left: -7.8em;
+	margin-top: -3.8em;
     background: rgba(40, 40, 40, 0.75);
     text-align: center;
     border-radius: 5px;

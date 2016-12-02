@@ -92,8 +92,7 @@ define(function(require, exports, module) {
 		//新增加
 		if($('.star_bg1').length>3){
 			$('.pre_realize').addClass('hide');
-			$('.portrait').removeClass('hide');
-			
+			$('.portrait').removeClass('hide');	
 		}
 	})
 	
@@ -123,22 +122,20 @@ define(function(require, exports, module) {
 	function axleStart() {
 		var time,time1;
 		if(!pageDom.$wheels.hasClass('animation')){
-			pageDom.$wheels.addClass('animation');
+			pageDom.$wheels.addClass('animation');//6个小礼物收缩1s
 						
 			var time =setTimeout(function(){
 				pageDom.$wheels_wrap.css('opacity','0');
-				
 
-				$('.pre_realize').addClass('scaleStart');
-				$('.tel').addClass('hide');
+				$('.pre_realize').addClass('scaleStart');//中间星星放大1s
+				$('.tel').addClass('hide');//手机摇一摇关闭
+				myShakeEvent.stop();
 				
 				$('.pre_realize').addClass('light_star');
 				
 				$('.wheels_shine').removeClass('hide');//新增
 				
 
-				
-				
 				time1 =setTimeout(function(){
 					$('.dialog').removeClass('hide').addClass('dialog_open');
 					$('.dialog_wrap').hide();
@@ -381,13 +378,6 @@ define(function(require, exports, module) {
 		})
 		$('.dialog_pic').eq(0).find('img').attr('src','images/pro/3.png');
 		$('.dialog_pic').eq(1).find('img').attr('src','images/pro/4.png');
-		
-
-		//关闭
-		//$('.s_mask').addClass('hide');
-		//$('.wheels_wrap').css('opacity',1);
-		//$('.wheels').removeClass('animation');
-		//$('.dialog').addClass('hide').removeClass('dialog_open');
 	})
 	
 	
