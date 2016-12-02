@@ -144,6 +144,17 @@ body {
         background-position: 0 -150px
     }
 }
+.mask {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	pointer-events: none;
+	background: rgba(0,0,0,0.8);
+	z-index: 1000;
+	display: none;
+}
 </style>
 <script type="text/javascript" src="js/sea.js"></script>
 </head>
@@ -152,8 +163,10 @@ body {
 <div class="page-wrapper">
 	<div class="page page1 none" data-pageid="1">
 		<div>content</div>
+		<button onclick="alert(1);">click</button>
 	</div>
 </div>
+<div class="mask"></div>
 <div class="loading">
 	<div class="jinmao-load anim-jinmao-load"></div>
 	<div class="progressbar_wrap">
