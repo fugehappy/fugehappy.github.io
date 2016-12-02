@@ -4,7 +4,7 @@ define(function(require, exports, module) {
 	var $ = require('fx');
 	//create a new instance of shake.js.
 	var myShakeEvent = new Shake({
-		threshold: 10
+		threshold: 25
 	});
 	function triggerShake() {		
 		
