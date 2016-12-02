@@ -20,7 +20,7 @@ define(function(require, exports, module) {
 		//put your own code here etc.
 		if(index == 6){
 			alert('end');
-			myShakeEvent.end();
+			myShakeEvent.stop();
 			return false;
 		}
 		var arr=['1','2','3','4','5'];
