@@ -21,13 +21,11 @@ define(function(require, exports, module) {
         if (window.orientation === 180 || window.orientation === 0) { 
 			if(!$('.toast').hasClass('hide')){
 			   $('.toast').addClass('hide');
-			   $('.wrapper').show();
 			   myShakeEvent.stop();
 			}
         } 
         if (window.orientation === 90 || window.orientation === -90 ){ 
            $('.toast').removeClass('hide');
-		   $('.wrapper').hide();
 		   myShakeEvent.start();
         }  
     }, false); 
