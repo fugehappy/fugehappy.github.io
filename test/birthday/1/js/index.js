@@ -1,10 +1,11 @@
 /**
 *@file
 *@author
+*@http://fecs.baidu.com/demo(代码校验)
 */
 define(function (require, exports, module) {
-    require('shake');
-    require('swiper');// 加载
+    require('shake');  // 加载摇一摇
+    require('swiper'); // 加载
     var $ = require('fx');
 
     $(function () {
@@ -17,9 +18,38 @@ define(function (require, exports, module) {
         });
     });
 
+    // create a new instance of shake.js.
     var myShakeEvent = new Shake({
         threshold: 15
     });
+
+    // 处理摇动
+    function triggerShake() {
+        if (!$('.moveTel').hasClass('none')) {
+
+            // start listening to device motion
+            myShakeEvent.start();
+
+            // register a shake event
+            window.addEventListener('shake', shakeEventDidOccur, false);
+        }
+        else {
+            // cancel a shake event
+            myShakeEvent.stop();
+        }
+    }
+
+    function shakeEventDidOccur() {
+
+        // put your own code here etc.
+        var arr = ['1', '2', '3', '4'];
+        var i = Math.floor(Math.random() * 5);
+        alert(arr[i]);
+    }
+
+    window.onload = function () {
+        triggerShake();
+    };
 
     // 判断手机横竖屏状态：
     /**
@@ -37,33 +67,7 @@ define(function (require, exports, module) {
     }, false);
     */
 
-    // 处理摇动
-    function triggerShake() {
-        if (!$('.moveTel').hasClass('none')) {
-            // create a new instance of shake.js.
 
-            // start listening to device motion
-            myShakeEvent.start();
-
-            // register a shake event
-            window.addEventListener('shake', shakeEventDidOccur, false);
-        }
-        else {
-            myShakeEvent.stop();
-        }
-    }
-
-    function shakeEventDidOccur() {
-
-        // put your own code here etc.
-        var arr = ['1', '2', '3', '4'];
-        var i = Math.floor(Math.random() * 5);
-        alert(arr[i]);
-    }
-
-    window.onload = function () {
-        triggerShake();
-    };
 
     // 预设值
 
@@ -72,23 +76,25 @@ define(function (require, exports, module) {
         $wheels_wrap: $('.screen .wheels_items')
     };
 
+    // 点击出现商品
     $('.axle .portrait').on('click', function () {
-        // swing('unaward');//未中奖
-        // swing('success');//完善信息-提交成功
-        // swing('unfinished');//心盘尚未满3个
-        // swing('done');//不要贪心哟，已经许下了6个愿望
-        // swing('error');//时间不到
-        // swing('timeout');//时间不到
+        // swing('unaward');    //未中奖
+        // swing('success');    //完善信息-提交成功
+        // swing('unfinished'); //心盘尚未满3个
+        // swing('done');       //不要贪心哟，已经许下了6个愿望
+        // swing('error');      //时间不到
+        // swing('timeout');    //时间不到
 
-        swing('start');// 摇一摇
+        swing('start');      // 摇一摇
 
     });
 
+    // 点击抽奖(6个星星收缩，中间的星星放大，最后出现领取奖品弹框)
     $('.axle .pre_realize').on('click', function () {
         axleStart('pre');
     });
 
-    // 删除商品
+    // 删除心愿商品
     $('.wrapper .close').on('click', function () {
         var obj    = $(this).parent();
         var oImg   = obj.find('img');
@@ -96,7 +102,8 @@ define(function (require, exports, module) {
         obj.hide();
         obj.parent().removeClass('star_bg2').addClass('star_bg1');
         oImg.attr('src', origin);
-        // 新增加
+
+        // 心愿商品小于3个不能抽奖
         if ($('.star_bg1').length > 3) {
             $('.pre_realize').addClass('hide');
             $('.portrait').removeClass('hide');
@@ -330,45 +337,50 @@ define(function (require, exports, module) {
     // 礼物加入和取消
     $('.dialog_wrap').on('click', '.dialog_pic', function () {
         var obj = $(this).find('.s_mask');
+        var selectImg = $(this).find('img').attr('src');
         if (obj.hasClass('hide')) {
             if ($('.star_bg1').length !== 0) {
-
-                $($('.star_bg1')[0]).find('img').attr('src', $(this).find('img').attr('src'));
-                $($('.star_bg1')[0]).find('.wheel_list').show();
-                $($('.star_bg1')[0]).removeClass('star_bg1').addClass('star_bg2');
+                var selObj = $('.star_bg1').eq(0);
+                selObj.find('img').attr('src', selectImg);
+                selObj.find('.wheel_list').show();
+                selObj.removeClass('star_bg1').addClass('star_bg2');
                 // dialog.tips('请输入您的真实姓名,请再次确认重新输入','animate');
             }
             else {
                 swing('done');
-                alert('添加心愿已经满了，删除后再添加');
-
+                // alert('添加心愿已经满了，删除后再添加');
             }
+
+            // 心愿商品数量达到3个及以上
             if ($('.star_bg1').length <= 3) {
                 $('.portrait').addClass('hide');
                 $('.pre_realize').removeClass('hide');
             }
-            obj.removeClass('hide');
 
+            // 出现选中动画
+            obj.removeClass('hide');
         }
         else {
             // 取消礼物
-            var selectImg = $(this).find('img').attr('src');
-            var defaultImg = $($('.wheel')[0]).find('img').attr('data-origin');
+            var defaultImg = $('.wheel').eq(0).find('img').attr('data-origin');
             // alert(selectImg);
             $('.wheel').each(function (i) {
                 var addImg = $(this).find('img').attr('src');
                 if (selectImg === addImg) {
-                    $('.wheel').eq(i).find('img').attr('src', defaultImg);
-                    $('.wheel').eq(i).removeClass('star_bg2').addClass('star_bg1');
-                    $('.wheel').eq(i).find('.wheel_list').hide();
+                    var wheel = $('.wheel').eq(i);
+                    wheel.find('img').attr('src', defaultImg);
+                    wheel.removeClass('star_bg2').addClass('star_bg1');
+                    wheel.find('.wheel_list').hide();
                 }
             });
-            // 新增
+
+            // 心愿商品小于3个时，不能抽奖
             if ($('.star_bg2').length < 3) {
                 $('.portrait').removeClass('hide');
                 $('.pre_realize').addClass('hide');
             }
 
+            // 取消选中
             obj.addClass('hide');
         }
 
@@ -389,7 +401,7 @@ define(function (require, exports, module) {
         $('.dialog').addClass('hide').removeClass('dialog_open');
     });
 
-    // 对话框下再次摇一摇
+    // 弹出框下再次摇一摇
     $('.dialog_wrap').on('click', '.btnChange span', function () {
 
         // 切换图片
@@ -402,7 +414,7 @@ define(function (require, exports, module) {
     });
 
 
-    // 规则的弹出效果
+    // 活动规则的弹出效果
     $('.rule').on('click', function () {
         var mask = $('<div class="t_mask"></div>');
         $('body').append(mask);
@@ -412,7 +424,7 @@ define(function (require, exports, module) {
         });
     });
 
-    // 规则的收起效果
+    // 活动规则的收起效果
     $('.rule_msg').on('click', '.close', function () {
         $('.rule_msg').animate({
             'left': '100%',
@@ -432,10 +444,7 @@ define(function (require, exports, module) {
             setBarrager();// 出现弹幕
         }
         else {
-            obj.addClass('hide');
-            $.fn.barrager.removeAll();
-            clearInterval(looper);
-            $('.msg_contents').html();
+            closeBarrager();
         }
     });
 
@@ -448,7 +457,104 @@ define(function (require, exports, module) {
         $('.msg_contents').html();
     });
 
+    // 关闭弹幕
+    function closeBarrager() {
+        var obj = $('.alert_msg');
+        obj.addClass('hide');
+        $.fn.barrager.removeAll();
+        clearInterval(looper);
+        $('.msg_contents').html();
+    }
 
+    // 弹幕
+    /**
+    img:'images/pro/portrait.png',
+    info:'大叔生日快乐', //文字
+    href:'javascript:;', //链接
+    close:false, //显示关闭按钮
+    speed:6, //延迟,单位秒,默认6
+    */
+    function setBarrager() {
+        var data = [{
+            img: 'images/pro/portrait.png',
+            info: '大叔，生日快乐哟！',
+            href: 'javascript:;',
+            close: false,
+            speed: 6
+        },
+        {
+            img: 'images/pro/portrait.png',
+            info: '大叔，生日快乐哟！',
+            href: 'javascript:;',
+            close: false,
+            speed: 6
+        },
+        {
+            img: 'images/pro/portrait.png',
+            info: '大叔，生日快乐哟！',
+            href: 'javascript:;',
+            close: false,
+            speed: 6
+        },
+        {
+            img: 'images/pro/portrait.png',
+            info: '大叔，生日快乐哟！',
+            href: 'javascript:;',
+            close: false,
+            speed: 6
+        },
+        {
+            img: 'images/pro/portrait.png',
+            info: '大叔，生日快乐哟！',
+            href: 'javascript:;',
+            close: false,
+            speed: 6
+        },
+        {
+            img: 'images/pro/portrait.png',
+            info: '大叔，生日快乐哟！',
+            href: 'javascript:;',
+            close: false,
+            speed: 6
+        },
+        {
+            img: 'images/pro/portrait.png',
+            info: '大叔，生日快乐哟！',
+            href: 'javascript:;',
+            close: false,
+            speed: 6
+        }];
+        // 每条弹幕发送间隔
+        var looper_time = 2 * 1000;
+        var items = data;
+        // 弹幕总数
+        var total = data.length;
+        // 是否首次执行
+        var run_once = true;
+
+        // 弹幕索引
+        var index = 0;
+        clearInterval(looper);
+        $('.msg_contents').html();
+        // 先执行一次
+        barrager1();
+        function barrager1() {
+            if (run_once) {
+                // 如果是首次执行,则设置一个定时器,并且把首次执行置为false
+                looper = setInterval(barrager1, looper_time);
+                run_once = false;
+            }
+            // 发布一个弹幕
+            $('.msg_contents').barrager(items[index]);
+            // 索引自增
+            index++;
+            // 所有弹幕发布完毕，清除计时器。
+            if (index === total) {
+                clearInterval(looper);
+                return false;
+            }
+        }
+    }
 
 
     var dialog = require('dialog');
@@ -544,96 +650,5 @@ define(function (require, exports, module) {
         dialog.tips2(str);
 
     });
-
-
-    // 弹幕
-    /**
-    img:'images/pro/portrait.png',
-    info:'大叔生日快乐', //文字
-    href:'javascript:;', //链接
-    close:false, //显示关闭按钮
-    speed:6, //延迟,单位秒,默认6
-    */
-    function setBarrager() {
-        var data = [{
-            img: 'images/pro/portrait.png',
-            info: '大叔，生日快乐哟！',
-            href: 'javascript:;',
-            close: false,
-            speed: 6
-        },
-        {
-            img: 'images/pro/portrait.png',
-            info: '大叔，生日快乐哟！',
-            href: 'javascript:;',
-            close: false,
-            speed: 6
-        },
-        {
-            img: 'images/pro/portrait.png',
-            info: '大叔，生日快乐哟！',
-            href: 'javascript:;',
-            close: false,
-            speed: 6
-        },
-        {
-            img: 'images/pro/portrait.png',
-            info: '大叔，生日快乐哟！',
-            href: 'javascript:;',
-            close: false,
-            speed: 6
-        },
-        {
-            img: 'images/pro/portrait.png',
-            info: '大叔，生日快乐哟！',
-            href: 'javascript:;',
-            close: false,
-            speed: 6
-        },
-        {
-            img: 'images/pro/portrait.png',
-            info: '大叔，生日快乐哟！',
-            href: 'javascript:;',
-            close: false,
-            speed: 6
-        },
-        {
-            img: 'images/pro/portrait.png',
-            info: '大叔，生日快乐哟！',
-            href: 'javascript:;',
-            close: false,
-            speed: 6
-        }];
-        // 每条弹幕发送间隔
-        var looper_time = 2 * 1000;
-        var items = data;
-        // 弹幕总数
-        var total = data.length;
-        // 是否首次执行
-        var run_once = true;
-
-        // 弹幕索引
-        var index = 0;
-        clearInterval(looper);
-        $('.msg_contents').html();
-        // 先执行一次
-        barrager1();
-        function barrager1() {
-            if (run_once) {
-                // 如果是首次执行,则设置一个定时器,并且把首次执行置为false
-                looper = setInterval(barrager1, looper_time);
-                run_once = false;
-            }
-            // 发布一个弹幕
-            $('.msg_contents').barrager(items[index]);
-            // 索引自增
-            index++;
-            // 所有弹幕发布完毕，清除计时器。
-            if (index === total) {
-                clearInterval(looper);
-                return false;
-            }
-        }
-    }
 
 });
