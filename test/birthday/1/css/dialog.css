@@ -53,8 +53,8 @@
 
 .waiting {
     background: url(../images/waiting.gif) no-repeat  center center;
-    height: 120px;
     background-size: 50px 50px;
+    height: 120px;
 }
 /*.dialog_wrap1 {
     background: url(../images/bombbox.png) no-repeat center top;
@@ -73,7 +73,7 @@
     line-height: 0;
 }
 .dialog_main {
-    background: #fff;
+    background-color: #fff;
     border-radius: 0 0 20px 20px;
     padding: 0 10px;
     position: relative;
@@ -85,7 +85,7 @@
     margin: 0 0 10px 0;
     font-size: 14px;
     color: #391C50;
-    background: #fff;
+    background-color: #fff;
 }
 .dialog_items {
     overflow: hidden;
@@ -103,7 +103,7 @@
 }
 .dialog_pic {
     position: relative;
-    background: #fff;
+    background-color: #fff;
     border: 1px solid #7E5A97;
     border-radius: 4px;
     height: 112px;
@@ -189,7 +189,7 @@
     height: 32px;
     line-height: 32px;
     font-size: 14px;
-    background: url(../images/botton_8.png);
+    background-image: url(../images/botton_8.png);
     background-size: 100%;
 }
 .dialog_award img {
@@ -203,13 +203,13 @@
     height: 40px;
     line-height: 40px;
     font-size: 16px;
-    background: url(../images/botton_change.png);
+    background-image: url(../images/botton_change.png);
     background-size: 100%;
 }
 .dialog .close {
     width: 22px;
     height: 22px;
-    background: url(../images/icon_closed_02.png);
+    background-image: url(../images/icon_closed_02.png);
     background-size: 100%;
     position: absolute;
     right: 0;
@@ -307,7 +307,7 @@
     color: #666;
     border-radius: 10px;
     position: fixed;
-    background: #fff;
+    background-color: #fff;
     line-height: 1.2;
     width: 82%;
     padding: 10px;
@@ -414,7 +414,7 @@ textarea::-webkit-input-placeholder {
     position: absolute;
     width: 30px;
     height: 30px;
-    background: url(../images/ic_close2.png);
+    background-image: url(../images/ic_close2.png);
     background-size: 100%;
     bottom: -60px;
     left: 50%;
@@ -422,7 +422,7 @@ textarea::-webkit-input-placeholder {
 }
 
 .tips_wrapper.tips_bg {
-    background: #f7f7f7;
+    background-color: #f7f7f7;
     padding: 10px;
 }
 

@@ -22,6 +22,7 @@ define(function (require, exports, module) {
     });
 
     // 判断手机横竖屏状态：
+    /**
     window.addEventListener('onorientationchange' in window ? 'orientationchange' : 'resize', function () {
         if (window.orientation === 180 || window.orientation === 0) {
             if (!$('.toast').hasClass('hide')) {
@@ -34,6 +35,7 @@ define(function (require, exports, module) {
             myShakeEvent.start();
         }
     }, false);
+    */
 
     // 处理摇动
     function triggerShake() {
