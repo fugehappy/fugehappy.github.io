@@ -1,4 +1,4 @@
-@charset "UTF-8"; 
+@charset "UTF-8";
 /*reset*/
 html {
     -ms-text-size-adjust: 100%;
@@ -12,8 +12,8 @@ body {
 }
 
 * {
-	box-sizing:border-box;
-	-webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
 }
 
 
@@ -43,8 +43,8 @@ pre {
 a {
     background-color: transparent;
     -webkit-text-decoration-skip: objects;
-	-webkit-tap-highlight-color: transparent;
-	text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
 }
 
 a:active, a:hover {
@@ -109,12 +109,12 @@ audio:not([controls]) {
 
 img {
     border-style: none;
-	width: 100%;
+    width: 100%;
 }
 
-a,img {
-	-webkit-touch-callout: none;
-	-webkit-tap-highlight-color：transparent;
+a, img {
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color：transparent;
 }
 
 svg:not(:root) {
@@ -165,8 +165,8 @@ textarea {
 
 [type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
-	-moz-appearance:textfield;
-	height: auto;
+    -moz-appearance:textfield;
+    height: auto;
 }
 
 [type="search"] {
@@ -200,61 +200,10 @@ canvas {
 }
 
 .hide {
-	display: none !important;
+    display: none !important;
 }
 .ellipsis {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
 }
-
-/*page*/
-
-
-/*animate*/
-@-webkit-keyframes rotatechild{
-	0%{
-		-webkit-transform: rotate(0deg);
-		-moz-transform: rotate(0deg);
-		transform: rotate(0deg);
-		opacity: 1;
-	}
-	100%{
-		-webkit-transform: scale(0,0);
-		-moz-transform: scale(0,0);
-		transform: scale(0,0);
-		opacity: 0;
-	}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
