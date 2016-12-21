@@ -1,3 +1,8 @@
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    line-height: 1.6;
+}
 body {
     font-size: 16px;
     font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
@@ -13,14 +18,6 @@ body {
     box-sizing: border-box;
     border-radius: 3px;
 }
-.search-bar-form  input[type="text"] {
-    outline: none;
-    border: 0;
-}
-.search-bar-form  input[type="text"]:focus {
-    background: #fff;
-    outline: none;
-}
 .search-bar-form {
     position: relative;
     -webkit-box-flex: 1;
@@ -31,6 +28,15 @@ body {
 .search-bar-box {
     padding-left: 30px;
     padding-right: 30px;
+    position: relative;
+}
+.search-bar-box  input[type="text"] {
+    outline: none;
+    border: 0;
+}
+.search-bar-box  input[type="text"]:focus {
+    background: #fff;
+    outline: none;
 }
 .search-bar-input {
     padding: 4px 0;
@@ -41,6 +47,15 @@ body {
     line-height: 1.42857143em;
     box-sizing: content-box;
     background: transparent;
+}
+.weui-icon-search {
+    position: absolute;
+    left: 6px;
+    top: 0;
+    line-height: 28px;
+}
+.weui-icon-search:before {
+    content: "\EA0E";
 }
 .panel {
     margin: 15px;
@@ -55,12 +70,12 @@ body {
     font-size: 24px;
     color: #333;
 }
-a:hover {
-   color: #607fa6; 
-}
 .view-source {
     color: #607fa6;
     text-decoration: none;
+}
+a.view-source:hover {
+    color: #fff;
 }
 .panel-date {
     color: #999;
