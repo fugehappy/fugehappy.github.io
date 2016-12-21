@@ -1,107 +1,55 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="zh-cn">
+<head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Fugehappy.GitHub.io by fugehappy</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit">
     <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <link rel="stylesheet" href="stylesheets/blog.css">
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>-->
     <script src="javascripts/respond.js"></script>
     <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-	<style>
-		body{
-			background:url(images/bgr.png) repeat;
-		}
-		.s_form input[type=text]{
-			padding:2px 8px;
-			line-height: 20px;
-			color: #333;
-			vertical-align: middle;
-			border-radius: 3px;
-			outline: none;
-			border:0;
-			background:#eee;
-		}
-		.s_form input[type=text]:focus{
-			background:#fff;
-		}
-		.wrapper{
-			margin-top:70px;
-		}
-		.blogs-title{
-			text-align:center;
-			line-height:60px;
-		}
-		.blog-lists{
-			padding:0;
-		}
-		.blog-list{
-			padding:30px 0 20px 0;
-			border-bottom:1px solid #eee;
-		}
-		.blog-list:last-child{
-			border-bottom:none;
-		}
-		.blog-content{
-			margin:10px 0; 
-		}
-		.blog-footer{
-			display:flex;
-		}
-		.blog-footer .date{
-			display:block;
-			flex:1;
-		}
-		.blog-footer .full-article{
-			display:block;
-			flex:1;
-		}
-		
-	</style>
-  </head>
-  <body>
-    <div id="header" class="blogs-title">wonderful</div><!-- end header -->
+</head>
+<body>
+    <section class="blogs-hd">
+        <div class="search-bar">
+            <form action="//www.baidu.com/s" method="get" class="search-bar-form ">
+                <div class="search-bar-box">
+                    <input type="hidden" name="sitesearch" value="fugehappy.github.io">
+                    <input type="text" name="wd" class="search-bar-input" placeholder="Search" maxlength="255" autocomplete="off"/>
+                </div>
+            </form>
+        </div>
+    </section>
 
-    <div class="wrapper">
-      <section>
-		<form action="//www.baidu.com/s" method="get" class="s_form">
-			<input type="hidden" name="sitesearch" value="fugehappy.github.io" />
-			<input type="text" name="wd" placeholder="Search"/>
-		</form>
-      </section>
-	  
-	  <section class="blog-lists">
-	    <article class="blog-list">
-		  <header class="blog-title">
-		    <a href="###" title="">my first blog</a>
-		  </header>
-		  <div class="blog-content">
-		    main descriptions
-		  </div>
-		  <div class="blog-footer">
-		    <span class="date">2016-08-18 10:24</span>
-			<a href="###" class="full-article">View Details</a>
-		  </div>
-		</article>
-		
-		<article class="blog-list">
-		  <header class="blog-title">
-		    <a href="###" title="">my first blog</a>
-		  </header>
-		  <div class="blog-content">
-		    main descriptions
-		  </div>
-		  <div class="blog-footer">
-		    <span class="date">2016-08-18 10:24</span>
-			<a href="###" class="full-article">View Details</a>
-		  </div>
-		</article>
-	  </section>
-    </div><!-- end wrapper -->
+    <section class="blogs-bd">
+        <article class="panel">
+            <a href="#">
+                <header class="panel-title">
+                    <h2>my first blog</h2>
+                </header>
+                <div class="panel-content">
+                    main descriptions
+                </div>
+                <a href="#" title="查看全文" class="view-source">查看全文</a>
+            </a>
+        </article>
     
-  </body>
+        <article class="panel">
+            <a href="#">
+                <header class="panel-title">
+                    <h2>my first blog</h2>
+                </header>
+                <div class="panel-content">
+                    main descriptions
+                </div>
+                <a href="#" title="查看全文" class="view-source">查看全文</a>
+            </a>
+        </article>
+    </section><!-- end wrapper -->
+</body>
 </html>
