@@ -17,6 +17,11 @@ body {
     top: 35%;
     bottom: 40px;
 }
+@media screen and (max-height: 480px) {
+    .wrapper {
+        top: 10%;
+    }
+}
 .slogan {
     width: 90%;
     margin: 0 auto;

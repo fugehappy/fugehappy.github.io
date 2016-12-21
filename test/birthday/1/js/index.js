@@ -422,6 +422,7 @@ define(function (require, exports, module) {
             'left': '50%',
             'margin-left': '-45%'
         });
+        return false;
     });
 
     // 活动规则的收起效果
@@ -433,6 +434,7 @@ define(function (require, exports, module) {
             $('.rule_msg').css('zIndex', 99);
             $('.t_mask').remove();
         });
+        return false;
     });
 
     // 留言(弹幕)信息的展示和关闭
