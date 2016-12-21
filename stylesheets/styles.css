@@ -177,6 +177,11 @@ body {
 /*
  * Addresses outline displayed oddly in Chrome
  */
+a {
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 a:focus {
   outline: thin dotted;
 }
