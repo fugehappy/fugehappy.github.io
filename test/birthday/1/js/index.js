@@ -624,7 +624,7 @@ define(function (require, exports, module) {
     $('#btn5').on('click', function () {
         var str = '<div class="tips_wrapper">'
                     + '<div class="desc_two">'
-                        + '<span>确定要领取此优惠码吗？</span>'
+                        + '<span>\u786e\u5b9a\u8981\u9886\u53d6\u6b64\u4f18\u60e0\u7801\u5417\uff1f</span>'
                     + '</div>'
                     + '<div class="desc_two">'
                         + '<span>你只有一次领取机会哟～</span>'
