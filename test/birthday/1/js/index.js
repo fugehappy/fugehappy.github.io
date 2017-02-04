@@ -562,15 +562,16 @@ define(function (require, exports, module) {
     var dialog = require('dialog');
 
     $('#btn').on('click', function () {
-        var str = '<div class="tips_wrapper">'
-                    + '<div class="desc">'
-                        + '<span>请确认姓名和生日日期与身份证上信息一致，提交后将无法修改。若填写不正确，中奖后将无法领奖哟！</span>'
-                    + '</div>'
-                    + '<div class="tips_footer">'
-                        + '<a href="###" class="button btn_bg1" id="checkBack">返回检查</a>'
-                        + '<a href="###" class="button btn_bg2">确认提交</a>'
-                    + '</div>'
-                + '</div>';
+        var str = '' 
+            + '<div class="tips_wrapper">'
+            +     '<div class="desc">'
+            +         '<span>请确认姓名和生日日期与身份证上信息一致，提交后将无法修改。若填写不正确，中奖后将无法领奖哟！</span>'
+            +     '</div>'
+            +     '<div class="tips_footer">'
+            +         '<a href="###" class="button btn_bg1" id="checkBack">返回检查</a>'
+            +         '<a href="###" class="button btn_bg2">确认提交</a>'
+            +     '</div>'
+            + '</div>';
         dialog.createMask();
         dialog.tips2(str);
 
@@ -585,19 +586,20 @@ define(function (require, exports, module) {
     });
 
     $('#btn3').on('click', function () {
-        var str = '<div class="tips_wrapper">'
-                    + '<h3 class="title">已提交</h3>'
-                        + '<div class="desc">'
-                        + '<span>请确认姓名和生日日期与身份证上信息一致，提交后将无法修改。若填写不正确，中奖后将无法领奖哟！</span>'
-                    + '</div>'
-                    + '<div class="desc_one">'
-                        + '<span>请确认姓名和生日日期与身份证上信息一致，提交后将无法修改。若填写不正确，中奖后将无法领奖哟！</span>'
-                    + '</div>'
-                    + '<div class="tips_footer">'
-                        + '<a href="###" class="button btn_bg1" id="checkBack">返回检查</a>'
-                        + '<a href="###" class="button btn_bg2">确认提交</a>'
-                    + '</div>'
-                + '</div>';
+        var str = ''
+            + '<div class="tips_wrapper">'
+            +     '<h3 class="title">已提交</h3>'
+            +     '<div class="desc">'
+            +         '<span>请确认姓名和生日日期与身份证上信息一致，提交后将无法修改。若填写不正确，中奖后将无法领奖哟！</span>'
+            +     '</div>'
+            +     '<div class="desc_one">'
+            +         '<span>请确认姓名和生日日期与身份证上信息一致，提交后将无法修改。若填写不正确，中奖后将无法领奖哟！</span>'
+            +     '</div>'
+            +     '<div class="tips_footer">'
+            +         '<a href="###" class="button btn_bg1" id="checkBack">返回检查</a>'
+            +         '<a href="###" class="button btn_bg2">确认提交</a>'
+            +     '</div>'
+            + '</div>';
         dialog.createMask();
         dialog.tips2(str);
 
