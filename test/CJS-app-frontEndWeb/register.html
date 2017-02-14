@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    <title>快速注册</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script type="text/javascript" src="./js/adaptive.js"></script>
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="./css/weui.min.css">
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+	<div class="container">
+        <div class="login-tip" style="display: none;">
+			<div class="msg msg-err">
+				<p>手机号格式有误</p>
+			</div>
+		</div>
+		<div class="login-page">
+			<div class="logo-img"></div>
+			<div class="login-form">
+				<div class="login-cell">
+					<div class="login-title">手机号</div>
+					<div class="login-input">
+						<input type="text" class="wei-input" placeholder="请输入手机号" onblur="checkTel()" onkeyup="checkRegister()" id="tel">
+					</div>
+				</div>
+				<div class="login-cell">
+					<div class="login-title">验证码</div>
+					<div class="login-input login-flex">
+						<input type="text" class="wei-input" id="vcode" placeholder="请输入验证码" onkeyup="checkRegister()">
+						<div class="login-vcode">
+							<img src="img/login/yanzhengma.png" alt="验证码">
+						</div>
+					</div>
+				</div>
+				<div class="wei-cells_checkbox">
+					<label class="wei-cell wei-check__label">
+						<div class="wei-cell__hd">
+							<input type="checkbox" class="wei-check" name="checkbox1" id="wei-checkbox" onchange="checkRegister()">
+							<i class="wei-icon-checked"></i>
+						</div>
+						<div class="wei-cell-primary">
+							<p>我已经阅读并同意<a href="#" class="wei-primary">《会员协议》</a></p>
+						</div>
+					</label>
+				</div>
+				<a class="wei-btn login-btn-disabled" href="javascript:;">下一步</a>
+			</div>
+		</div>
+	</div>
+    <script type="text/javascript" src="./js/zepto.min.js"></script>
+    <script type="text/javascript" src="./js/login.js"></script>
+</body>
+</html>

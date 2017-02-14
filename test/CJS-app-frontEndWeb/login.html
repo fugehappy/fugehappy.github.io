@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    <title>登陆</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<script type="text/javascript" src="./js/adaptive.js"></script>
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="./css/weui.min.css">
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+	<div class="container">
+		<div class="login-tip" style="display: none;">
+			<div class="msg msg-err">
+				<p>账号或密码有误</p>
+			</div>
+		</div>
+		<div class="login-page">
+			<div class="logo-img"></div>
+			<div class="login-form">
+				<div class="login-cell">
+					<div class="login-title">账号</div>
+					<div class="login-input">
+						<input type="text" class="wei-input" placeholder="手机号码/用户名" id="login-user" onkeyup="checkLogin()">
+						<i class="icon icon-clear" style="display: none;"></i>
+					</div>
+				</div>
+				<div class="login-cell">
+					<div class="login-title">密码</div>
+					<div class="login-input">
+						<input type="password" class="wei-input" placeholder="6-16位数字加字母组合" id="login-pw" onkeyup="checkLogin()">
+						<i class="icon icon-clear" style="display: none;"></i>
+					</div>
+				</div>
+				<!--<a class="wei-btn login-btn-active" href="javascript:;">登陆</a>-->
+				<a class="wei-btn login-btn-disabled" href="javascript:;">登陆</a>
+				<div class="login-link">
+					<a href="register.html">快速注册</a>
+					<a href="forgetpassword.html">忘记密码</a>
+				</div>
+			</div>
+			<div class="login-footer">
+                <div class="login-zone">
+                    <div class="login-chat">
+                        <div class="f-icon wei_wechat"></div>
+                        <p>微信登陆</p>
+                    </div>
+                </div>
+                <div class="login-zone">
+                    <div class="login-chat">
+                        <div class="f-icon wei_phone"></div>
+                        <p>手机快捷登录</p>
+                    </div>
+                </div>
+			</div>
+		</div>
+    </div>
+	<script type="text/javascript" src="./js/zepto.min.js"></script>
+	<script type="text/javascript" src="./js/login.js"></script>
+</body>
+</html>
