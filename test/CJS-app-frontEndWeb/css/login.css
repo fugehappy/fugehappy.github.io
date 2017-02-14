@@ -83,8 +83,7 @@ body {
     background-color: transparent;
     font-size: inherit;
     color: inherit;
-    height: .16rem;
-    line-height: 1;
+    line-height: .14rem;
 }
 .wei-btn {
 	position: relative;
