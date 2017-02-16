@@ -7,7 +7,7 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 }
-.icon {
+.icons {
 	width: .2rem;
     height: .2rem;
     overflow: hidden;
@@ -150,7 +150,7 @@ body {
 	margin-top: 8px;
 }
 .login-btn-disabled {
-    background-color: #c3c3c3;
+    background-color: #B6B6B6;
 }
 .login-btn-disabled:active {
     background-color: #f4f4f4;
@@ -199,6 +199,11 @@ body {
     padding-top: 10px;
     padding-bottom: 10px;
     border-radius: 4px;
+}
+.login-tip .msg-err p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .re-send a {
     color: #c58630;

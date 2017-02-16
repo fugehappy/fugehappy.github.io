@@ -29,10 +29,11 @@ function checkTel() {
 	var timeout = null;
 	if (!(/^1(3|4|5|7|8)\d{9}$/.test(telVal))) {
         // 错误提示
-		$('.login-tip').fadeIn();
+		/*$('.login-tip').fadeIn();
 		timeout = setTimeout(function() {
 			$('.login-tip').fadeOut();
-		}, 3000);
+		}, 3000);*/
+        $.errTips('手机格式有误');
 	}
 	return false; 		
 }

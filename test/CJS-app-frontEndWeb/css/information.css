@@ -19,6 +19,7 @@ body {
 .fr {
     float: right;
 }
+
 .wei-primary {
     color: #c58630;
 }
@@ -204,7 +205,7 @@ body {
     background-color: transparent;
     font-size: inherit;
     color: inherit;
-    height: .14rem;
+    height: .18rem;
     line-height: .14rem;
     padding-left: .1rem;
 }
@@ -300,6 +301,7 @@ body {
     display: inline-block;
     margin-left: 10px;
     font-size: 24px;
+    color: #666;
 }
 .wei-check__label {
     position: relative;

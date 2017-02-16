@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    <title>分类</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/weui.min.css">
+    <link rel="stylesheet" href="./js/plugins/swiper/swiper.min.css">
+    <style>
+.category-viewport {
+    height: auto;
+    min-height: 100%;
+}
+.category-tab {
+    float: left;
+    min-width: 76px;
+    width: 76px;
+    height: auto;
+    overflow-y: auto;
+    min-height: 100%;
+}
+.category-content {
+    height: auto;
+    min-height: 100%;
+    width: 100%;
+    font-size: 12px;
+    color: #252525;
+    background-color: #f3f5f7;
+}
+.category-content-wrapper {
+    margin-left: 76px;
+    overflow: hidden;
+}
+.category-tab li {
+    height: 46px;
+    line-height: 46px;
+    background: #fff;
+    text-align: center;
+    position: relative;
+}
+
+.category-tab li:before {
+    content: '';
+    height: 92px;
+    width: 1px;
+    position: absolute;
+    left: auto;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    background-color: #e5e5e5;
+    border: 0 solid transparent;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    transform: scale(0.5);
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    transform-origin: top left;
+    -webkit-transform-origin: top left;
+    -moz-transform-origin: top left;
+    -ms-transform-origin: top left;
+    -o-transform-origin: top left;
+}
+
+.category-tab li:after {
+    content: '';
+    height: 1px;
+    width: 200%;
+    position: absolute;
+    left: 0;
+    top: auto;
+    right: auto;
+    bottom: 0;
+    background-color: #e5e5e5;
+    border: 0 solid transparent;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    transform: scale(0.5);
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    transform-origin: top left;
+    -webkit-transform-origin: top left;
+    -moz-transform-origin: top left;
+    -ms-transform-origin: top left;
+    -o-transform-origin: top left;
+}
+
+.category-tab a {
+    display: block;
+    width: 100%;
+    height: 46px;
+    line-height: 46px;
+    text-decoration: none;
+    font-size: 11px;
+    color: #232326;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.category-tab li.cur {
+    background: #fff;
+}
+
+.category-tab li.cur a {
+    color: #f23030;
+}
+.branchList {
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+.category-div {
+    margin-left: 7px;
+    margin-right: 7px;
+}
+    </style>
+</head>
+<body>
+    <div class=""></div>
+    <div class="category-viewport">
+        <div class="category-tab" id="rootList">
+            <div class="category-tab-wrapper" style="overflow: hidden; height: 622px;">
+                <ul class="">
+                    <li class="cur"><a href="javascript:;">热门推荐</a></li>
+                    <li><a href="javascript:;">潮流女装</a></li>
+                    <li><a href="javascript:;">品牌男装</a></li>
+                    <li><a href="javascript:;">潮流女装</a></li>
+                    <li><a href="javascript:;">品牌男装</a></li>
+                    <li><a href="javascript:;">潮流女装</a></li>
+                    <li><a href="javascript:;">品牌男装</a></li>
+                    <li><a href="javascript:;">潮流女装</a></li>
+                    <li><a href="javascript:;">品牌男装</a></li>
+                    <li><a href="javascript:;">潮流女装</a></li>
+                    <li><a href="javascript:;">品牌男装</a></li>
+                    <li><a href="javascript:;">潮流女装</a></li>
+                    <li><a href="javascript:;">品牌男装</a></li>
+                    <li><a href="javascript:;">潮流女装</a></li>
+                    <li><a href="javascript:;">品牌男装</a></li>
+                    <li><a href="javascript:;">潮流女装</a></li>
+                    <li><a href="javascript:;">品牌男装</a></li>
+                    <li><a href="javascript:;">潮流女装</a></li>
+                    <li><a href="javascript:;">品牌男装</a></li>
+                    <li><a href="javascript:;">潮流女装</a></li>
+                    <li><a href="javascript:;">品牌男装</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="category-content">
+            <div class="category-content-wrapper">
+                <div class="branchList">
+                    <div class="category-div">123</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/zepto.min.js"></script>
+    <script type="text/javascript" src="./js/weui.min.js"></script>
+</body>
+</html>
