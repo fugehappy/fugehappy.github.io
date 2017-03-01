@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" Content="text/html; charset=utf-8;">
+<title>移动端触摸滑动</title>
+<meta name="author" content="rainna" />
+<meta name="keywords" content="rainna's js lib" />
+<meta name="description" content="移动端触摸滑动" />
+<meta name="viewport" content="target-densitydpi=320,width=640,user-scalable=no">
+
+</head>
+
+<body>
+<style>
+*{
+    margin:0;
+    padding:0;
+}
+li{
+    list-style:none;
+    height: 60px;
+}
+#dragup_wrapper {
+    background-color: red;
+}
+
+</style>
+<ol id="list">
+   <li>内容1</li>
+   <li>内容1</li>
+   <li>内容1</li>
+   <li>内容1</li>
+   <li>内容1</li>
+   <li>内容1</li>
+   <li>内容1</li>
+   <li>内容1</li>
+   <li>内容1</li>
+   <li>内容1</li>
+   <li>内容1</li>
+   <li>内容1</li>
+   <li>内容1</li>
+   <li>内容1</li>
+   <li>内容1</li>
+   <li>内容1</li>
+   <li>内容1</li>
+   <li>内容1</li>
+   <li>内容1</li>
+   <li>内容1</li>
+   <li>内容1</li>
+   <li>内容1</li>
+   <li>内容1</li>
+   <li>内容1</li>
+  </ol>
+
+  <div id="dragup_wrapper"></div>
+  <script src="test.js"></script>
+<script>
+dragDown({
+    upWrapId:"dragup_wrapper",
+    upCallback:function(){
+        // alert(1);
+    }
+})
+</script>
+</body>
+</html>
