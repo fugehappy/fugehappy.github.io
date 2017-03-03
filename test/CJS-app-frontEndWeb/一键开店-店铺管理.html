@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    <title>一键开店-店铺管理</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script type="text/javascript" src="./js/adaptive.js"></script>
+	<link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/weui.min.css">
+    <link rel="stylesheet" href="./css/picker.css">
+    <link rel="stylesheet" href="./css/all.css">
+</head>
+<body>
+    <div class="container">
+        <!--
+        <div class="wei-header bg-white">
+            <div class="wei-header-left">
+                <a class="icon icon-109">返回</a>
+            </div>
+            <div class="wei-header-title">账户信息</div>
+        </div>
+        -->
+        <div class="wei-cells">
+            <div class="wei-cell wei-cell_access" id="info-img">
+                <div class="wei-cell__bd">
+                    <span>头像</span>
+                </div>
+                <div class="wei-cell__ft"><img class="info-img-person" src="img/login/ic_wechat.png"></div>
+            </div>
+            <div class="wei-cell wei-cell_access" id="info-user">
+                <div class="wei-cell__bd">
+                    <span>用户名</span>
+                </div>
+                <div class="wei-cell__ft">王永安的店铺</div>
+            </div>
+            <div class="wei-cell wei-cell_access" id="info-user">
+                <div class="wei-cell__bd">
+                    <span>手机号</span>
+                </div>
+                <div class="wei-cell__ft">18699996666</div>
+            </div>
+            <div class="wei-cell wei-cell_access" id="showWorkPicker">
+                <div class="wei-cell__bd">
+                    <span>所在行业</span>
+                </div>
+                <div class="wei-cell__ft">个人/企业分销商</div>
+            </div>
+            <div class="wei-cell wei-cell_access" id="showWorkPicker">
+                <div class="wei-cell__bd">
+                    <span>地址</span>
+                </div>
+                <div class="wei-cell__ft">四川省成都市武侯区天府大道</div>
+            </div>
+        </div>
+        <div class="qr-box">
+			<img src="img/pro/timg.jpg">
+            <p>店铺二维码</p>
+        </div>
+        <a class="loginout-btn store-btn" href="javascript:;">进入店铺</a>
+    </div>
+    
+    <!-- 相册 -->
+    <div id="img-sheet" class="wei-primary">
+        <div class="weui-mask" id="iosMask" style="display: none"></div>
+        <div class="weui-actionsheet" id="iosActionsheet">
+            <div class="weui-actionsheet__menu">
+                <div class="weui-actionsheet__cell">拍照</div>
+                <div class="weui-actionsheet__cell">相册</div>
+            </div>
+            <div class="weui-actionsheet__action">
+                <div class="weui-actionsheet__cell" id="iosActionsheetCancel">Cancel</div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/zepto.min.js"></script>
+    <script type="text/javascript" src="./js/plugins/layer/layer.js"></script>
+    <script type="text/javascript" src="./js/weui.min.js"></script>
+    <script>
+    $('body').addClass('page-bg');
+    // 修改头像  
+    $(function(){
+        var $iosActionsheet = $('#iosActionsheet');
+        var $iosMask = $('#iosMask');
+
+        function hideActionSheet() {
+            $iosActionsheet.removeClass('weui-actionsheet_toggle');
+            $iosMask.fadeOut(200);
+        }
+
+        $iosMask.on('click', hideActionSheet);
+        $('#iosActionsheetCancel').on('click', hideActionSheet);
+        // 出现弹出层
+        $("#info-img").on("click", function(){
+            $iosActionsheet.addClass('weui-actionsheet_toggle');
+            $iosMask.fadeIn(200);
+        });
+    });
+
+    
+    
+    // 修改行业
+    $('#showWorkPicker').on('click', function () {
+        weui.picker([{
+            label: '学生',
+            value: 0
+        }, {
+            label: '计算机',
+            value: 2
+        }, {
+            label: '互联网',
+            value: 3
+        }, {
+            label: '金融',
+            value: 4
+        }], {
+            onChange: function (result) {
+                // console.log(result);
+            },
+            onConfirm: function (result) {
+                var str = result;
+                // 格式化
+            }
+        });
+    });
+    
+    </script>
+</body>
+</html>

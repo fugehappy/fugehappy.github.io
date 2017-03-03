@@ -1,3 +1,4 @@
+/*基本样式*/
 .baseline {
     vertical-align: baseline;
 }
@@ -195,7 +196,7 @@
     z-index: 1000;
 }
 
-/*1pxè§£å†³æ–¹æ¡ˆ*/
+/*1px解决方案*/
 .weui-border-t {
     border-top: 1px solid #e0e0e0;
 }
@@ -316,7 +317,7 @@
     }
 }
 
-/*æŒ‰é’®*/
+/*按钮*/
 .button_sp_area {
     padding: 10px 0;
     width: 60%;
@@ -346,7 +347,7 @@
 }
 
 .bg-blue {
-    /*è“è‰²*/
+    /*蓝色*/
     background-color: #18b4ed;
 }
 
@@ -378,7 +379,7 @@ button.bg-blue-b, input.bg-blue-b {
 }
 
 .bg-orange {
-    /*æ©™è‰²*/
+    /*橙色*/
     background-color: #FF6600;
 }
 
@@ -413,7 +414,7 @@ button.bg-orange-b, input.bg-orange-b {
     background-color: #e7e7e7;
 }
 
-/*å­—ä½“å¤§å° ç”Ÿæˆ11-32 35 40 45 50åƒç´ å­—ä½“ */
+/*字体大小 生成11-32 35 40 45 50像素字体 */
 .f11 {
     font-size: 11px !important;
     line-height: 11px;
@@ -549,7 +550,7 @@ button.bg-orange-b, input.bg-orange-b {
     line-height: 55px;
 }
 
-/*å­—ä½“é¢œè‰²*/
+/*字体颜色*/
 .f-red {
     color: #ef4f4f !important;
 }
@@ -622,7 +623,7 @@ button.bg-orange-b, input.bg-orange-b {
     border-right: none;
 }
 
-/*åˆ†å‰²çº¿*/
+/*分割线*/
 .weui-loadmore {
     font-size: 14px;
     line-height: 1.6em;
@@ -666,7 +667,7 @@ button.bg-orange-b, input.bg-orange-b {
 }
 
 /**
- * è¡¨æ ¼
+ * 表格
  */
 .weui-table {
     width: 100%;
@@ -830,7 +831,7 @@ button.bg-orange-b, input.bg-orange-b {
     text-overflow: ellipsis;
 }
 
-/*æœç´¢*/
+/*搜索*/
 .search-input {
     box-sizing: content-box;
     width: 100%;
@@ -863,7 +864,7 @@ button.bg-orange-b, input.bg-orange-b {
     border-radius: 0!important;
 }
 
-/*æ ‡ç­¾*/
+/*标签*/
 .weui-label {
     display: inline-block;
     position: relative;
@@ -956,7 +957,7 @@ button.bg-orange-b, input.bg-orange-b {
 }
 
 /*
-* çº¢ç‚¹æé†’
+* 红点提醒
 */
 .weui-reddot, .weui-reddot-border, .weui-reddot-s {
     position: relative;
@@ -1011,7 +1012,7 @@ button.bg-orange-b, input.bg-orange-b {
     right: -5px;
 }
 
-/*åŠ¨ç”»*/
+/*动画*/
 .animated {
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
@@ -1253,7 +1254,7 @@ button.bg-orange-b, input.bg-orange-b {
     -webkit-animation-name: swing;
     animation-name: swing;
 }
-
+/*
 @-webkit-keyframes a {
     0% {
         -webkit-transform: translate3d(100%,0,0);
@@ -1319,6 +1320,7 @@ button.bg-orange-b, input.bg-orange-b {
     -webkit-animation: b .2s forwards;
     animation: b .2s forwards
 }
+*/
 
 .weui-loading {
     width: 20px;
@@ -1349,7 +1351,7 @@ button.bg-orange-b, input.bg-orange-b {
     100% {
         -webkit-transform: rotate3d(0, 0, 1, 360deg);
     }
-}
+}*/
 
 /*css3*/
 .radius-lg {
@@ -1420,7 +1422,7 @@ button.bg-orange-b, input.bg-orange-b {
     animation: xz360 6s ease-out 0.1s infinite;
 }
 
-.xz180 {
+\ .xz180 {
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
     -webkit-transform-origin: 50% 50%;
@@ -1457,7 +1459,7 @@ button.bg-orange-b, input.bg-orange-b {
     background-image: linear-gradient(top, #999, #FFF);
 }
 
-/*å›¾ç‰‡æ•ˆæžœç»„ä»¶*/
+/*图片效果组件*/
 .img-border {
     padding: 3px;
     margin-left: -5px;
@@ -1538,7 +1540,7 @@ weui-box*/
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-/*åˆ†é¡µ*/
+/*分页*/
 .pager {
     font-size: 14px;
 }
@@ -1603,7 +1605,7 @@ weui-box*/
     float: right;
 }
 
-/*åˆ†äº«åˆ°æœ‹å‹åœˆæˆ–æœ‹å‹*/
+/*分享到朋友圈或朋友*/
 .weui-share {
     position: fixed;
     left: 0;
@@ -1641,7 +1643,7 @@ weui-box*/
     right: 23px;
 }
 
-/*å¾®ä¿¡æ–‡ç« */
+/*微信文章*/
 @media (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
     .weui-weixin-ui {
         font-size: 17px;
@@ -1821,7 +1823,7 @@ weui-box*/
 }
 
 /**
- * æç¤ºé¡µé¢
+ * 提示页面
  */
 .weui_msg_box {
     width: 100%;
@@ -1842,7 +1844,7 @@ weui-box*/
     padding: 0 15px;
 }
 
-/*è¯„è®º*/
+/*评论*/
 .weui-comment {
     font-size: 16px;
     margin-top: -5px;
@@ -1858,7 +1860,7 @@ weui-box*/
 
 .weui-comment-item::after {
     clear: both;
-    content: "â€‹";
+    content: "​";
     display: block;
     height: 0;
 }
@@ -1981,7 +1983,7 @@ weui-box*/
     background-position: 0 -18px;
 }
 
-/*åŠ å‡*/
+/*加减*/
 .weui-number-input {
     float: left;
     height: 20px;
@@ -2067,7 +2069,7 @@ weui-box*/
     overflow: hidden;
 }
 
-/*å¼¹å‡ºæ¡†*/
+/*弹出框*/
 .weui_msg_img {
     background: rgba(0, 0, 0, 0.7) none repeat scroll 0 0;
     height: 100%;
@@ -2139,7 +2141,7 @@ weui-box*/
     padding: 0 0 10px;
 }
 
-/*toast å¯¹è¯æ¡† æ‰©å±•*/
+/*toast 对话框 扩展*/
 .weui_dialog, .weui_toast {
     -webkit-transition-duration: .2s;
     transition-duration: .2s;
@@ -2226,7 +2228,7 @@ weui-box*/
     margin-top: 10px;
 }
 
-/* picker,æ—¥æœŸæ—¶é—´popup,select*/
+/* picker,日期时间popup,select*/
 .weui-picker-modal {
     width: 100%;
     position: absolute;
@@ -2261,11 +2263,12 @@ weui-box*/
 
 .weui-picker-modal .toolbar {
     position: relative;
+    height: 35px;
     width: 100%;
     font-size: 16px;
     line-height: 1.5;
     color: #3d4145;
-    background: #f7f7f8
+    background: #f7f7f8;
 }
 
 .weui-picker-modal .toolbar:before {
@@ -2504,9 +2507,9 @@ weui-box*/
     box-sizing: border-box;
     height: 30px;
     line-height: 30px;
-    color: #04be02;
+    color: #C58630;
     z-index: 1;
-    padding: 0 .5rem
+    padding: 0 .2rem
 }
 
 .weui-picker-overlay,.weui-picker-container {
@@ -2972,7 +2975,7 @@ weui-box*/
     margin-right: 0
 }
 
-/*æ—¶é—´çº¿*/
+/*时间线*/
 .timeline {
     padding: 1rem;
 }
@@ -3194,7 +3197,7 @@ weui-box*/
     background-clip: padding-box
 }
 
-/*ä¸Šä¸‹æ‹‰*/
+/*上下拉*/
 .dropload-up,.dropload-down {
     position: relative;
     height: 0;
@@ -3547,16 +3550,12 @@ weui-box*/
     width: 100%;
 }
 
-/*æœ‹å‹åœˆ*/
+/*朋友圈*/
 /* 
-  åŸºæœ¬æ ·å¼è®¾ç½® 
+  基本样式设置 
   Basic Setup
-  å¼•ç”¨WeUI,FontAwesome
+  引用WeUI,FontAwesome
 */
-body {
-    background-color: #eee;
-}
-
 .iphone-container {
     width: 250px;
     margin: 0 auto;
@@ -3762,7 +3761,7 @@ body {
 }
 
 /*
-è¡¨å•é¢„è§ˆ
+表单预览
 */
 .weui-form-preview {
     background-color: #ffffff;
@@ -4150,7 +4149,7 @@ button.weui-form-preview-btn {
     min-width: 0;
 }
 
-/*è§’æ ‡*/
+/*角标*/
 .weui-mark {
     padding-left: 10px;
     padding-right: 0;

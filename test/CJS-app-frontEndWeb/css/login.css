@@ -1,12 +1,6 @@
-body {
-    font-size: .14rem;
-    color: #333;
-}
-.container {
-	max-width: 768px;
-	margin-left: auto;
-	margin-right: auto;
-}
+/* =================================== */
+/*                login                */
+/* =================================== */
 .icons {
 	width: .2rem;
     height: .2rem;
@@ -266,7 +260,8 @@ body {
     content: '\EA06';
     color: #09bb07;
 }  
-[class*=" wei-icon-"],[class^=wei-icon-] {
+[class*=" wei-icon-"],
+[class^=wei-icon-] {
     display: inline-block;
     vertical-align: middle;
     font: normal normal normal 14px/1 weui;
@@ -275,6 +270,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-[class*=" wei-icon-"]:before,[class^=wei-icon-]:before {
+[class*=" wei-icon-"]:before,
+[class^=wei-icon-]:before {
     display: inline-block;
 }

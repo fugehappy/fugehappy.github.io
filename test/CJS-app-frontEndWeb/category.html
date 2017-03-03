@@ -8,161 +8,138 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<link rel="stylesheet" href="./css/reset.css">
+    <script type="text/javascript" src="./js/adaptive.js"></script>
+	<link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/weui.min.css">
     <link rel="stylesheet" href="./js/plugins/swiper/swiper.min.css">
-    <style>
-.category-viewport {
-    height: auto;
-    min-height: 100%;
-}
-.category-tab {
-    float: left;
-    min-width: 76px;
-    width: 76px;
-    height: auto;
-    overflow-y: auto;
-    min-height: 100%;
-}
-.category-content {
-    height: auto;
-    min-height: 100%;
-    width: 100%;
-    font-size: 12px;
-    color: #252525;
-    background-color: #f3f5f7;
-}
-.category-content-wrapper {
-    margin-left: 76px;
-    overflow: hidden;
-}
-.category-tab li {
-    height: 46px;
-    line-height: 46px;
-    background: #fff;
-    text-align: center;
-    position: relative;
-}
-
-.category-tab li:before {
-    content: '';
-    height: 92px;
-    width: 1px;
-    position: absolute;
-    left: auto;
-    top: 0;
-    right: 0;
-    bottom: auto;
-    background-color: #e5e5e5;
-    border: 0 solid transparent;
-    border-radius: 0;
-    -webkit-border-radius: 0;
-    transform: scale(0.5);
-    -webkit-transform: scale(0.5);
-    -moz-transform: scale(0.5);
-    -ms-transform: scale(0.5);
-    -o-transform: scale(0.5);
-    transform-origin: top left;
-    -webkit-transform-origin: top left;
-    -moz-transform-origin: top left;
-    -ms-transform-origin: top left;
-    -o-transform-origin: top left;
-}
-
-.category-tab li:after {
-    content: '';
-    height: 1px;
-    width: 200%;
-    position: absolute;
-    left: 0;
-    top: auto;
-    right: auto;
-    bottom: 0;
-    background-color: #e5e5e5;
-    border: 0 solid transparent;
-    border-radius: 0;
-    -webkit-border-radius: 0;
-    transform: scale(0.5);
-    -webkit-transform: scale(0.5);
-    -moz-transform: scale(0.5);
-    -ms-transform: scale(0.5);
-    -o-transform: scale(0.5);
-    transform-origin: top left;
-    -webkit-transform-origin: top left;
-    -moz-transform-origin: top left;
-    -ms-transform-origin: top left;
-    -o-transform-origin: top left;
-}
-
-.category-tab a {
-    display: block;
-    width: 100%;
-    height: 46px;
-    line-height: 46px;
-    text-decoration: none;
-    font-size: 11px;
-    color: #232326;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.category-tab li.cur {
-    background: #fff;
-}
-
-.category-tab li.cur a {
-    color: #f23030;
-}
-.branchList {
-    overflow: hidden;
-    padding-bottom: 10px;
-}
-.category-div {
-    margin-left: 7px;
-    margin-right: 7px;
-}
-    </style>
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./css/home.css">
 </head>
 <body>
-    <div class=""></div>
-    <div class="category-viewport">
-        <div class="category-tab" id="rootList">
-            <div class="category-tab-wrapper" style="overflow: hidden; height: 622px;">
-                <ul class="">
-                    <li class="cur"><a href="javascript:;">热门推荐</a></li>
-                    <li><a href="javascript:;">潮流女装</a></li>
-                    <li><a href="javascript:;">品牌男装</a></li>
-                    <li><a href="javascript:;">潮流女装</a></li>
-                    <li><a href="javascript:;">品牌男装</a></li>
-                    <li><a href="javascript:;">潮流女装</a></li>
-                    <li><a href="javascript:;">品牌男装</a></li>
-                    <li><a href="javascript:;">潮流女装</a></li>
-                    <li><a href="javascript:;">品牌男装</a></li>
-                    <li><a href="javascript:;">潮流女装</a></li>
-                    <li><a href="javascript:;">品牌男装</a></li>
-                    <li><a href="javascript:;">潮流女装</a></li>
-                    <li><a href="javascript:;">品牌男装</a></li>
-                    <li><a href="javascript:;">潮流女装</a></li>
-                    <li><a href="javascript:;">品牌男装</a></li>
-                    <li><a href="javascript:;">潮流女装</a></li>
-                    <li><a href="javascript:;">品牌男装</a></li>
-                    <li><a href="javascript:;">潮流女装</a></li>
-                    <li><a href="javascript:;">品牌男装</a></li>
-                    <li><a href="javascript:;">潮流女装</a></li>
-                    <li><a href="javascript:;">品牌男装</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="category-content">
-            <div class="category-content-wrapper">
-                <div class="branchList">
-                    <div class="category-div">123</div>
+    <div class="container">
+        <div class="search-box">
+            <div class="search-zone">
+                <div class="search-wrap">
+                    <i class="wei-icon-search"></i>
+                    <input type="search" class="wei-search-input" placeholder="蒙顶山雪茶" required>
+                    <i class="icons-clear"></i>
+                </div>
+                <div class="wei-header-icon">
+                    <a><img src="img/icon/ic_megs.png" class="icon-msg" width="20" height="20"></a>
                 </div>
             </div>
         </div>
+        <div class="menu-left scrollbar-none">
+            <ul>
+                <li class="active">绿茶</li>
+                <li>红茶</li>
+                <li>黄茶</li>
+                <li>花茶</li>
+                <li>乌龙茶</li>
+                <li>黑茶</li>
+                <li>花草茶</li>
+                <li>茶制品</li>
+                <li>茶具</li>
+                <li>茶包装</li>
+                <li>茶包装</li>
+                <li>茶包装</li>
+                <li>茶包装</li>
+                <li>茶包装</li>
+                <li>茶包装</li>
+                <li>茶包装1</li>
+            </ul>
+        </div>
+        <div class="menu-right j-content">
+            <h5>蒸青绿茶</h5>
+            <ul>
+                <li>
+                    <a href="#">
+                    <img src="img/home/ic_goodeal.png">
+                        <span>煎茶</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    <img src="img/home/pro/img01.png">
+                        <span>煎茶</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                    <img src="img/home/pro/img01.png">
+                        <span>煎茶</span>
+                    </a>
+                </li>
+            </ul>
+            <h5>蒸青绿茶</h5>
+            <ul>
+                <li>
+                    <a href="#">
+                        <span>煎茶</span>
+                    </a>
+                </li>
+            </ul>
+            <h5>蒸青绿茶</h5>
+            <ul>
+                <li>
+                    <a href="#">
+                        <span>煎茶</span>
+                    </a>
+                </li>
+            </ul>
+            <h5>蒸青绿茶</h5>
+            <ul>
+                <li>
+                    <a href="#">
+                        <span>煎茶</span>
+                    </a>
+                </li>
+            </ul>
+            <h5>蒸青绿茶</h5>
+            <ul>
+                <li>
+                    <a href="#">
+                        <span>煎茶</span>
+                    </a>
+                </li>
+             </ul>
+        </div>
+    </div>
+    <div class="bottom-tab clearfix" id="tab2">
+        <a class="tab-b-item" href="#">
+            <span class="tb-icon i-tb-home"></span>
+            <p class="tabbar-label">首页</p>
+        </a>
+        <a class="tab-b-item tab-b-active" href="javascript:void(0)">
+            <span class="tb-icon i-tb-sort"></span>
+            <p class="tabbar-label">分类</p>
+        </a>
+        <a class="tab-b-item" href="#">
+        <span class="tb-icon i-tb-cart"></span>
+            <p class="tabbar-label">购物车</p>
+        </a>
+        <a class="tab-b-item" href="#">
+            <span class="tb-icon i-tb-my"></span>
+            <p class="tabbar-label">我的</p>
+        </a>
     </div>
     <script type="text/javascript" src="./js/zepto.min.js"></script>
     <script type="text/javascript" src="./js/weui.min.js"></script>
+    <script>
+    $(function () {
+        function menuPostion() {
+            var bw = document.body.clientWidth;
+            if (bw > 768) {
+                $('.menu-left').css({
+                    left: (bw - 768)/2
+                })
+            } 
+        }
+        menuPostion();
+        $(window).resize(function () {
+            menuPostion(); 
+        });
+    })
+    </script>
 </body>
 </html>

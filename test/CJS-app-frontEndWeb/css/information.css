@@ -1,28 +1,6 @@
-body {
-    font-size: .14rem;
-    color: #333;
-}
-.container {
-	max-width: 768px;
-	margin-left: auto;
-	margin-right: auto;
-}
-.page-bg {
-    background-color: #f8f8f8;
-}
-.over {
-    overflow: hidden;
-}
-.fl {
-    float: left;
-}
-.fr {
-    float: right;
-}
-
-.wei-primary {
-    color: #c58630;
-}
+/* =================================== */
+/*            information              */
+/* =================================== */
 .weui-actionsheet__cell {
     font-size: .16rem;
 }

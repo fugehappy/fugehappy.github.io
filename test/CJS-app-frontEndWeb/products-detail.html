@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    <title>商品详情-冲泡过程</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script type="text/javascript" src="./js/adaptive.js"></script>
+	<link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/weui.min.css">
+    <link rel="stylesheet" href="./js/plugins/swiper/swiper.min.css">
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="common-header-bar">
+                <div class="go-back">
+                    <a href="#" class="icon-back icon icon-109"></a>
+                </div>
+                <ul class="header-title header-tabs" id="header-tab">
+                    <li class="header-tab-item active">
+                        <a href="#"><p>商品</p></a>
+                    </li>
+                    <li class="header-tab-item">
+                        <a href="#"><p>详情</p></a>
+                    </li>
+                    <li class="header-tab-item">
+                        <a href="#"><p>评价</p></a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <div class="detail-header">
+            <ul class="detail-tab">
+                <li class="active">商品介绍</li>
+                <li>规格信息</li>
+                <li>冲泡过程</li>
+            </ul>
+        </div>
+        <!--content-->
+        <!--冲泡过程和商品介绍内容从后台读取-->
+        <div id="detail-content">
+            <div class="detail-c-item">conntent</div>
+            <div class="detail-c-item hide"></div>
+            <div class="detail-c-item hide"></div>
+        </div>
+        <!--content结束-->
+    </div>
+    <div class="mall-bar">
+        <div class="container">
+            <ul class="mall-bar-items">
+                <li class="serve">
+                    <a>
+                        <span class="mall-icon-serve"></span>
+                        <span>客服</span>
+                    </a>
+                </li>
+                <li class="cart">
+                    <a>
+                        <span class="mall-icon-cart">
+                            <span class="mall-cart-num">16</span>
+                        </span>
+                        <span>购物车</span>
+                    </a>
+                </li>
+                <li class="favor">
+                    <a>
+                        <span class="mall-icon-favor active"></span>
+                        <span>收藏</span>
+                    </a>
+                </li>
+                <li class="join-cart">
+                    <a>
+                        <span>加入购物车</span>
+                    </a>
+                </li>
+                <li class="buyer">
+                    <a>
+                        <span>立即购买</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/zepto.min.js"></script>
+    <script type="text/javascript" src="./js/weui.min.js"></script>
+    <script>
+    $('.detail-header .detail-tab li').click(function () {
+        var index = $(this).index();
+        $(this).addClass('active').siblings().removeClass('active');
+        $('#detail-content').find('.detail-c-item').addClass('hide');
+        $('#detail-content').find('.detail-c-item').eq(index).removeClass('hide');
+        // ajax
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    <title>一键开店-提现</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script type="text/javascript" src="./js/adaptive.js"></script>
+	<link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/weui.min.css">
+    <link rel="stylesheet" href="./css/picker.css">
+    <link rel="stylesheet" href="./css/all.css">
+</head>
+<body>
+    <div class="container">
+        <!--
+        <div class="wei-header bg-white">
+            <div class="wei-header-left">
+                <a class="icon icon-109">返回</a>
+            </div>
+            <div class="wei-header-title">账户信息</div>
+        </div>
+        -->
+        <div class="wei-cells">
+            <div class="wei-cell wei-cell_access" id="info-user">
+                <div class="wei-cell__bd">
+                    <span>转帐到银行卡</span>
+                </div>
+                <div class="wei-cell__ft">建设银行（7895）李丽娟</div>
+            </div>
+            <div class="wei-cell">
+                <div class="wei-cell__hd">
+                    <span class="wei_label">提现金额:</span>
+                </div>
+                <div class="wei_cell_bd wei_cell_primary">
+                    <input class="wei_input" type="number" placeholder="不超过30个字符">
+                </div>
+            </div>
+        </div>
+        <p class="withdraw-box">
+            <span>可提现：¥998.5</span>
+            <a href="#" class="t-yellow">全部提现</a>
+        </p>
+        <a class="wei-btn-gray" href="javascript:;">申请提现</a>
+    </div>
+    <!-- 相册 -->
+    <div id="img-sheet" class="wei-primary">
+        <div class="weui-mask" id="iosMask" style="display: none"></div>
+        <div class="weui-actionsheet" id="iosActionsheet">
+            <div class="weui-actionsheet__menu">
+                <div class="weui-actionsheet__cell">拍照</div>
+                <div class="weui-actionsheet__cell">相册</div>
+            </div>
+            <div class="weui-actionsheet__action">
+                <div class="weui-actionsheet__cell" id="iosActionsheetCancel">Cancel</div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/zepto.min.js"></script>
+    <script type="text/javascript" src="./js/plugins/layer/layer.js"></script>
+    <script type="text/javascript" src="./js/weui.min.js"></script>
+    <script>
+    $('body').addClass('page-bg');
+    // 修改头像  
+    $(function(){
+        var $iosActionsheet = $('#iosActionsheet');
+        var $iosMask = $('#iosMask');
+
+        function hideActionSheet() {
+            $iosActionsheet.removeClass('weui-actionsheet_toggle');
+            $iosMask.fadeOut(200);
+        }
+
+        $iosMask.on('click', hideActionSheet);
+        $('#iosActionsheetCancel').on('click', hideActionSheet);
+        // 出现弹出层
+        $("#info-img").on("click", function(){
+            $iosActionsheet.addClass('weui-actionsheet_toggle');
+            $iosMask.fadeIn(200);
+        });
+    });
+
+    // 修改性别
+    $('#showSexPicker').on('click', function () {
+        weui.picker([{
+            label: '男',
+            value: 0
+        }, {
+            label: '女',
+            value: 1
+        }], {
+            onChange: function (result) {
+                // console.log(result);
+            },
+            onConfirm: function (result) {
+                var str = result;
+                // 格式化
+                str = !!str[0] ? '女' : '男';
+                console.log(str);
+            }
+        });
+    });
+    
+    // 修改日期
+    $('#showDatePicker').on('click', function () {
+        weui.datePicker({
+            start: 1950,
+            end: new Date().getFullYear(),
+            onChange: function (result) {
+                // console.log(result);
+            },
+            onConfirm: function (result) {
+                var arr = result;
+                // 格式化年月日
+                var strDate = ''
+                        + arr[0] + '年'
+                        + arr[1] + '月'
+                        + arr[2] + '日';
+                console.log(strDate);
+            }
+        });
+    });
+    
+    // 修改行业
+    $('#showWorkPicker').on('click', function () {
+        weui.picker([{
+            label: '学生',
+            value: 0
+        }, {
+            label: '计算机',
+            value: 2
+        }, {
+            label: '互联网',
+            value: 3
+        }, {
+            label: '金融',
+            value: 4
+        }], {
+            onChange: function (result) {
+                // console.log(result);
+            },
+            onConfirm: function (result) {
+                var str = result;
+                // 格式化
+            }
+        });
+    });
+    
+    // 修改用户名
+    /*$('#info-user').on('click', function () {
+        var config = ''
+                    + '<div class="sheet-form">'
+                        + '<div class="sheet-cell">'
+                            + '<div class="sheet-input">'
+                                + '<input type="text" class="sheet-txt" placeholder="2-12个中英文数字组合的字符">'
+                            + '</div>'
+                        + '</div>'
+                    + '</div>'
+        newPage(config);
+    });*/
+    
+    /**
+     * 公用弹出组件 newPage
+     * config string
+     */ 
+    /*function newPage(config) {
+        var height = document.body.clientHeight + 'px';
+        var content = ''
+                    + '<div>'
+                        + '<div class="weui-mask weui-animate-fade-in">'
+                            + '<div class="weui-picker weui-animate-slide-up">'
+                                + '<div class="weui-picker-self">'
+                                    + config
+                                + '</div>'
+                            + '</div>'
+                        + '</div>'
+                    + '</div>';
+        $('body').append(content);
+        
+        $('.weui-picker-self').css('height', height);
+    }*/
+    </script>
+</body>
+</html>

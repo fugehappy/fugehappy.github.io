@@ -12,10 +12,12 @@
 	<link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/weui.min.css">
     <link rel="stylesheet" href="./js/plugins/swiper/swiper.min.css">
+    <link rel="stylesheet" href="./css/all.css">
     <link rel="stylesheet" href="./css/home.css">
 </head>
-<body class="page-bg">
+<body>
     <div class="container">
+        <!--
         <div class="wei-header bg-white">
             <div class="wei-header-left">
                 <a class="icon icon-109">返回</a>
@@ -25,6 +27,7 @@
                 <a><img src="img/icon/ic_megs.png" class="icon-msg" width="20" height="20"></a>
             </div>
         </div>
+        -->
         <!-- search-bar -->
         <div class="search-bar">
             <div class="search-wrap">
@@ -47,11 +50,26 @@
         </div>
         <!-- nav-box -->
         <div class="nav-box clearfix">
-            <a href="#" class="nav-item"><img src="img/home/ic_gulicloud.png"></a>
-            <a href="#" class="nav-item"><img src="img/home/ic_teastar.png"></a>
-            <a href="#" class="nav-item"><img src="img/home/ic_goodeal.png"></a>
-            <a href="#" class="nav-item"><img src="img/home/ic_teaartist.png"></a>
-            <a href="#" class="nav-item"><img src="img/home/ic_openstore.png"></a>
+            <a href="#" class="nav-item">
+                <img src="img/home/icon/ic_guli.png">
+                <span>故里云</span>
+            </a>
+            <a href="#" class="nav-item">
+                <img src="img/home/icon/ic_rank.png">
+                <span>茶人评星</span>
+            </a>
+            <a href="#" class="nav-item">
+                <img src="img/home/icon/ic_coin.png">
+                <span>超值消费</span>
+            </a>
+            <a href="#" class="nav-item">
+                <img src="img/home/icon/ic_artist.png">
+                <span>茶艺师</span>
+            </a>
+            <a href="#" class="nav-item">
+                <img src="img/home/icon/ic_newstore.png">
+                <span>一键开店</span>
+            </a>
         </div>
         <!-- notice-box -->
         <div class="notice-box">
@@ -213,6 +231,7 @@
     <script type="text/javascript" src="./js/weui.min.js"></script>
     <script type="text/javascript" src="./js/plugins/swiper/swiper.jquery.min.js"></script>
     <script>
+    $('body').addClass('page-bg');
     // swiper
     new Swiper('.swiper-img', {
         pagination: '.swiper-pagination',

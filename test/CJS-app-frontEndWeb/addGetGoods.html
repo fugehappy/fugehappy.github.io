@@ -11,11 +11,14 @@
     <script type="text/javascript" src="./js/adaptive.js"></script>
 	<link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/weui.min.css">
-    <link rel="stylesheet" href="./css/picker.css">
-    <link rel="stylesheet" href="./css/information.css">
+    <link rel="stylesheet" href="./js/plugins/swiper/swiper.min.css">
+    <link rel="stylesheet" href="./js/area/LArea.min.css">
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./css/home.css">
 </head>
-<body class="page-bg over">
+<body>
     <div class="container">
+        <!--
         <div class="wei-header bg-white">
             <div class="wei-header-left">
                 <a class="icon icon-109">返回</a>
@@ -25,6 +28,7 @@
                 <a>保存</a>
             </div>
         </div>
+        -->
         <div class="wei-cells">
             <div class="wei-cell">
                 <div class="wei-cell__hd">
@@ -47,7 +51,8 @@
                     <span class="wei_label">所在地区:</span>
                 </div>
                 <div class="wei_cell_ft wei_cell_primary ">
-                    <input class="wei_input" type="text" value="" id="picker-city"/>
+                    <input class="wei_input" type="text" readonly="" value="" id="picker-city"/>
+                    <input id="value1" type="hidden" value=""/>
                 </div>
             </div>
             <div class="wei-cell">
@@ -57,17 +62,69 @@
                 <div class="wei_cell_bd wei_cell_primary">
                     <input class="wei_input" type="text" placeholder="不超过30个字符">
                 </div>
-            </div>
+            </div>           
         </div>
+        <a class="add-btn" href="javascript:;">新 增</a>
     </div>
     <script type="text/javascript" src="./js/zepto.min.js"></script>
     <script type="text/javascript" src="./js/weui.min.js"></script>
-    <script type="text/javascript" src="./js/picker/picker.js"></script>
-    <script type="text/javascript" src="./js/picker/picker-city.js"></script>
+    <script type="text/javascript" src="./js/area/LArea.min.js"></script>
     <script>
-    $("#picker-city").cityPicker({
-        title: "选择省市县"
+    var LAreaData =[{
+		"id": 1,
+		"name": "浙江省",
+		"child": [{
+			"id": "1",
+			"name": "杭州市",
+			"child": [{
+				"id": 1,
+				"name": "滨江区"
+			}, {
+				"id": 2,
+				"name": "西湖区"
+			}, {
+				"id": 3,
+				"name": "余杭区"
+			}, {
+				"id": 4,
+				"name": "留下区"
+			}]
+		}, {
+			"id": "2",
+			"name": "宁波市",
+			"child": []
+		}, {
+			"id": "3",
+			"name": "温州市",
+			"child": []
+		}]
+	}, {
+		"id": 2,
+		"name": "江苏省",
+		"child": [{
+			"id": "1",
+			"name": "南京",
+			"child": [{
+				"id": 1,
+				"name": "解放区"
+			}]
+		}]
+	}, {
+		"id": 3,
+		"name": "湖北省"
+	}];
+    var area1 = new LArea();
+    area1.init({
+        'trigger': '#picker-city', //触发选择控件的文本框，同时选择完毕后name属性输出到该位置
+        'valueTo': '#value1', //选择完毕后id属性输出到该位置
+        'keys': {
+            id: 'id',
+            name: 'name'
+        }, //绑定数据源相关字段 id对应valueTo的value属性输出 name对应trigger的value属性输出
+        'type': 1, //数据源类型
+        'data': LAreaData //数据源
     });
+    $('body').addClass('page-bg');  
     </script>
 </body>
 </html>

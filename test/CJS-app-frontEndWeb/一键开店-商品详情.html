@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    <title>一键开店-商品详情</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script type="text/javascript" src="./js/adaptive.js"></script>
+	<link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/weui.min.css">
+    <link rel="stylesheet" href="./js/plugins/swiper/swiper.min.css">
+    <link rel="stylesheet" href="./css/picker.css">
+    <link rel="stylesheet" href="./css/home.css">
+</head>
+<body>
+    <div class="container">
+        <div class="ware-detail">
+            <div class="swiper-container ware-swiper">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <a href="#">
+                            <img src="img/pro/img01.png">
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="#"></a>
+                    </li>
+                </ul>
+                <div class="swiper-pagination"></div>
+            </div>
+            <h3>【茶交所O2O专供茶】 六羡茶 福鼎白茶 白牡丹 罐装 100g</h3>
+            <dl class="ware-items">
+                <dd class="ware-price">
+                    <span class="fl">
+                        <span class="new-price">¥ 1599</span>
+                    </span>
+                </dd>
+                <dd class="ware-mun">
+                    <span class="t-gray">运费：包邮/ ¥10</span>
+                    <span class="t-gray">销量：2356</span>
+                    <span class="t-gray">库存：1600</span>
+                </dd> 
+            </dl>
+			<div class="remain">剩余缓存期：<span>14</span>天 <span>12</span>小时 <span>26</span>分</div>
+        </div>
+    </div>
+    <!-- 底部 -->
+    <div class="mall-bar">
+        <div class="container">
+            <a href="" class="wei-btn-left">分享</a>
+            <a href="" class="wei-btn-right">立即购买</a>
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/zepto.min.js"></script>
+    <script type="text/javascript" src="./js/weui.min.js"></script>
+    <script type="text/javascript" src="./js/plugins/swiper/swiper.jquery.min.js"></script>
+    <script>
+    $('body').addClass('page-bg');
+    new Swiper('.ware-swiper', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true
+    });
+    new Swiper('.swiper-shop', {
+        slidesPerView: 2.5
+    });
+    </script>
+</body>
+</html>

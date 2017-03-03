@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    <title>商品详情-积分</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script type="text/javascript" src="./js/adaptive.js"></script>
+	<link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/weui.min.css">
+    <link rel="stylesheet" href="./js/plugins/swiper/swiper.min.css">
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./css/home.css">
+</head>
+<body>
+    <div class="container">
+        <div class="ware-detail">
+            <div class="swiper-container ware-swiper">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <a href="#">
+                            <img src="img/pro/img01.png">
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="#"></a>
+                    </li>
+                </ul>
+                <div class="swiper-pagination"></div>
+            </div>
+            <h3>【茶交所O2O专供茶】 六羡茶 福鼎白茶 白牡丹 罐装 100g</h3>
+            <dl class="ware-items">
+                <dd class="ware-price">
+                    <span class="fl">
+                        <span class="common-font">积分</span>
+                        <span class="new-price">1500</span>
+                        <del class="common-font">售价:¥ 2599</del>
+                    </span>
+                </dd>
+            </dl>
+            <div class="ware-select-mun">
+                <span class="label-mun">选择数量</span>
+                <a class="wei-num wei-num-sub" id="num-sub">-</a>
+                <input pattern="[0-9]*" class="wei-num-input" id="num-input" value="1" data-min="1" data-step="1">
+                <a class="wei-num wei-num-plus" id="num-plus">+</a>
+            </div>
+            <dl class="ware-items">
+                <dd>
+                    <span class="label">领优惠券</span>
+                    <span class="t-orange">满199-10</span>
+                    <span class="t-orange">满399-30</span>
+                    <span class="t-orange">满599-50</span>
+                </dd>
+            </dl>
+        </div>
+        <div class="floor">
+            <div class="expert-box">
+                <div class="assess">
+                    <img src="img/icon/ic_ranking.png">
+                    <p>专家评定</p>
+                </div>
+                <div class="expert-items">
+                    <div class="expert-item">
+                        <span class="expert-circle expert-circle-21">100</span>
+                        <p>外形</p>
+                    </div>
+                    <div class="expert-item">
+                        <span class="expert-circle expert-circle-21">100</span>
+                        <p>汤色</p>
+                    </div>
+                    <div class="expert-item">
+                        <span class="expert-circle expert-circle-21">100</span>
+                        <p>香气</p>
+                    </div>
+                    <div class="expert-item">
+                        <span class="expert-circle expert-circle-21">100</span>
+                        <p>滋味</p>
+                    </div>
+                    <div class="expert-item">
+                        <span class="expert-circle expert-circle-21">100</span>
+                        <p>叶底</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ware-source">
+                <a href="#">
+                    <div class="ware-source-msg">
+                        <div class="ware-source-hd">追踪溯源</div>
+                        <p class="ware-source-bd">茶园信息、茶园管理、茶叶加工、检验测评</p>
+                    </div>
+                </a>
+            </div>
+            <div class="join-store">
+                <img src="img/pro/logo_bama.png" width="64" height="42">
+                <span>八马茶业旗舰店</span>
+            </div>
+        </div>
+        <div class="floor">
+            <p class="recommend">为你推荐</p>
+            <div class="floor-item swiper-container swiper-shop">
+                <ul class="floor-item swiper-wrapper">
+                    <li class="swiper-slide">
+                        <a href="#">
+                            <div>
+                                <img src="img/home/pro/img01.png">
+                            </div>
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="#">
+                            <div>
+                                <img src="img/home/pro/img01.png">
+                            </div>
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="#">
+                            <div>
+                                <img src="img/home/pro/img01.png">
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="floor pro-pull" id="pro-pull"><a href="javascript:void(0)"><span class="icon icon-35"></span>上拉查看商品</a></div>
+    </div>
+    <div class="pro-down">该商品已下架</div>
+    <!-- 底部 -->
+    <div class="mall-bar">
+        <div class="container">
+            <ul class="mall-bar-items">
+                <li class="serve">
+                    <a>
+                        <span class="mall-icon-serve"></span>
+                        <span>客服</span>
+                    </a>
+                </li>
+                <li class="cart">
+                    <a>
+                        <span class="mall-icon-cart">
+                            <span class="mall-cart-num">16</span>
+                        </span>
+                        <span>购物车</span>
+                    </a>
+                </li>
+                <li class="favor">
+                    <a>
+                        <span class="mall-icon-favor active"></span>
+                        <span>收藏</span>
+                    </a>
+                </li>
+                <li class="join-cart disabled">
+                    <a>
+                        <span>加入购物车</span>
+                    </a>
+                </li>
+                <li class="buyer disabled">
+                    <a>
+                        <span>立即购买</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/zepto.min.js"></script>
+    <script type="text/javascript" src="./js/weui.min.js"></script>
+    <script type="text/javascript" src="./js/plugins/swiper/swiper.jquery.min.js"></script>
+    <script>
+    $('body').addClass('page-bg');
+    new Swiper('.ware-swiper', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true
+    });
+    new Swiper('.swiper-shop', {
+        slidesPerView: 2.5
+    });
+    $('#pro-pull').swipeUp(function () {
+        // 上滑跳转页面
+        window.location.href = './products-detail.html';
+    });
+    
+    // 加减法
+    $('#num-sub').click(function () {
+        var obj = $('#num-input');
+        var num = parseInt(obj.val());
+        if (num <= 0) {
+            return false;
+        }
+        obj.val(parseInt(obj.val()) - 1);
+    });
+    $('#num-plus').click(function () {
+        var obj = $('#num-input');
+        obj.val(parseInt(obj.val()) + 1);
+    });
+    </script>
+</body>
+</html>

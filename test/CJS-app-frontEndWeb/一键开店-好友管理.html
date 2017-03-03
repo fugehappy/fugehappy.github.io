@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    <title>一键开店-好友管理</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script type="text/javascript" src="./js/adaptive.js"></script>
+	<link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/weui.min.css">
+    <link rel="stylesheet" href="./js/area/LArea.min.css">
+    <link rel="stylesheet" href="./css/all.css">
+</head>
+<body>
+    <div class="container">
+		<div class="friend-tab" id="tab">
+			<ul>
+				<li class="active"><span>我的分销</span></li>
+				<li><span>我的客户</span></li>
+			</ul>
+		</div>
+        <div class="tab-content">
+            <div class="page-panel">
+                <div class="friend-cell">
+                    <img src="img/login/ic_wechat.png">
+                    <div class="friend-info">
+                        <p class="friend-name">
+                            <strong>李东临的店铺 </strong>
+                            <span>18688886666</span>
+                        </p>
+                        <p>累计销售：<span class="yellow">¥1560</span>（12单）</p>
+                        <p>下级代理：12 家</p>
+                    </div>
+                </div>
+                <div class="friend-cell">
+                    <img src="img/login/ic_wechat.png">
+                    <div class="friend-info">
+                        <p class="friend-name">
+                            <strong>李东临的店铺 </strong>
+                            <span>18688886666</span>
+                        </p>
+                        <p>累计销售：<span class="yellow">¥1560</span>（12单）</p>
+                        <p>下级代理：12 家</p>
+                    </div>
+                </div>
+                <div class="friend-cell">
+                    <img src="img/login/ic_wechat.png">
+                    <div class="friend-info">
+                        <p class="friend-name">
+                            <strong>李东临的店铺 </strong>
+                            <span>18688886666</span>
+                        </p>
+                        <p>累计销售：<span class="yellow">¥1560</span>（12单）</p>
+                        <p>下级代理：12 家</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-content hide">
+            <div class="data-empty">暂无相关记录</div>
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/zepto.min.js"></script>
+    <script type="text/javascript" src="./js/weui.min.js"></script>
+    <script type="text/javascript" src="./js/lazyimg.js"></script>
+    <script type="text/javascript" src="./js/dropload.js"></script>
+    <script>
+    $('body').addClass('page-bg');
+    // 切换
+    $('#tab').tabSwitch({
+        tab: "tab li",  
+        tabClass: "active",
+        tabFrame: "tab-content",
+        callback: function () {
+            
+        }
+    });
+    </script>
+</body>
+</html>
