@@ -2215,6 +2215,16 @@
 .cart-product-cell {
     padding-right: .1rem;
 }
+.cart-product-cell .num {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 84px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    text-align: right;
+    height: 24px;
+}
 .cart-product-name .title {
     font-size: .14rem;
     color: #333;
