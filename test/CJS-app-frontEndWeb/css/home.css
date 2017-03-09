@@ -181,7 +181,7 @@
 .search-wrap .wei-icon-search {
     position: absolute;
     left: 10px;
-    top: -2px;
+    top: -4px;
     line-height: 28px;
 }
 .search-bg .search-wrap .wei-icon-search {
@@ -887,7 +887,7 @@
     height: 100%;
     left: 0;
     top: 0;
-    z-index: 2;
+    z-index: 3;
 }
 .side-fixed {
     position: fixed;
