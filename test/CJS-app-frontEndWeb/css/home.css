@@ -684,6 +684,7 @@
 .wei-header-icon .fz20 {
     font-size: 20px;
     color: #333;
+    margin-top: -6px;
 }
 .filter-box {
     position: absolute;
