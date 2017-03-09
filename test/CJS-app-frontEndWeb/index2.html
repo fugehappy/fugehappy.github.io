@@ -16,26 +16,24 @@
     <link rel="stylesheet" href="./css/home.css">
 </head>
 <body>
+    <section class="main_wrapper">
+        <div class="search_header">
+            <a href="#" class="back"></a>
+            <div class="search">
+                <div class="text_box" onclick="return 1;">
+                    <input id="_keyword" type="text" class="text" placeholder="蒙顶山雪茶">
+                </div>
+                <input type="submit" value="" class="submit">
+            </div>
+            <div class="wei-header-icon">
+                <a class="msg"></a>
+            </div>
+        </div>
+    </section>
+    
     <div class="container">
-        <!--
-        <div class="wei-header bg-white">
-            <div class="wei-header-left">
-                <a class="icon icon-109">返回</a>
-            </div>
-            <div class="wei-header-title">智慧茶城</div>
-            <div class="wei-header-right">
-                <a><img src="img/icon/ic_megs.png" class="icon-msg" width="20" height="20"></a>
-            </div>
-        </div>
-        -->
         <!-- search-bar -->
-        <div class="search-bar">
-            <div class="search-wrap">
-                <i class="wei-icon-search"></i>
-                <input type="search" class="wei-search-input" placeholder="蒙顶山雪茶" required>
-                <i class="icons-clear"></i>
-            </div>
-        </div>
+        <div style="height: 52px;" class="hide"></div>
         <!-- swiper-box -->
         <div class="swiper-box">
             <div class="swiper-container swiper-img">
@@ -78,6 +76,9 @@
                     <div class="swiper-slide swiper-no-swiping">
                         <a href="#" class="notice-desc"><span class="sound"></span>春节放假，2月10号以后开始陆续发货</a>
                     </div>
+                    <div class="swiper-slide swiper-no-swiping">
+                        <a href="#" class="notice-desc"><span class="sound"></span>春节放假，2月10号以后开始陆续发货</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -100,17 +101,34 @@
                             <a href="#">
                                 <div>
                                     <img src="img/home/pro/img01.png">
-                                    <span class="shop-title">半手工精品·风云卷</span>
-                                    <span class="shop-price">178.00元/袋</span>
                                 </div>
                             </a>
                         </li>
                         <li class="swiper-slide">
-                            <a href="#" class="shop-more-wrap">
-                                <div class="shop-more">
-                                    <span class="shop-more-title">查看更多</span>
-                                    <span class="shop-more-txt">more</span>
-                                    <span class="shop-more-icon"></span>
+                            <a href="#">
+                                <div>
+                                    <img src="img/home/pro/img01.png">
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#">
+                                <div>
+                                    <img src="img/home/pro/img01.png">
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#">
+                                <div>
+                                    <img src="img/home/pro/img01.png">
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#">
+                                <div>
+                                    <img src="img/home/pro/img01.png">
                                 </div>
                             </a>
                         </li>
@@ -121,78 +139,123 @@
                 <div class="floor-item floor-item-12">
                     <a href="#"><img src="img/home/pro/sort02.png"></a>
                 </div>
-                <div class="floor-item swiper-container swiper-shop">
-                    <ul class="floor-item swiper-wrapper">
-                        <li class="swiper-slide">
-                            <a href="#">
-                                <div>
-                                    <img src="img/home/pro/img01.png">
-                                    <span class="shop-title">半手工精品·风云卷</span>
-                                    <span class="shop-price">178.00元/袋</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="swiper-slide">
-                            <a href="#">
-                                <div>
-                                    <img src="img/home/pro/img01.png">
-                                    <span class="shop-title">半手工精品·风云卷</span>
-                                    <span class="shop-price">178.00元/袋</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="swiper-slide">
-                            <a href="#">
-                                <div>
-                                    <img src="img/home/pro/img01.png">
-                                    <span class="shop-title">半手工精品·风云卷</span>
-                                    <span class="shop-price">178.00元/袋</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="swiper-slide">
-                            <a href="#" class="shop-more-wrap">
-                                <div class="shop-more">
-                                    <span class="shop-more-title">查看更多</span>
-                                    <span class="shop-more-txt">more</span>
-                                    <span class="shop-more-icon"></span>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
+                <div class="floor-fix clearfix">
+                    <div class="floor-fix-item">
+                        <a href></a>
+                    </div>
+                    <div class="floor-fix-item">
+                        <a href></a>
+                    </div>
+                    <div class="floor-fix-item">
+                        <a href></a>
+                    </div>
                 </div>
             </div>
             <div class="floor">
                 <div class="floor-item floor-item-12">
                     <a href="#"><img src="img/home/pro/sort03.png"></a>
                 </div>
-                <div class="floor-item swiper-container swiper-shop">
-                    <ul class="floor-item swiper-wrapper">
-                        <li class="swiper-slide">
-                            <a href="#">
-                                <div>
-                                    <img src="img/home/pro/img01.png">
-                                    <span class="shop-title">半手工精品·风云卷</span>
-                                    <span class="shop-price">178.00元/袋</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="swiper-slide">
-                            <a href="#" class="shop-more-wrap">
-                                <div class="shop-more">
-                                    <span class="shop-more-title">查看更多</span>
-                                    <span class="shop-more-txt">more</span>
-                                    <span class="shop-more-icon"></span>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
+                <div class="floor-fix clearfix">
+                    <div class="floor-fix-item">
+                        <a href></a>
+                    </div>
+                    <div class="floor-fix-item">
+                        <a href></a>
+                    </div>
+                    <div class="floor-fix-item">
+                        <a href></a>
+                    </div>
+                </div>
+            </div>
+            <div class="floor">
+                <div class="floor-item floor-item-12">
+                    <a href="#"><img src="img/home/pro/sort03.png"></a>
+                </div>
+                <div class="floor-fix clearfix">
+                    <div class="floor-fix-item">
+                        <a href></a>
+                    </div>
+                    <div class="floor-fix-item">
+                        <a href></a>
+                    </div>
+                    <div class="floor-fix-item">
+                        <a href></a>
+                    </div>
                 </div>
             </div>
             <div class="floor">
                 <div class="floor-item floor-item-12">
                     <a href="#"><img src="img/home/pro/img03.png"></a>
                 </div>
+            </div>
+            <div class="floor">
+                <p class="recommend">为你推荐</p>
+                <ul class="prod-box">
+                    <li>
+                        <a href="#">
+                            <div class="prod-wrap">
+                                <div class="prod-pic">
+                                    <img src="img/home/pro/swiper-img01.png">
+                                </div>
+                                <h4 class="prod-title">皇茗园 蒙顶甘露 雅安蒙</h4>
+                                <div class="prod-price-wrap">
+                                    <span class="prod-price-yuan">￥</span>
+                                    <span class="prod-price-mun">2,469</span>
+                                    <span class="prod-price-quan">券</span>
+                                    <span class="prod-price-discount">满1000-50</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="prod-wrap">
+                                <div class="prod-pic">
+                                    <img src="img/home/pro/swiper-img01.png">
+                                </div>
+                                <h4 class="prod-title">皇茗园 蒙顶甘露 雅安蒙</h4>
+                                <div class="prod-price-wrap">
+                                    <span class="prod-price-yuan">￥</span>
+                                    <span class="prod-price-mun">2,469</span>
+                                    <span class="prod-price-quan">券</span>
+                                    <span class="prod-price-discount">满1000-50</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="prod-wrap">
+                                <div class="prod-pic">
+                                    <img src="img/home/pro/swiper-img01.png">
+                                </div>
+                                <h4 class="prod-title">皇茗园 蒙顶甘露 雅安蒙</h4>
+                                <div class="prod-price-wrap">
+                                    <span class="prod-price-yuan">￥</span>
+                                    <span class="prod-price-mun">2,469</span>
+                                    <span class="prod-price-quan">券</span>
+                                    <span class="prod-price-discount">满1000-50</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="prod-wrap">
+                                <div class="prod-pic">
+                                    <img src="img/home/pro/swiper-img01.png">
+                                </div>
+                                <h4 class="prod-title">皇茗园 蒙顶甘露 雅安蒙</h4>
+                                <div class="prod-price-wrap">
+                                    <span class="prod-price-yuan">￥</span>
+                                    <span class="prod-price-mun">2,469</span>
+                                    <span class="prod-price-quan">券</span>
+                                    <span class="prod-price-discount">满1000-50</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
         <!--<div class="wei-tab clearfix" id="tab1">
@@ -236,27 +299,65 @@
     new Swiper('.swiper-img', {
         pagination: '.swiper-pagination',
         slidesPerView: 1,
-        paginationClickable: true,
-        loop: true
+        paginationClickable: true
     });
     new Swiper('.swiper-notice', {
         autoplayDisableOnInteraction: false,
         direction: 'vertical',
         autoplay: 3000,
-        noSwiping : true,
-        loop: true
+        noSwiping : true
     });
     new Swiper('.swiper-shop', {
-        slidesPerView: 2.5,
-        spaceBetween: 10
+        slidesPerView: 'auto'
     });
     
     $('#tab1').on('tap', '.wei-tab-item', function () {
         $('.wei-tab-item').removeClass('tab-active');
         $(this).addClass('tab-active');
     });
-    // 底部tab切换
-    
+	var scroolFlag = false;
+    // 滚动条
+    $(window).scroll(function () {
+		if (scroolFlag) return false;
+        var scrollTop = document.body.scrollTop||document.documentElement.scrollTop;
+        if (scrollTop > 50) {
+            $('.search-box').removeClass('search-bg');
+        }
+        else {
+            $('.search-box').addClass('search-bg');
+        }
+    });
+	$('#search-input').focus(function() {
+		scroolFlag = true;
+		window.scrollTo(0,0);
+		$('.icons-clear').show();
+		$('.pop_back').show();
+		$('.search-btn').show();
+		$('.search-page-cons').show();
+		$('.wei-header-icon').hide();
+		$('.container').hide();
+		$('.bottom-tab').hide();
+		$('.search-box').removeClass('search-bg').addClass('search-bg1');
+		
+		window.ontouchmove = function(e) {
+			e.preventDefault && e.preventDefault();
+			e.returnValue = false;
+			e.stopPropagation && e.stopPropagation();
+			return false;
+		}
+	});
+    $('.pop_back').click(function () {
+        scroolFlag = false;
+        $('.container').show();
+        $('.wei-header-icon').show();
+        $('.bottom-tab').show();
+        $('.icons-clear').hide();
+		$('.pop_back').hide();
+		$('.search-btn').hide();
+		$('.search-page-cons').hide();
+		$('.search-box').removeClass('search-bg1').addClass('search-bg');
+        return false;
+    });
     </script>
 </body>
 </html>

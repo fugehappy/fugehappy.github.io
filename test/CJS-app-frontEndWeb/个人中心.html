@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    <title>个人中心</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script type="text/javascript" src="./js/adaptive.js"></script>
+	<link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/weui.min.css">
+    <link rel="stylesheet" href="./js/plugins/swiper/swiper.min.css">
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./css/home.css">
+</head>
+<body class="page-bg">
+    <div class="container">
+        <div class="user-box">
+            <a href="#" class="sign"><span></span>签到</a>
+            <!--<a href="#" class="sign done"><span></span>已签</a>-->
+            <a href="#" class="user-set"><span>设置</span></a>
+            <a href="#" class="user-msg"><span></span></a>
+            <a href="#" class="user-pic">
+                <img src="img/login/ic_wechat.png">
+                <span class="user-nick">王永安</span>
+            </a>
+        </div>
+        <div class="wei-cells not-mt">
+            <a href="#">
+                <div class="wei-cell wei-cell_access">
+                    <div class="wei-cell__bd">
+                        <span>我的订单</span>
+                    </div>
+                    <div class="wei-cell__ft"></div>
+                </div>
+            </a>
+        </div>
+        <ul class="goods-process-state">
+            <li>
+                <a href="#">
+                    <img src="img/icon/ic_unpay.png" width="24" height="24">
+                    <p>待付款</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="img/icon/ic_undeliv.png" width="24" height="24">
+                    <p>待发货</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="img/icon/ic_unpay.png" width="24" height="24">
+                    <p>已发货</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="img/icon/ic_uncomm.png" width="24" height="24">
+                    <p>待评价</p>
+                </a>
+            </li>
+        </ul>
+        <div class="wei-cells">
+            <a href="#">
+                <div class="wei-cell wei-cell_access">
+                    <div class="wei-cell__bd">
+                        <span>我的收藏</span>
+                    </div>
+                    <div class="wei-cell__ft"></div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="wei-cell wei-cell_access">
+                    <div class="wei-cell__bd">
+                        <span>我的积分</span>
+                    </div>
+                    <div class="wei-cell__ft">1500</div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="wei-cell wei-cell_access">
+                    <div class="wei-cell__bd">
+                        <span>优惠券</span>
+                    </div>
+                    <div class="wei-cell__ft"></div>
+                </div>
+            </a>
+        </div>
+        <div class="wei-cells">
+            <a href="#">
+                <div class="wei-cell wei-cell_access">
+                    <div class="wei-cell__bd">
+                        <span class="mall-g-icon"></span>
+                        <span>积分商城</span>
+                    </div>
+                    <div class="wei-cell__ft"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- tab -->
+    <div class="bottom-tab clearfix" id="tab2">
+        <a class="tab-b-item" href="javascript:void(0)">
+            <span class="tb-icon i-tb-home"></span>
+            <p class="tabbar-label">首页</p>
+        </a>
+        <a class="tab-b-item" href="#">
+            <span class="tb-icon i-tb-sort"></span>
+            <p class="tabbar-label">分类</p>
+        </a>
+        <a class="tab-b-item" href="#">
+        <span class="tb-icon i-tb-cart"></span>
+            <p class="tabbar-label">购物车</p>
+        </a>
+        <a class="tab-b-item tab-b-active" href="#">
+            <span class="tb-icon i-tb-my"></span>
+            <p class="tabbar-label">我的</p>
+        </a>
+    </div>
+    <script type="text/javascript" src="./js/zepto.min.js"></script>
+    <script type="text/javascript" src="./js/weui.min.js"></script>
+    <script type="text/javascript" src="./js/plugins/swiper/swiper.jquery.min.js"></script>
+    <script>
+    $('#tab1').on('tap', '.wei-tab-item', function () {
+        $('.wei-tab-item').removeClass('tab-active');
+        $(this).addClass('tab-active');
+    });
+    // 底部tab切换
+    
+    </script>
+</body>
+</html>

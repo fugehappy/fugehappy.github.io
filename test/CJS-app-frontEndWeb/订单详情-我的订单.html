@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    <title>我的订单</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script type="text/javascript" src="./js/adaptive.js"></script>
+	<link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/weui.min.css">
+    <link rel="stylesheet" href="./js/plugins/swiper/swiper.min.css">
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./css/home.css">
+</head>
+<body>
+    <div class="myorder-page">
+        <div class="container">
+            <ul class="myorder-tab">
+                <li class="active">
+                   <span>全部</span> 
+                </li>
+                <li>
+                   <span>待支付</span> 
+                </li>
+                <li>
+                   <span>待收货</span> 
+                </li>
+                <li>
+                   <span>已完成</span> 
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="myorder-content">
+            <div class="myorder-cell">
+                <div class="myorder-hd">
+                    <h4>八马茶业官方自营店</h4>
+                    <a href="#" class="orange">待收货</a>
+                </div>
+                <div class="myorder-pic">
+                    <div class="myorder-pic-swiper">
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide"><a href="#"><img src="img/home/pro/swiper-img01.png"></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="img/home/pro/swiper-img02.png"></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="img/home/pro/swiper-img01.png"></a></div>
+                        </div>
+                    </div>
+                </div>
+                <p class="myorder-desc">共5件商品，实付款：<span class="orange">¥1560</span></p>
+                <div class="myorder-ft">
+                    <a href="#">确认收货</a>
+                    <a href="#">再次购买</a>
+                </div>
+            </div>
+            <div class="myorder-cell">
+                <div class="myorder-hd">
+                    <h4>八马茶业官方自营店</h4>
+                    <a href="#" class="orange">待支付</a>
+                </div>
+                <div class="myorder-pic">
+                    <div class="myorder-pic-swiper">
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide"><a href="#"><img src="img/home/pro/swiper-img01.png"></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="img/home/pro/swiper-img02.png"></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="img/home/pro/swiper-img01.png"></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="img/home/pro/swiper-img01.png"></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="img/home/pro/swiper-img01.png"></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="img/home/pro/swiper-img01.png"></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="img/home/pro/swiper-img01.png"></a></div>
+                        </div>
+                    </div>
+                </div>
+                <p class="myorder-desc">共5件商品，实付款：<span class="orange">¥1560</span></p>
+                <div class="myorder-ft">
+                    <a href="#">支付</a>
+                    <a href="#">再次购买</a>
+                </div>
+            </div>
+            <div class="myorder-cell">
+                <div class="myorder-hd">
+                    <h4>八马茶业官方自营店</h4>
+                    <a href="#" class="orange">已完成</a>
+                </div>
+                <div class="myorder-pic">
+                    <div class="myorder-pic-swiper">
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide"><a href="#"><img src="img/home/pro/swiper-img01.png"></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="img/home/pro/swiper-img02.png"></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="img/home/pro/swiper-img01.png"></a></div>
+                        </div>
+                    </div>
+                </div>
+                <p class="myorder-desc">共5件商品，实付款：<span class="orange">¥1560</span></p>
+                <div class="myorder-ft">
+                    <a href="#">评价</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/zepto.min.js"></script>
+    <script type="text/javascript" src="./js/weui.min.js"></script>
+    <script type="text/javascript" src="./js/plugins/swiper/swiper.jquery.min.js"></script>
+    <script>
+    $('body').addClass('page-bg');
+    
+    new Swiper('.myorder-pic-swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        slidesOffsetBefore: 10
+    });
+    </script>
+</body>
+</html>

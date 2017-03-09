@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    <title>确认订单</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script type="text/javascript" src="./js/adaptive.js"></script>
+	<link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/weui.min.css">
+    <link rel="stylesheet" href="./js/area/LArea.min.css">
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./css/home.css">
+</head>
+<body>
+    <div class="container">
+        <div class="order-sure-wrapper">
+            <div class="order-info">
+                <h4>张达明   186****8899 <a href="#" class="order-info-address">默认地址</a></h4>
+                <p>地址：四川省成都市武侯区人民南路四段1号时代数码广场B25</p>
+                <p>备注：只在工作日收货</p>
+            </div>
+            <div class="order-cell">
+                <div class="order-store">蒙顶山茶叶旗舰店</div>
+                <a href="#">
+                    <div class="order-cell-bd">
+                        <div class="pic"><img></div>
+                        <h3>【茶交所O2O专供茶】 六羡茶 福鼎白茶 白牡丹 罐装 100g</h3>
+                        <p><span class="yellow">￥140</span><span class="num">x2</span></p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="order-cell-bd">
+                        <div class="pic"><img></div>
+                        <h3>【茶交所O2O专供茶】 六羡茶 福鼎白茶 白牡丹 罐装 100g</h3>
+                        <p><span class="yellow">￥140</span><span class="num">x2</span></p>
+                    </div>
+                </a>
+            </div>
+            <div class="wei-cells">
+                <div class="wei-cell wei-cell_access express">
+                    <div class="wei-cell__bd">
+                        <span>配送方式</span>
+                    </div>
+                    <div class="wei-cell__ft">快递</div>
+                </div>
+                <div class="wei-cell wei-cell_access use-coupon">
+                    <div class="wei-cell__bd">
+                        <span>优惠券</span>
+                    </div>
+                    <div class="wei-cell__ft"><span>¥50</span></div>
+                </div>
+                <div class="wei-cell">
+                    <div class="wei-cell__hd">
+                        <span class="wei_label text-align-l">备注：</span>
+                    </div>
+                    <div class="wei_cell_bd wei_cell_primary">
+                        <input class="wei_input" type="text" placeholder="请输入30字内的备注内容">
+                    </div>
+                </div>
+            </div>
+            <div class="order-cell">
+                <div class="order-store">八马茶业官方自营店</div>
+                <a href="#">
+                    <div class="order-cell-bd">
+                        <div class="pic"><img></div>
+                        <h3>【茶交所O2O专供茶】 六羡茶 福鼎白茶 白牡丹 罐装 100g</h3>
+                        <p><span class="yellow">￥140</span><span class="num">x2</span></p>
+                    </div>
+                </a>
+            </div>
+            <div class="wei-cells">
+                <div class="wei-cell wei-cell_access express">
+                    <div class="wei-cell__bd">
+                        <span>配送方式</span>
+                    </div>
+                    <div class="wei-cell__ft">快递</div>
+                </div>
+                <div class="wei-cell wei-cell_access use-coupon">
+                    <div class="wei-cell__bd">
+                        <span>优惠券</span>
+                    </div>
+                    <div class="wei-cell__ft"><span class="yellow">¥50</span></div>
+                </div>
+                <div class="wei-cell">
+                    <div class="wei-cell__hd">
+                        <span class="wei_label text-align-l">备注：</span>
+                    </div>
+                    <div class="wei_cell_bd wei_cell_primary">
+                        <p>双休日送货！</p>
+                    </div>
+                </div>
+            </div>
+            <div class="order-count order-r-count">
+                <dl class="order-count-item">
+                    <dt>商品应付总计</dt>
+                    <dd>¥998.5</dd>
+                </dl>
+                <dl class="order-count-item">
+                    <dt>优惠券</dt>
+                    <dd>¥10</dd>
+                </dl>
+                <dl class="order-count-item">
+                    <dt>运费</dt>
+                    <dd>¥10</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <div class="cart-footer1">
+        <div class="container">
+            <div class="cart-handle clearfix">
+                <div class="cart-sum">
+                    <span class="sum">合计：<span>¥1008.5</span></span>
+                </div>
+                <div class="cart-group">
+                    <a href="#" class="btn" id="payment">去付款</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/zepto.min.js"></script>
+    <script type="text/javascript" src="./js/weui.min.js"></script>
+    <script type="text/javascript" src="./js/plugins/layer/layer.js"></script>
+    <script>
+    $('body').addClass('page-bg');
+    // 支付方式
+    $('#payment').click(function () {
+        var content = ''
+        + '<div class="payment-box">'
+            + '<span class="close icon icon-95" onclick="layer.closeAll();"></span>'
+            + '<h4>支付方式</h4>'
+            + '<ul>'
+                + '<li>'
+                    + '<div class="title"><img src="img/icon/ic_alipay.png"> 支付宝</div>'
+                    + '<div class="check-wrapper"><span class="cart-checkbox checked"></span></div>'
+                + '</li>'
+                + '<li>'
+                    + '<div class="title"><img src="img/icon/ic_wcpay.png"> 微信</div>'
+                    + '<div class="check-wrapper"><span class="cart-checkbox"></span></div>'
+                + '</li>'
+            + '</ul>'
+            + '<div class="payment-ft"><span class="sum">应付金额：<span>¥1028.5</span></span><a href="#">去付款</a></div>'
+        + '</div>'
+        layer.open({
+            type: 1
+            ,content: content
+            ,anim: 'up'
+            ,style: 'position:fixed; bottom:0; left:0; width: 100%; height: 178px; padding-top: 10px; border:none; overflow-y: scroll;'
+        });
+    });
+    // 快递方式
+    $('.express').click(function () {
+        var content = ''
+        + '<div class="payment-box">'
+            + '<span class="close icon icon-95" onclick="layer.closeAll();"></span>'
+            + '<h4>快递方式</h4>'
+            + '<ul>'
+                + '<li>'
+                    + '<div class="title">快递配送</div>'
+                    + '<div class="check-wrapper"><span class="cart-checkbox checked"></span></div>'
+                + '</li>'
+                + '<li>'
+                    + '<div class="title">线下自提</div>'
+                    + '<div class="check-wrapper"><span class="cart-checkbox"></span></div>'
+                + '</li>'
+            + '</ul>'
+        + '</div>';
+        layer.open({
+            type: 1
+            ,content: content
+            ,anim: 'up'
+            ,style: 'position:fixed; bottom:0; left:0; width: 100%; height: 148px; padding-top: 10px; border:none; overflow-y: scroll;'
+        });
+    });
+    $('.use-coupon').click(function () {
+        var content = ''
+        + '<div class="coupons-box">'
+            + '<span class="close icon icon-95" onclick="layer.closeAll();"></span>'
+            + '<h4>使用优惠券</h4>'
+            + '<ul>'
+                + '<a href="javascript:;" onclick="coupons(this);"><li>'
+                    + '<div class="coupons-bd">'
+                        + '<div class="coupons-num">'
+                            + '<span class="yuan">¥ </span><span class="num">30</span>'
+                        + '</div>'
+                        + '<div class="coupons-desc">'
+                            + '<p>峨眉雪芽官方旗舰店部分可用满199元可用</p>'
+                            + '<p class="txt">满199元可用</p>'
+                        + '</div>'
+                    + '</div>'
+                    + '<p class="coupons-ft">有效期：2017.02.01-2017.13.31</p>'
+                    + '<span class="selected hide"></span>'
+                + '</li></a>'
+                + '<a href="javascript:;" onclick="coupons(this);"><li>'
+                    + '<div class="coupons-bd">'
+                        + '<div class="coupons-num">'
+                            + '<span class="yuan">¥ </span><span class="num">300</span>'
+                        + '</div>'
+                        + '<div class="coupons-desc">'
+                            + '<p>峨眉雪芽官方旗舰店部分可用满199元可用</p>'
+                            + '<p class="txt">满199元可用</p>'
+                        + '</div>'
+                    + '</div>'
+                    + '<p class="coupons-ft">有效期：2017.02.01-2017.13.31</p>'
+                    + '<span class="selected hide"></span>'
+                + '</li></a>'
+            + '</ul>'
+            + '<h4 class="unsuit">- 不满足条件优惠券 -</h4>'
+            + '<ul>'
+                + '<a href="#"><li class="out-date">'
+                    + '<div class="coupons-bd">'
+                        + '<div class="coupons-num">'
+                            + '<span class="yuan">¥ </span><span class="num">30</span>'
+                        + '</div>'
+                        + '<div class="coupons-desc">'
+                            + '<p>峨眉雪芽官方旗舰店部分可用满199元可用</p>'
+                            + '<p class="txt">满199元可用</p>'
+                        + '</div>'
+                    + '</div>'
+                    + '<p class="coupons-ft">有效期：2017.02.01-2017.13.31</p>'
+                + '</li></a>'
+                + '<a href="#"><li class="out-date">'
+                    + '<div class="coupons-bd">'
+                        + '<div class="coupons-num">'
+                            + '<span class="yuan">¥ </span><span class="num">300</span>'
+                        + '</div>'
+                        + '<div class="coupons-desc">'
+                            + '<p>峨眉雪芽官方旗舰店部分可用满199元可用</p>'
+                            + '<p class="txt">满199元可用</p>'
+                        + '</div>'
+                    + '</div>'
+                    + '<p class="coupons-ft">有效期：2017.02.01-2017.13.31</p>'
+                + '</li></a>'
+            + '</ul>'
+            + '<a href="" class="coupons-off">不使用优惠券</a>'
+        + '</div>'
+        layer.open({
+            type: 1
+            ,content: content
+            ,anim: 'up'
+            ,style: 'position:fixed; bottom:0; left:0; width: 100%; height: 280px; padding-top: 10px; border:none; overflow-y: scroll;'
+        });
+    });
+    function coupons(opt) {
+        var obj = $(opt).find('.selected');
+        if (obj.hasClass('hide')) {
+            obj.removeClass('hide');
+        }
+        else {
+            obj.addClass('hide');
+        }
+    }
+    </script>
+</body>
+</html>

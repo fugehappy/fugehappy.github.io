@@ -330,6 +330,9 @@ html {
 .icon-35:before {
     content: "\e61d";
 }
+.icon-71:before {
+    content: "\e641";
+}
 
 .icons-clear {
     position: absolute;
@@ -456,9 +459,12 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 .icon-shaixuan:before {
-    content: "\e669";
+    content: "\e600";
 }
 .icon-order-down:before {
-    content: "\e504";
+    content: "\e601";
+}
+.icon-daishouhuo:before {
+    content: "\e653";
 }
 

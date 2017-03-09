@@ -17,14 +17,56 @@
 </head>
 <body>
     <div class="search-box">
-        <div class="search-zone">
-            <div class="search-wrap">
-                <i class="wei-icon-search"></i>
-                <input type="search" class="wei-search-input" placeholder="蒙顶山雪茶" required>
-                <i class="icons-clear"></i>
+        <div class="search-page">
+            <div class="search-page-header">
+                <div class="search-zone">
+                    <a href="#" class="pop_back icon icon-109"></a>
+                    <div class="search-wrap">
+                        <i class="wei-icon-search"></i>
+                        <input type="search" class="wei-search-input" id="search-input" placeholder="蒙顶山雪茶" required>
+                        <i class="icons-clear hide"></i>
+                    </div>
+                    <div class="wei-header-icon">
+                        <a class="icon icon-81 fz20" href="javascript:void(0)" onclick="showSiderBar()"></a>
+                    </div>
+                    <a href="#" class="search-btn">搜索</a>
+                </div>
             </div>
-            <div class="wei-header-icon">
-                <a class="icon icon-81 fz20" href="javascript:void(0)" onclick="showSiderBar()"></a>
+            <div class="search-page-cons">
+                <!-- 联想词开始 -->
+                <ul class="association">
+                    <li><a href="#">峨眉雪芽</a></li>
+                    <li><a href="#">泉州铁观音</a></li>
+                    <li><a href="#">蒙顶山</a></li>
+                    <li><a href="#">普洱</a></li>
+                </ul>
+                <!-- 联想词结束 -->
+                <div class="search-land">
+                    <div class="hot-search-box">
+                        <h5>热搜</h5>
+                        <div class="hot-search-word">
+                            <a href="#">顶上茶</a>
+                            <a href="#">蒙顶山茶</a>
+                            <a href="#">顶上茶</a>
+                            <a href="#">泉州铁观音</a>
+                            <a href="#">泉州铁观音</a>
+                            <a href="#">泉州铁观音</a>
+                        </div>
+                    </div>
+                    <div class="floor search-history">
+                        <h5>历史搜索</h5>
+                        <ul>
+                            <li><a href="#">峨眉雪芽</a></li>
+                            <li><a href="#">泉州铁观音</a></li>
+                            <li><a href="#">蒙顶山</a></li>
+                            <li><a href="#">普洱</a></li>
+                        </ul>
+                        <div class="no_search hide">
+                            <span>没有历史搜索记录</span>
+                        </div>
+                        <a class="loginout-btn" href="javascript:;">清空搜索记录</a>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="search-select">
@@ -161,71 +203,65 @@
         <!--加载内容-->
         <div class="sidebar-mask hide"></div>
         <div class="sidebar hide">
-            <div class="swiper-containerb sidebar-swiper">
-                <div class="swiper-wrapper">
-                    <div class="side-floor-box swiper-slide">
-                        <div class="side-floor">
-                            <h5>价格区间</h5>
-                            <div class="side-floor-l">
-                                <label class="side-floor-label">
-                                    <span class="yuan">￥</span>
-                                    <input type="text" placeholder="最低价" class="wei-w-input">
-                                </label>
-                                <span class="line">-</span>
-                                <label class="side-floor-label">
-                                    <span class="yuan">￥</span>
-                                    <input type="text" placeholder="最高价" class="wei-w-input">
-                                </label>
-                            </div>
-                        </div>
-                        <div class="side-floor">
-                            <h5>品牌<span class="show-all">全部<span class="icon icon-35"></span></span></h5>
-                            <div class="side-floor-con clearfix">
-                                <span class="active">皇茗园</span>
-                                <span>峨眉雪芽</span>
-                                <span>顶上茶</span>
-                                <div class="floor-more">
-                                    <span>川黄</span>
-                                    <span>蒙顶山茶</span>
-                                    <span>味独珍</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="side-floor">
-                            <h5>分类<span class="show-all">全部<span class="icon icon-74"></span></span></h5>
-                            <div class="side-floor-con clearfix">
-                                <span class="active">绿茶</span>
-                                <span>红茶</span>
-                                <span>乌龙茶</span>
-                                <div class="floor-more hide">
-                                    <span>川黄</span>
-                                    <span>蒙顶山茶</span>
-                                    <span>味独珍</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="side-floor">
-                            <h5>季节<span class="show-all">全部<span class="icon icon-74"></span></span></h5>
-                            <div class="side-floor-con clearfix">
-                                <span class="active">绿茶</span>
-                                <span>红茶</span>
-                                <span>乌龙茶</span>
-                                <div class="floor-more hide">
-                                    <span>川黄</span>
-                                    <span>蒙顶山茶</span>
-                                    <span>味独珍</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="side-floor">
-                            <h5>包装</h5>
-                            <div class="side-floor-con clearfix">
-                                <span class="active">绿茶</span>
-                                <span>红茶</span>
-                                <span>乌龙茶</span>
-                            </div>
-                        </div>
+            <div class="side-floor">
+                <h5>价格区间</h5>
+                <div class="side-floor-l">
+                    <label class="side-floor-label">
+                        <span class="yuan">￥</span>
+                        <input type="text" placeholder="最低价" class="wei-w-input">
+                    </label>
+                    <span class="line">-</span>
+                    <label class="side-floor-label">
+                        <span class="yuan">￥</span>
+                        <input type="text" placeholder="最高价" class="wei-w-input">
+                    </label>
+                </div>
+            </div>
+            <div class="side-floor">
+                <h5>品牌<span class="show-all">全部<span class="icon icon-35"></span></span></h5>
+                <div class="side-floor-con clearfix">
+                    <span class="active">皇茗园</span>
+                    <span>峨眉雪芽</span>
+                    <span>顶上茶</span>
+                    <div class="floor-more">
+                        <span>川黄</span>
+                        <span>蒙顶山茶</span>
+                        <span>味独珍</span>
                     </div>
+                </div>
+            </div>
+            <div class="side-floor">
+                <h5>分类<span class="show-all">全部<span class="icon icon-74"></span></span></h5>
+                <div class="side-floor-con clearfix">
+                    <span class="active">绿茶</span>
+                    <span>红茶</span>
+                    <span>乌龙茶</span>
+                    <div class="floor-more hide">
+                        <span>川黄</span>
+                        <span>蒙顶山茶</span>
+                        <span>味独珍</span>
+                    </div>
+                </div>
+            </div>
+            <div class="side-floor">
+                <h5>季节<span class="show-all">全部<span class="icon icon-74"></span></span></h5>
+                <div class="side-floor-con clearfix">
+                    <span class="active">绿茶</span>
+                    <span>红茶</span>
+                    <span>乌龙茶</span>
+                    <div class="floor-more hide">
+                        <span>川黄</span>
+                        <span>蒙顶山茶</span>
+                        <span>味独珍</span>
+                    </div>
+                </div>
+            </div>
+            <div class="side-floor">
+                <h5>包装</h5>
+                <div class="side-floor-con clearfix">
+                    <span class="active">绿茶</span>
+                    <span>红茶</span>
+                    <span>乌龙茶</span>
                 </div>
             </div>
             <div class="side-floor-btn">

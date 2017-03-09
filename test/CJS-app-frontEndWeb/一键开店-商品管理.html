@@ -31,7 +31,7 @@
 				<p>佣金: ¥79; 销量: 125</p>
 			</div>
 			<div class="goods-cell-ft">
-				<a href="#">下架</a>
+				<a href="#" class="shelf-off">下架</a>
 				<a href="#">分享</a>
 			</div>
 		</div>
@@ -43,15 +43,25 @@
 				<p>佣金: ¥79; 销量: 125</p>
 			</div>
 			<div class="goods-cell-ft">
-				<a href="#">下架</a>
+				<a href="#" class="shelf-off">下架</a>
 				<a href="#">分享</a>
 			</div>
 		</div>
     </div>
     <script type="text/javascript" src="./js/zepto.min.js"></script>
+    <script type="text/javascript" src="./js/plugins/layer/layer.js"></script>
     <script type="text/javascript" src="./js/weui.min.js"></script>
     <script>
-    $('body').addClass('page-bg');  
+    $('body').addClass('page-bg');
+    $('.shelf-off').click(function () {
+        layer.open({
+            content: '确定下架？'
+            ,btn: ['确定', '取消']
+            ,yes: function(index){
+                layer.close(index);
+            }
+        });
+    });
     </script>
 </body>
 </html>

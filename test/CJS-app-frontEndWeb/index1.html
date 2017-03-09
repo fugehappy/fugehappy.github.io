@@ -16,31 +16,73 @@
     <link rel="stylesheet" href="./css/home.css">
 </head>
 <body>
-    <div class="container">
-        <!--
-        <div class="wei-header bg-white">
-            <div class="wei-header-left">
-                <a class="icon icon-109">返回</a>
-            </div>
-            <div class="wei-header-title">智慧茶城</div>
-            <div class="wei-header-right">
-                <a><img src="img/icon/ic_megs.png" class="icon-msg" width="20" height="20"></a>
-            </div>
-        </div>
-        -->
-        <!-- search-bar -->
-        <div class="search-box search-bg">
+    <div class="search-box search-bg">
+        <div class="search-page-header">
             <div class="search-zone">
+                <a href="#" class="pop_back icon icon-109"></a>
                 <div class="search-wrap">
                     <i class="wei-icon-search"></i>
-                    <input type="search" class="wei-search-input" placeholder="蒙顶山雪茶" required>
-                    <!--<i class="icons-clear"></i>-->
+                    <input type="search" class="wei-search-input" id="search-input" placeholder="蒙顶山雪茶" onkeyup="association()">
+                    <i class="icons-clear hide"></i>
                 </div>
                 <div class="wei-header-icon">
                     <a class="msg"></a>
                 </div>
+                <a href="#" class="search-btn">搜索</a>
             </div>
         </div>
+    </div>
+    <div class="search-page-cons">
+        <!-- 联想词开始 -->
+        <ul class="association hide">
+            <li><a href="#">峨眉雪芽</a></li>
+            <li><a href="#">泉州铁观音</a></li>
+            <li><a href="#">蒙顶山</a></li>
+            <li><a href="#">普洱</a></li>
+        </ul>
+        <!-- 联想词结束 -->
+        <div class="search-land">
+            <div class="hot-search-box">
+                <h5>热搜</h5>
+                <div class="hot-search-word">
+                    <a href="#">顶上茶</a>
+                    <a href="#">蒙顶山茶</a>
+                    <a href="#">顶上茶</a>
+                    <a href="#">泉州铁观音</a>
+                    <a href="#">泉州铁观音</a>
+                    <a href="#">泉州铁观音</a>
+                </div>
+            </div>
+            <div class="floor search-history">
+                <h5>历史搜索</h5>
+                <ul>
+                    <li><a href="#">峨眉雪芽</a></li>
+                    <li><a href="#">泉州铁观音</a></li>
+                    <li><a href="#">蒙顶山</a></li>
+                    <li><a href="#">普洱</a></li>
+                    <li><a href="#">普洱</a></li>
+                    <li><a href="#">普洱</a></li>
+                    <li><a href="#">普洱</a></li>
+                    <li><a href="#">普洱</a></li>
+                    <li><a href="#">普洱</a></li>
+                    <li><a href="#">普洱</a></li>
+                    <li><a href="#">普洱</a></li>
+                    <li><a href="#">普洱</a></li>
+                    <li><a href="#">普洱</a></li>
+                    <li><a href="#">普洱</a></li>
+                    <li><a href="#">普洱</a></li>
+                    <li><a href="#">普洱</a></li>
+                    <li><a href="#">普洱</a></li>
+                    <li><a href="#">普洱</a></li>
+                </ul>
+                <a class="loginout-btn" href="javascript:;">清空搜索记录</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <!-- search-bar -->
+        <div style="height: 52px;" class="hide"></div>
         <!-- swiper-box -->
         <div class="swiper-box">
             <div class="swiper-container swiper-img">
@@ -315,23 +357,58 @@
         noSwiping : true
     });
     new Swiper('.swiper-shop', {
-        slidesPerView: 2.5
+        slidesPerView: 'auto'
     });
-    
-    $('#tab1').on('tap', '.wei-tab-item', function () {
+    // 底部tab切换
+    $('#tab1').on('tap', '.wei-tab-item', function() {
         $('.wei-tab-item').removeClass('tab-active');
         $(this).addClass('tab-active');
     });
+	var scroolFlag = false;
     // 滚动条
     $(window).scroll(function () {
-        var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;
+		if (scroolFlag) return false;
+        var scrollTop = document.body.scrollTop||document.documentElement.scrollTop;
         if (scrollTop > 50) {
             $('.search-box').removeClass('search-bg');
         }
         else {
             $('.search-box').addClass('search-bg');
         }
-    })
+    });
+    // 搜索
+	$('#search-input').focus(function() {
+		scroolFlag = true;
+		window.scrollTo(0,0);
+		$('.icons-clear').show();
+		$('.pop_back').show();
+		$('.search-btn').show();
+		$('.search-page-cons').show();
+		$('.wei-header-icon').hide();
+		$('.container').hide();
+		$('.bottom-tab').hide();
+		$('.search-box').removeClass('search-bg').addClass('search-bg1');
+		
+        return false;
+	});
+    // 返回
+    $('.pop_back').click(function () {
+        scroolFlag = false;
+        $('.container').show();
+        $('.wei-header-icon').show();
+        $('.bottom-tab').show();
+        $('.icons-clear').hide();
+		$('.pop_back').hide();
+		$('.search-btn').hide();
+		$('.search-page-cons').hide();
+		$('.search-box').removeClass('search-bg1').addClass('search-bg');
+        return false;
+    });
+    function association() {
+        if ()
+        $('.association').show();
+        $('.search-land').hide();
+    }
     </script>
 </body>
 </html>

@@ -24,7 +24,7 @@
                     </div>
                     <div class="shop-title-content">
                         <span class="shop-title-name">张兴力的店铺</span>
-                        <a class="shop-btn-com" href="#">领取优惠券</a>
+                        <a class="shop-btn-com get-coupons" href="#">领取优惠券</a>
                     </div>
                 </div>
                 <ul>
@@ -92,7 +92,7 @@
                     </div>
                     <div class="shop-title-content">
                         <span class="shop-title-name">张兴力的店铺</span>
-                        <a class="shop-btn-com" href="#">领取优惠券</a>
+                        <a class="shop-btn-com get-coupons" href="#">领取优惠券</a>
                     </div>
                 </div>
                 <ul>
@@ -206,7 +206,6 @@
                     </li>
                 </ul>
             </div>
-            
         </div>
     </div>
     <div class="cart-footer">
@@ -247,6 +246,61 @@
     <script type="text/javascript" src="./js/plugins/layer/layer.js"></script>
     <script>
     $('body').addClass('page-bg');
+    // 领取优惠券
+    $('.get-coupons').click(function () {
+        var content = ''
+        + '<div class="coupons-box">'
+            + '<span class="close icon icon-95" onclick="layer.closeAll();"></span>'
+            + '<h4>领取优惠券</h4>'
+            + '<ul>'
+                + '<a href="#"><li>'
+                    + '<div class="coupons-bd">'
+                        + '<div class="coupons-num">'
+                            + '<span class="yuan">¥ </span><span class="num">30</span>'
+                        + '</div>'
+                        + '<div class="coupons-desc">'
+                            + '<p>峨眉雪芽官方旗舰店部分可用满199元可用</p>'
+                            + '<p class="txt">满199元可用</p>'
+                        + '</div>'
+                    + '</div>'
+                    + '<p class="coupons-ft">有效期：2017.02.01-2017.13.31</p>'
+                    + '<span class="done"></span>'
+                + '</li></a>'
+                + '<a href="#"><li class="out-date">'
+                    + '<div class="coupons-bd">'
+                        + '<div class="coupons-num">'
+                            + '<span class="yuan">¥ </span><span class="num">30</span>'
+                        + '</div>'
+                        + '<div class="coupons-desc">'
+                            + '<p>峨眉雪芽官方旗舰店部分可用满199元可用</p>'
+                            + '<p class="txt">满199元可用</p>'
+                        + '</div>'
+                    + '</div>'
+                    + '<p class="coupons-ft">有效期：2017.02.01-2017.13.31</p>'
+                    + '<span class="done"></span>'
+                + '</li></a>'
+                + '<a href="#"><li>'
+                    + '<div class="coupons-bd">'
+                        + '<div class="coupons-num">'
+                            + '<span class="yuan">¥ </span><span class="num">30</span>'
+                        + '</div>'
+                        + '<div class="coupons-desc">'
+                            + '<p>峨眉雪芽官方旗舰店部分可用满199元可用</p>'
+                            + '<p class="txt">满199元可用</p>'
+                        + '</div>'
+                    + '</div>'
+                    + '<p class="coupons-ft">有效期：2017.02.01-2017.13.31</p>'
+                + '</li></a>'
+            + '</ul>'
+        + '</div>';
+        layer.open({
+            type: 1
+            ,content: content
+            ,anim: 'up'
+            ,style: 'position:fixed; bottom:0; left:0; width: 100%; height: 280px; padding:10px 0; border:none; overflow-y: scroll;'
+        });
+    });
+    
     </script>
 </body>
 </html>
