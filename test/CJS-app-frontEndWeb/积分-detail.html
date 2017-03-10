@@ -17,6 +17,18 @@
 </head>
 <body>
     <div class="container">
+        <header>
+            <div class="common-header-bar">
+                <ul class="header-title header-tabs" id="header-tab">
+                    <li class="header-tab-item active">
+                        <a href="#"><p>商品</p></a>
+                    </li>
+                    <li class="header-tab-item">
+                        <a href="#"><p>详情</p></a>
+                    </li>
+                </ul>
+            </div>
+        </header>
         <div class="ware-detail">
             <div class="swiper-container ware-swiper">
                 <ul class="swiper-wrapper">
@@ -47,14 +59,6 @@
                 <input pattern="[0-9]*" class="wei-num-input" id="num-input" value="1" data-min="1" data-step="1">
                 <a class="wei-num wei-num-plus" id="num-plus">+</a>
             </div>
-            <dl class="ware-items">
-                <dd>
-                    <span class="label">领优惠券</span>
-                    <span class="t-orange">满199-10</span>
-                    <span class="t-orange">满399-30</span>
-                    <span class="t-orange">满599-50</span>
-                </dd>
-            </dl>
         </div>
         <div class="floor">
             <div class="expert-box">
@@ -153,14 +157,10 @@
                         <span>收藏</span>
                     </a>
                 </li>
-                <li class="join-cart disabled">
-                    <a>
-                        <span>加入购物车</span>
-                    </a>
-                </li>
+                <li class="join-cart"></li>
                 <li class="buyer disabled">
                     <a>
-                        <span>立即购买</span>
+                        <span>立即兑换</span>
                     </a>
                 </li>
             </ul>

@@ -2147,6 +2147,7 @@
 .shop-group-item li{
     background: #FBFBFB;
     box-shadow: inset 0 -1px 0 0 rgba(203,203,203,0.50);
+    position: relative;
 }
 .check-wrapper {
     width: 40px;
@@ -2202,6 +2203,28 @@
 .shop-group-item .items {
     position: relative;
     padding: .1rem 0;
+    transition-timing-function: linear;
+    transition-duration: .5s;
+}
+.shop-group-item .del-box {
+    position: absolute;
+    height: 100%;
+    right: -61px;
+    top: 0;
+    width: 60px;
+    text-align: center;
+    color: #fff;
+    background-color: #f50000;
+}
+.shop-group-item .del-box span {
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    line-height: 30px;
+    left: 50%;
+    top: 50%;
+    margin-left: -20px;
+    margin-top: -15px;
 }
 .shop-cart-item-core  {
     padding-left: 40px;

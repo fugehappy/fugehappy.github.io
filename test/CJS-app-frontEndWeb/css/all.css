@@ -1430,7 +1430,7 @@
     line-height: 14px;
     padding-top: 15px;
     padding-bottom: 15px;
-    color: #222;
+    color: #666;
     width: 28px;
     margin: 0 auto;
 }
@@ -1439,8 +1439,9 @@
     line-height: 15px;
     padding-top: 15px;
     padding-bottom: 12px;
-    border-bottom: 2px solid #222;
+    border-bottom: 2px solid #c58630;
     font-weight: 600;
     width: 34px;
     text-align: center;
+    color: #c58630
 }
