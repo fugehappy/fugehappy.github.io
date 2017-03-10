@@ -2395,14 +2395,15 @@
     color: #fff;
     width: 108px;
 }
+.cart-footer2 .btn-group .btn-group-r.primary-btn {
+    background: #C58630;
+    color: #fff;
+}
 .order-sure-wrapper {
     padding-bottom: 60px;
 }
 .wei_label.text-align-l {
     text-align: left;
-}
-.order-sure-wrapper .wei-cells {
-    margin-top: 0;
 }
 .order-info-address {
     display: inline-block;
@@ -2448,6 +2449,7 @@
     display: inline-block;
     margin-right: 4px;
     vertical-align: middle;
+    margin-left: -4px;
 }
 .order-state-header .iconfont {
     display: inline-block;
@@ -2457,7 +2459,34 @@
 .order-state-header .orange {
     color: #C58630;
 }
-/* 商品评价 */
+.order-state-header1 {
+    height: .72rem;
+    line-height: .72rem;
+    background: #FBFBFB;
+    box-shadow: inset 0 -1px 0 0 rgba(203,203,203,0.50);
+    margin-bottom: .1rem;
+    text-align: center;
+}
+.order-state-header1 .iconfont {
+    display: inline-block;
+    margin-right: 4px;
+    vertical-align: middle;
+    margin-left: -4px;
+}
+.order-state-header1 h4 {
+    font-size: .16rem;
+    font-weight: 400;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.order-state-header1 .waiting {
+    color: #C58630;
+}
+.order-state-header1 .cancel {
+    color: #C58630;
+}
+/* 个人中心-商品评价 */
 .assess-zone {
     overflow: hidden;
     padding: .1rem;
@@ -2491,7 +2520,7 @@
     background: #F6F6F6;
 }
 .assess-upload {
-    padding: .15rem .1rem;
+    padding: 10px .1rem 0 .1rem;
     background-color: #fff;
     border-bottom: 1px solid #eee;
 }
@@ -2504,6 +2533,9 @@
     background-size: 26px 26px;
     background-repeat: no-repeat;
     background-position: center;
+    float: left;
+    box-sizing: border-box;
+    margin-bottom: 10px;
 }
 .assess-uploader-input input {
     position: absolute;
@@ -2529,13 +2561,129 @@
 .star-rater-box.checked:before {
     content: "\e62a";
 }
-
-
-
-
-
-
-
-
-
-
+.assess-wrapper .order-cell {
+    padding-top: 0;
+}
+.assess-wrapper .order-cell:first-child {
+    margin-top: 0;
+}
+.assess-content {
+    background-color: #fbfbfb;
+}
+.assess-content .time {
+    font-size: .12rem;
+    color: #999;
+    padding: .08rem .1rem;
+}
+.assess-content .desc {
+    font-size: .12rem;
+    color: #666;
+    padding: 0 .1rem;
+}
+.assess-content .pic {
+    padding: .1rem 0;
+}
+.assess-content .swiper-slide {
+    width: .68rem;
+    height: .68rem;
+}
+.assess-content .swiper-slide img {
+    width: 100%;
+    height: 100%;
+}
+.assess-uploader-files {
+    float: left;
+}
+.assess-uploader-files li {
+    float: left;
+    width: 68px;
+    height: 68px;
+    margin-right: 8px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.assess-uploader-files li img {
+    width: 100%;
+    height: 100%;
+}
+.assess-uploader-files .close {
+    position: absolute;
+    top: -14px;
+    right: -6px;
+    font-size: 24px;
+}
+.assess-uploader-files .close:before {
+    content: "\e642";
+    color: #C58630;
+}
+/*时间线*/
+.timeline {
+    padding: .2rem;
+    background: #fff;
+    box-shadow: inset 0 -1px 0 0 rgba(203,203,203,0.50);
+}
+.timeline p {
+    color: #888;
+    font-size: 0.12rem;
+}
+.timeline h4 {
+    color: #666;
+    font-weight: 400;
+    font-size: .14rem;
+}
+.timeline .recent {
+    color: #C58630;
+}
+.timeline ul li {
+    list-style: outside none none;
+}
+.timeline-item {
+    position: relative;
+}
+.timeline-item-content {
+    padding: 0 0 0.15rem .3rem;
+}
+.timeline-item-head,
+.timeline-item-head-first {
+    border-radius: 99px;
+    content: "";
+    position: absolute;
+    z-index: 99;
+    background-color: #DCDCDC;
+}
+.timeline-item-head-first {
+    background-color: #C58630;
+}
+.timeline-item-head {
+    height: 10px;
+    left: 1px;
+    top: 4px;
+    width: 10px;
+}
+.timeline-item-head-first {
+    height: 20px;
+    left: -4px;
+    top: 5px;
+    width: 20px;
+}
+.timeline-item-tail {
+    content: "";
+    background-color: #eee;
+    height: 100%;
+    left: 5px;
+    position: absolute;
+    top: 5px;
+    width: 2px;
+}
+.timeline-item-checked {
+    left: 0;
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+.timeline-item-checked::before {
+    color: #fff;
+    font-size: 12px;
+    width: 20px;
+}

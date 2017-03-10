@@ -467,4 +467,14 @@ body {
 .icon-daishouhuo:before {
     content: "\e653";
 }
+.icon-dzf:before {
+    content: "\e625";
+}
+.icon-quxiao:before {
+    content: "\e613";
+}
+
+.icon-daifahuo:before {
+    content: "\e624";
+}
 

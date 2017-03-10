@@ -2,7 +2,7 @@
 <html lang="zh-cmn-Hans">
 <head>
     <meta charset="utf-8">
-    <title>商品评价</title>
+    <title>个人中心-商品评价</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="format-detection" content="telephone=no">
@@ -11,77 +11,65 @@
     <script type="text/javascript" src="./js/adaptive.js"></script>
 	<link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/weui.min.css">
-    <link rel="stylesheet" href="./js/area/LArea.min.css">
+    <link rel="stylesheet" href="./js/plugins/swiper/swiper.min.css">
     <link rel="stylesheet" href="./css/all.css">
     <link rel="stylesheet" href="./css/home.css">
 </head>
 <body>
     <div class="container">  
-        <div class="goods-assess-wrapper">
-            <div class="assess-zone">
-                <img width="68" height="68">
-                <div class="assess-score">
-                    <p>评分</p>
-                    <div class="star-bar">
-                        <span class="star-rater">
-                            <a data-num = "0" class="star-rater-box checked"></a>
-                            <a data-num = "2" class="star-rater-box checked"></a>
-                            <a data-num = "3" class="star-rater-box checked"></a>
-                            <a data-num = "4" class="star-rater-box checked"></a>
-                            <a data-num = "5" class="star-rater-box"></a>
+        <div class="assess-wrapper">
+            <div class="order-cell">
+                <div class="order-cell-bd">
+                    <div class="pic"><img></div>
+                    <h3>【茶交所O2O专供茶】 六羡茶 福鼎白茶 白牡丹 罐装 100g</h3>
+                    <p class="assess"><a href="#">去评价</a></p>
+                </div>
+            </div>
+            <div class="order-cell">
+                <div class="order-cell-bd">
+                    <div class="pic"><img></div>
+                    <h3>【茶交所O2O专供茶】 六羡茶 福鼎白茶 白牡丹 罐装 100g</h3>
+                    <p class="assess">
+                        <span class="star-wrap">
+                            <span class="icon icon-48"></span>
+                            <span class="icon icon-48"></span>
+                            <span class="icon icon-48"></span>
+                            <span class="icon icon-48"></span>
+                            <span class="icon icon-49"></span>
                         </span>
-                        <span class="num" id="fen">80分</span>
+                        <span class="score">4.0</span>
+                    </p>
+                </div>
+            </div>
+            <div class="assess-content">
+                <p class="time">评价时间：2017-03-05  15:36:41</p>
+                <p class="desc">
+                    这个茶叶不错，有回甘！这个茶叶不错，有回甘！这个茶叶不错，有回甘！这个茶叶不错，有回甘！这个茶叶不错，有回甘！这个茶叶不错，有回甘！
+                </p>
+                <div class="pic">
+                    <div class="assess-pic-swiper">
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide"><a href="#"><img src="img/home/pro/swiper-img01.png"></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="img/home/pro/swiper-img02.png"></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="img/home/pro/swiper-img01.png"></a></div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="assess-cont">
-                <textarea placeholder="提交评价可以赚取积分哦" rows="3"></textarea>
-            </div>
-            <div class="assess-upload">
-                <ul class="assess-uploader-files"></ul>
-                <div class="assess-uploader-input">
-                    <input class="weui_uploader_input" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="">
-                </div>
-            </div>
         </div>
-    </div>    
+    </div>
     <script type="text/javascript" src="./js/zepto.min.js"></script>
     <script type="text/javascript" src="./js/weui.min.js"></script>
     <script type="text/javascript" src="./js/plugins/layer/layer.js"></script>
+    <script type="text/javascript" src="./js/plugins/swiper/swiper.jquery.min.js"></script>
     <script>
     $('body').addClass('page-bg');
     
-    // 评分js
-    var arr = ["20分","40分","60分","80分","100分"];
-    var num = -1;
-    $(".star-rater a").mouseover(function(){
-		var thisL = $(this).index();
-		for(var i = 0;i < thisL;i++){
-			$(".star-rater a").eq(i).addClass('checked');
-		}
-		for(var i = thisL; i < 5;i++){
-			$(".star-rater a").eq(i).removeClass('checked');
-		}
-		$(this).addClass('checked');
-	})
-	$(".star-rater a").mouseout(function(){
-		var thisL = $(this).index();
-		for(var i = thisL; i < 5;i++){
-			$(".star-rater a").eq(i).removeClass('checked');
-		}
-	})
-	$(".star-rater").mouseout(function(){
-		for(var i = 0; i < num; i++){
-			$(".star-rater a").eq(i).addClass('checked');
-		}
-	})
-
-    $(".star-rater a").click(function(){
-        var thisL = $(this).index();
-        $("#fen").html(arr[thisL]);
-        $(this).addClass('checked');
-        num = thisL + 1;
-        console.log(num);
+    new Swiper('.assess-pic-swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        slidesOffsetBefore: 10
     });
     </script>
 </body>

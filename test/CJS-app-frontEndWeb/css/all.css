@@ -450,6 +450,13 @@
     margin-bottom: .1rem;
     color: #999;
 }
+.wei-d-cells .state {
+    font-size: .14rem;
+    line-height: 1;
+    padding: .1rem 0;
+    font-weight: 400;
+    color: #333;
+}
 
 /* form */
 .wei_label {
@@ -1144,13 +1151,13 @@
 .order-count-sum dt
 {
 	float: left;
-	width: 80%;
+	width: 70%;
 }
-.order-count-item dt
-.order-count-sum dt
+.order-count-item dd,
+.order-count-sum dd
 {
 	float: right;
-	width: 20%;
+	width: 30%;
 	text-align: right;
 }
 .order-count {
@@ -1167,6 +1174,9 @@
 }
 .order-count-sum dd {
 	color: #C58630;
+}
+.order-count-sum .gray {
+    color: #666;
 }
 .order-r-count dd {
     text-align: right;

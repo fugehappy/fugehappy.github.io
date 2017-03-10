@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    <title>个人中心-商品评价中</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script type="text/javascript" src="./js/adaptive.js"></script>
+	<link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/weui.min.css">
+    <link rel="stylesheet" href="./js/area/LArea.min.css">
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./css/home.css">
+</head>
+<body>
+    <div class="container">  
+        <div class="goods-assess-wrapper">
+            <div class="assess-zone">
+                <img width="68" height="68">
+                <div class="assess-score">
+                    <p>评分</p>
+                    <div class="star-bar">
+                        <span class="star-rater">
+                            <a data-num = "0" class="star-rater-box checked"></a>
+                            <a data-num = "2" class="star-rater-box checked"></a>
+                            <a data-num = "3" class="star-rater-box checked"></a>
+                            <a data-num = "4" class="star-rater-box checked"></a>
+                            <a data-num = "5" class="star-rater-box"></a>
+                        </span>
+                        <span class="num" id="fen">4分</span>
+                    </div>
+                </div>
+            </div>
+            <div class="assess-cont">
+                <textarea placeholder="提交评价可以赚取积分哦" rows="3"></textarea>
+            </div>
+            <div class="assess-upload clearfix">
+                <ul class="assess-uploader-files" id='img2'>
+                    <!--使用中删除ul中的内容-->
+                    <li><img src="img/home/pro/swiper-img01.png"><span class="close icon"></span></li>
+                </ul>
+                <div class="assess-uploader-input">
+                    <input class="weui_uploader_input" type="file" accept="image/jpg,image/jpeg,image/png,image/gif"id='headimgurl2' multiple="">
+                </div>
+            </div>
+        </div>
+    </div>    
+    <script type="text/javascript" src="./js/zepto.min.js"></script>
+    <script type="text/javascript" src="./js/weui.min.js"></script>
+    <script type="text/javascript" src="./js/lrz.min.js"></script>
+    <script type="text/javascript" src="./js/plugins/layer/layer.js"></script>
+    <script>
+    $('body').addClass('page-bg');
+    
+    // 评分js
+    var arr = ["1分","2分","3分","4分","5分"];
+    var num = -1;
+    $(".star-rater a").mouseover(function(){
+		var thisL = $(this).index();
+		for(var i = 0;i < thisL;i++){
+			$(".star-rater a").eq(i).addClass('checked');
+		}
+		for(var i = thisL; i < 5;i++){
+			$(".star-rater a").eq(i).removeClass('checked');
+		}
+		$(this).addClass('checked');
+	})
+	$(".star-rater a").mouseout(function(){
+		var thisL = $(this).index();
+		for(var i = thisL; i < 5;i++){
+			$(".star-rater a").eq(i).removeClass('checked');
+		}
+	})
+	$(".star-rater").mouseout(function(){
+		for(var i = 0; i < num; i++){
+			$(".star-rater a").eq(i).addClass('checked');
+		}
+	})
+
+    $(".star-rater a").click(function(){
+        var thisL = $(this).index();
+        $("#fen").html(arr[thisL]);
+        $(this).addClass('checked');
+        num = thisL + 1;
+        console.log(num);
+    });
+    
+    // 上传图片
+    $(function(){
+        //多图上传
+        var f2 = document.querySelector('#headimgurl2');
+        f2.onchange = function (e) {
+
+            var files = e.target.files;
+            var len = files.length;
+            for (var i=0; i < len; i++) {
+                lrz(files[i],{width:640,fieldName:"file1"}).then(function (rst) {
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('POST', '2.php');
+
+                    xhr.onload = function () {
+                        if (xhr.status === 200) {
+                        var obj = eval('(' + xhr.responseText + ')');
+                            $('#img2').append('<li><img src="'+obj.src+'"><span class="close icon" onclick="var delimg=$(this);$.confirm(\'您确定要删除吗?\', \'确认删除?\', function() {delimg.remove();},function(){$.toast(\'取消操作\', \'cancel\');});"></span></li>'); 
+                            $('#file2').append('<input value="'+obj.src+'"  type="hidden"  name="files" />');
+                        } else {
+                            // 处理其他情况
+                        }
+                    };
+
+                    xhr.onerror = function () {
+                        // 处理错误
+                    };
+
+                    xhr.upload.onprogress = function (e) {
+                        // 上传进度
+                        var percentComplete = ((e.loaded / e.total) || 0) * 100;
+                    };
+
+                    // 添加参数
+                    rst.formData.append('size', rst.fileLen);
+                    rst.formData.append('base64', rst.base64);
+                    // 触发上传
+                    xhr.send(rst.formData);
+
+                    return rst;
+                }).catch(function (err) {
+                    alert(err);
+                }).always(function () {
+                    // 不管是成功失败，这里都会执行
+                });
+
+            }//for end
+        }
+    });
+    </script>
+</body>
+</html>
