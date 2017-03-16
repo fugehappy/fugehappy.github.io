@@ -9,11 +9,9 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <script type="text/javascript" src="./js/adaptive.js"></script>
-	<link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/weui.min.css">
-    <link rel="stylesheet" href="./js/plugins/swiper/swiper.min.css">
-    <link rel="stylesheet" href="./css/all.css">
-    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
     <div class="container">
@@ -59,6 +57,16 @@
                 <input pattern="[0-9]*" class="wei-num-input" id="num-input" value="1" data-min="1" data-step="1">
                 <a class="wei-num wei-num-plus" id="num-plus">+</a>
             </div>
+            <dl class="ware-items coupons-dl">
+                <dd>
+                    <span class="label">领优惠券</span>
+                    <span id="get-coupons">
+                        <span class="t-orange">满199-10</span>
+                        <span class="t-orange">满399-30</span>
+                        <span class="t-orange">满599-50</span>
+                    </span>
+                </dd>
+            </dl>
         </div>
         <div class="floor">
             <div class="expert-box">
@@ -176,13 +184,13 @@
         paginationClickable: true
     });
     new Swiper('.swiper-shop', {
-        slidesPerView: 2.5
+        slidesPerView: 'auto'
     });
     $('#pro-pull').swipeUp(function () {
         // 上滑跳转页面
         window.location.href = './products-detail.html';
     });
-    
+
     // 加减法
     $('#num-sub').click(function () {
         var obj = $('#num-input');

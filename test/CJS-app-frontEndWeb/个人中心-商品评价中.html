@@ -9,14 +9,12 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <script type="text/javascript" src="./js/adaptive.js"></script>
-	<link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/weui.min.css">
-    <link rel="stylesheet" href="./js/area/LArea.min.css">
-    <link rel="stylesheet" href="./css/all.css">
-    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
-    <div class="container">  
+    <div class="container">
         <div class="goods-assess-wrapper">
             <div class="assess-zone">
                 <img width="68" height="68">
@@ -47,14 +45,21 @@
                 </div>
             </div>
         </div>
-    </div>    
+    </div>
+    <div class="cart-footer2">
+        <div class="container">
+            <div class="btn-group">
+                <a href="#" class="btn-group-block active">提交</a>
+            </div>
+        </div>
+    </div>
     <script type="text/javascript" src="./js/zepto.min.js"></script>
     <script type="text/javascript" src="./js/weui.min.js"></script>
     <script type="text/javascript" src="./js/lrz.min.js"></script>
     <script type="text/javascript" src="./js/plugins/layer/layer.js"></script>
     <script>
     $('body').addClass('page-bg');
-    
+
     // 评分js
     var arr = ["1分","2分","3分","4分","5分"];
     var num = -1;
@@ -87,7 +92,7 @@
         num = thisL + 1;
         console.log(num);
     });
-    
+
     // 上传图片
     $(function(){
         //多图上传
@@ -104,7 +109,7 @@
                     xhr.onload = function () {
                         if (xhr.status === 200) {
                         var obj = eval('(' + xhr.responseText + ')');
-                            $('#img2').append('<li><img src="'+obj.src+'"><span class="close icon" onclick="var delimg=$(this);$.confirm(\'您确定要删除吗?\', \'确认删除?\', function() {delimg.remove();},function(){$.toast(\'取消操作\', \'cancel\');});"></span></li>'); 
+                            $('#img2').append('<li><img src="'+obj.src+'"><span class="close icon" onclick="var delimg=$(this);$.confirm(\'您确定要删除吗?\', \'确认删除?\', function() {delimg.remove();},function(){$.toast(\'取消操作\', \'cancel\');});"></span></li>');
                             $('#file2').append('<input value="'+obj.src+'"  type="hidden"  name="files" />');
                         } else {
                             // 处理其他情况

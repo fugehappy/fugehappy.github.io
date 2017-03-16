@@ -9,21 +9,19 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <script type="text/javascript" src="./js/adaptive.js"></script>
-	<link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/weui.min.css">
-    <link rel="stylesheet" href="./css/picker.css">
-    <link rel="stylesheet" href="./css/all.css">
-    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
     <div class="container">
         <div class="withdraw-header">
-			<p>可提现金额</p>
-			<h4>¥15998.5</h4>
+			<p>可用积分</p>
+			<h4>20030</h4>
             <p class="score">年底到期积分：2500</p>
 		</div>
 		<div class="shop-g-con">
-			<ul class="shop-g-items">
+			<ul class="shop-g-icons">
 				<li>
 					<a href="#">
 						<img src="img/icon/ic_ptdetail_gain.png">
@@ -105,16 +103,16 @@
     $('body').addClass('page-bg');
     // 切换
     $('#tab').tabSwitch({
-        tab: "tab li",  
+        tab: "tab li",
         tabClass: "active",
         tabFrame: "tab-content",
         callback: function () {
-            
+
         }
     });
-    
+
     $(function() {
-        //页数 
+        //页数
         var page = 0;
         // 每页展示10个
         var size = 10;
@@ -167,14 +165,14 @@
                         }, 1000);
                     },
                     error: function(xhr, type) {
-                        alert('Ajax error!');
+                        // alert('Ajax error!');
                         // 即使加载出错，也得重置
                         me.resetload();
                     }
                 });
             }
         });
-    }); 
+    });
     </script>
 </body>
 </html>

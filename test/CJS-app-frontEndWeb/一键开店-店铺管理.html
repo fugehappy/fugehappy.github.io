@@ -9,10 +9,9 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <script type="text/javascript" src="./js/adaptive.js"></script>
-	<link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/weui.min.css">
-    <link rel="stylesheet" href="./css/picker.css">
-    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
     <div class="container">
@@ -60,9 +59,11 @@
 			<img src="img/pro/timg.jpg">
             <p>店铺二维码</p>
         </div>
-        <a class="loginout-btn store-btn" href="javascript:;">进入店铺</a>
+        <div class="fix-bottom1">
+           <a href="#" class="submit-btn submit-btn-withdraw">进入店铺</a>
+        </div>
     </div>
-    
+
     <!-- 相册 -->
     <div id="img-sheet" class="wei-primary">
         <div class="weui-mask" id="iosMask" style="display: none"></div>
@@ -81,7 +82,7 @@
     <script type="text/javascript" src="./js/weui.min.js"></script>
     <script>
     $('body').addClass('page-bg');
-    // 修改头像  
+    // 修改头像
     $(function(){
         var $iosActionsheet = $('#iosActionsheet');
         var $iosMask = $('#iosMask');
@@ -100,8 +101,8 @@
         });
     });
 
-    
-    
+
+
     // 修改行业
     $('#showWorkPicker').on('click', function () {
         weui.picker([{
@@ -126,7 +127,7 @@
             }
         });
     });
-    
+
     </script>
 </body>
 </html>

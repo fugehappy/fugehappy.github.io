@@ -74,6 +74,19 @@ $(function() {
         $("#mix_search_div").hide();
         $(".main_wrapper").show()
     });
+    $(".text_box input").keyup(function() {
+        var val = $.trim($(this).val());
+        if (val) {
+            $('.association').show();
+            $('.hot-search-box').hide();
+            $('.search-history').hide();
+        }
+        else {
+            $('.hot-search-box').show();
+            $('.search-history').show();
+            $('.association').hide();
+        }
+    })
 });
 $(function() {
     FastClick.attach(document.body);

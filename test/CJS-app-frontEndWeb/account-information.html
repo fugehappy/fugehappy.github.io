@@ -3,34 +3,26 @@
 <head>
     <meta charset="utf-8">
     <title>账户信息</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <script type="text/javascript" src="./js/adaptive.js"></script>
-	<link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/weui.min.css">
-    <link rel="stylesheet" href="./js/plugins/swiper/swiper.min.css">
-    <link rel="stylesheet" href="./css/all.css">
-    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/common.css">
+	<link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
     <div class="container">
-        <!--
-        <div class="wei-header bg-white">
-            <div class="wei-header-left">
-                <a class="icon icon-109">返回</a>
-            </div>
-            <div class="wei-header-title">账户信息</div>
-        </div>
-        -->
         <div class="wei-cells">
             <div class="wei-cell wei-cell_access" id="info-img">
                 <div class="wei-cell__bd">
                     <span>头像</span>
                 </div>
-                <div class="wei-cell__ft"><img class="info-img-person" src="img/login/ic_wechat.png"></div>
+                <div class="wei-cell__ft">
+					<img class="info-img-person" src="img/login/ic_wechat.png">
+				</div>
             </div>
             <div class="wei-cell wei-cell_access" id="info-user">
                 <div class="wei-cell__bd">
@@ -98,7 +90,7 @@
     <script type="text/javascript" src="./js/weui.min.js"></script>
     <script>
     $('body').addClass('page-bg');
-    // 修改头像  
+    // 修改头像
     $(function(){
         var $iosActionsheet = $('#iosActionsheet');
         var $iosMask = $('#iosMask');
@@ -137,7 +129,7 @@
             }
         });
     });
-    
+
     // 修改日期
     $('#showDatePicker').on('click', function () {
         weui.datePicker({
@@ -157,7 +149,7 @@
             }
         });
     });
-    
+
     // 修改行业
     $('#showWorkPicker').on('click', function () {
         weui.picker([{
@@ -182,40 +174,6 @@
             }
         });
     });
-    
-    // 修改用户名
-    /*$('#info-user').on('click', function () {
-        var config = ''
-                    + '<div class="sheet-form">'
-                        + '<div class="sheet-cell">'
-                            + '<div class="sheet-input">'
-                                + '<input type="text" class="sheet-txt" placeholder="2-12个中英文数字组合的字符">'
-                            + '</div>'
-                        + '</div>'
-                    + '</div>'
-        newPage(config);
-    });*/
-    
-    /**
-     * 公用弹出组件 newPage
-     * config string
-     */ 
-    /*function newPage(config) {
-        var height = document.body.clientHeight + 'px';
-        var content = ''
-                    + '<div>'
-                        + '<div class="weui-mask weui-animate-fade-in">'
-                            + '<div class="weui-picker weui-animate-slide-up">'
-                                + '<div class="weui-picker-self">'
-                                    + config
-                                + '</div>'
-                            + '</div>'
-                        + '</div>'
-                    + '</div>';
-        $('body').append(content);
-        
-        $('.weui-picker-self').css('height', height);
-    }*/
     </script>
 </body>
 </html>

@@ -9,23 +9,36 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <script type="text/javascript" src="./js/adaptive.js"></script>
-	<link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/weui.min.css">
     <link rel="stylesheet" href="./js/plugins/swiper/swiper.min.css">
-    <link rel="stylesheet" href="./css/all.css">
-    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
     <div class="container">
 		<div class="shop-g-header">
-			<a href="#">
-				<img src="img/pro/img02.png">
-			</a>
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                    <a href="#">
+                        <div>
+                            <img src="img/pro/img02.png">
+                        </div>
+                    </a>
+                </li>
+                <li class="swiper-slide">
+                    <a href="#">
+                        <div>
+                            <img src="img/pro/img02.png">
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <div class="swiper-pagination"></div>
 		</div>
 		<div class="shop-g-con">
 			<dl class="shop-g-score">
 				<dt>我的积分：<span class="yellow">15560</span></dt>
-				<dd><a href="#">积分明细&gt;</a></dd>
+				<dd><a href="#">积分明细 &gt;</a></dd>
 			</dl>
 			<ul class="shop-g-items">
 				<li>
@@ -82,12 +95,19 @@
     </div>
     <script type="text/javascript" src="./js/zepto.min.js"></script>
     <script type="text/javascript" src="./js/weui.min.js"></script>
+    <script type="text/javascript" src="./js/plugins/swiper/swiper.jquery.min.js"></script>
     <script type="text/javascript" src="./js/dropload.js"></script>
     <script type="text/javascript" src="./js/lazyimg.js"></script>
     <script>
     $('body').addClass('page-bg');
+
+    new Swiper('.shop-g-header', {
+        pagination: '.swiper-pagination',
+        slidesPerView: 1,
+        paginationClickable: true
+    });
     $(function() {
-        //页数 
+        //页数
         var page = 0;
         // 每页展示10个
         var size = 10;
@@ -154,7 +174,7 @@
                                 },
                                 error: function(el) {}
                             });
-                            // 
+                            //
                             // 每次数据加载完，必须重置
                             me.resetload();
                         }, 1000);

@@ -9,14 +9,31 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <script type="text/javascript" src="./js/adaptive.js"></script>
-	<link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/weui.min.css">
     <link rel="stylesheet" href="./js/plugins/swiper/swiper.min.css">
-    <link rel="stylesheet" href="./css/all.css">
-    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
     <div class="container">
+        <header>
+            <div class="common-header-bar">
+                <div class="go-back">
+                    <a href="#" class="icon-back icon icon-109"><span>返回</span></a>
+                </div>
+                <ul class="header-title header-tabs" id="header-tab">
+                    <li class="header-tab-item">
+                        <a href="#"><p>商品</p></a>
+                    </li>
+                    <li class="header-tab-item">
+                        <a href="#"><p>详情</p></a>
+                    </li>
+                    <li class="header-tab-item active">
+                        <a href="#"><p>评价</p></a>
+                    </li>
+                </ul>
+            </div>
+        </header>
         <div class="ware-detail">
             <div class="swiper-container ware-swiper">
                 <ul class="swiper-wrapper">
@@ -26,7 +43,7 @@
                         </a>
                     </li>
                     <li class="swiper-slide">
-                        <a href="#"></a>
+                        <a href="#"><img src="img/pro/img01.png"></a>
                     </li>
                 </ul>
                 <div class="swiper-pagination"></div>
@@ -51,7 +68,7 @@
                 <input pattern="[0-9]*" class="wei-num-input" id="num-input" value="1" data-min="1" data-step="1">
                 <a class="wei-num wei-num-plus" id="num-plus">+</a>
             </div>
-            <dl class="ware-items">
+            <dl class="ware-items coupons-dl">
                 <dd>
                     <span class="label">领优惠券</span>
                     <span id="get-coupons">
@@ -191,7 +208,7 @@
         // 上滑跳转页面
         window.location.href = './products-detail.html';
     });
-    
+
     // 加减法
     $('#num-sub').click(function () {
         var obj = $('#num-input');
@@ -205,14 +222,14 @@
         var obj = $('#num-input');
         obj.val(parseInt(obj.val()) + 1);
     });
-    
+
     // 领取优惠券
     $('#get-coupons').click(function () {
         var content = ''
         + '<div class="coupons-box">'
             + '<span class="close icon icon-95" onclick="layer.closeAll();"></span>'
             + '<h4>领取优惠券</h4>'
-            + '<div style="height: 250px;overflow: scroll;">'
+            + '<div style="height: 228px;overflow: scroll;">'
             + '<ul>'
                 + '<a href="#"><li>'
                     + '<div class="coupons-bd">'
@@ -262,7 +279,7 @@
             ,style: 'position:fixed; bottom:0; left:0; width: 100%; height: 280px; padding:10px 0; border:none; overflow-y: scroll;'
         });
     });
-    
+
     </script>
 </body>
 </html>

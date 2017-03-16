@@ -57,7 +57,7 @@
     transform: scaleY(0.5);
 }
 .login-title {
-    color: #333;
+    color: #666;
     font-weight: 700;
 	margin-bottom: .12rem;
 }
@@ -92,7 +92,7 @@
     text-decoration: none;
     color: #fff;
     line-height: 2.55555556;
-    border-radius: 5px;
+    border-radius: 4px;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     overflow: hidden;
 }
@@ -101,11 +101,11 @@
     padding-top: .3rem;
 }
 .login-link a:first-child{
-    color: #c53630;
+    color: #c58630;
     float: left;
 }
 .login-link a:last-child{
-    color: #333;
+    color: #666;
     float: right;
 }
 .login-footer {
@@ -132,7 +132,6 @@
     height: 48px;
     background-repeat: no-repeat;
     background-size: cover;
-	margin-bottom: .1rem; 
 }
 .wei_wechat {
     background-image: url(../img/login/ic_wechat.png);
@@ -154,6 +153,9 @@
 }
 .login-btn-active:active {
     background-color: #a36c21;
+}
+.login-form .agreement {
+	font-size: .12rem;
 }
 /* forgetpassword*/
 .login-flex {
@@ -419,16 +421,17 @@
     margin-left: 14px;
     margin-right: 14px;
     box-sizing: border-box;
-    font-size: .14rem;
+    font-size: .16rem;
     text-align: center;
     text-decoration: none;
     color: #333;
-    border-radius: 5px;
+    border-radius: 2px;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     overflow: hidden;
     background: #fff;
     height: .48rem;
     line-height: .48rem;
+	border: 1px solid #e5e5e5;
 }
 /* account-safe */
 .wei-d-cells {
@@ -523,7 +526,7 @@
     text-align: center;
     text-decoration: none;
     color: #fff;
-    border-radius: 5px;
+    border-radius: 2px;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     overflow: hidden;
     background: #fff;
@@ -677,6 +680,7 @@
 }
 .wei-cell-ft .sum {
 	line-height: .34rem;
+	color: #666;
 }
 .wei-cell-ft .doing {
 	line-height: .34rem;
@@ -700,7 +704,7 @@
     text-align: center;
     text-decoration: none;
     color: #fff;
-    border-radius: 5px;
+    border-radius: 2px;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     overflow: hidden;
     background: #fff;
@@ -711,6 +715,7 @@
 	width: 90%;
 	left: 50%;
 	margin-left: -45%;
+	border: 1px solid #ddd;
 }
 .wei-btn-primary {
     position: fixed;
@@ -920,7 +925,10 @@
 	color: #666;
 }
 .friend-info .yellow {
-	color: #C58630;
+	color: #ed6d00;
+}
+.orange {
+	color: #ed6d00;
 }
 .goods-cell {
 	background-color: #fff;
@@ -948,6 +956,9 @@
 	width: 100%;
 	height: 100%;
 }
+.goods-cell-bd .sum {
+	font-size: .12rem;
+}
 .goods-cell-bd  h3 {
 	overflow : hidden;
 	text-overflow: ellipsis;
@@ -967,6 +978,7 @@
 	border: 1px solid #e5e5e5;
 	padding: 2px 20px;
 	color: #333;
+	border-radius: 2px;
 }
 .order-tab {
 	padding: 0 .1rem;
@@ -1173,7 +1185,7 @@
 	border-top: 1px solid #e5e5e5;
 }
 .order-count-sum dd {
-	color: #C58630;
+	color: #ed6d00;
 }
 .order-count-sum .gray {
     color: #666;
@@ -1272,7 +1284,7 @@
     border-bottom: 1px solid #eee;
 }
 .myorder-desc .orange {
-    color: #C58630;
+    color: #ed6d00;
 }
 .myorder-ft {
     padding: .1rem;
@@ -1295,6 +1307,7 @@
     color: #333;
     border: 1px solid #eee;
     text-align: center;
+	border-radius: 2px;
 }
 .wei-btn-l, .wei-btn-r {
     display: block;
@@ -1355,9 +1368,9 @@
     float: right;
 }
 .wei-c-row.active .wei-c-fd .state{
-    background-color: #C58630;
+    background-color: #ed6d00;
     color: #fff;
-    border: 1px solid #C58630;
+    border: 1px solid #ed6d00;
 }
 .wei-c-row.active .wei-c-fd .state:before {
     content: "\EA08";

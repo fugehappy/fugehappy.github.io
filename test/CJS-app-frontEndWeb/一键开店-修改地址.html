@@ -9,10 +9,10 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <script type="text/javascript" src="./js/adaptive.js"></script>
-	<link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/weui.min.css">
     <link rel="stylesheet" href="./js/area/LArea.min.css">
-    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
     <div class="container">
@@ -28,16 +28,16 @@
         </div>
         -->
         <div class="wei-cells">
-            <div class="wei-cell">
+            <div class="wei-cell wei-cell_access wei-left">
                 <div class="wei-cell__hd">
-                    <span class="wei_label">所在地区:</span>
+                    <span class="wei_label">区域:</span>
                 </div>
                 <div class="wei_cell_ft wei_cell_primary ">
                     <input class="wei_input" type="text" readonly="" value="" id="picker-city"/>
                     <input id="value1" type="hidden" value=""/>
                 </div>
             </div>
-            <div class="wei-cell">
+            <div class="wei-cell wei-cell_access wei-left">
                 <div class="wei-cell__hd">
                     <span class="wei_label">详细地址:</span>
                 </div>
@@ -106,7 +106,7 @@
         'type': 1, //数据源类型
         'data': LAreaData //数据源
     });
-    $('body').addClass('page-bg');  
+    $('body').addClass('page-bg');
     </script>
 </body>
 </html>

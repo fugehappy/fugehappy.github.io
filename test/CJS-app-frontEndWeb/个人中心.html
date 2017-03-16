@@ -9,17 +9,15 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <script type="text/javascript" src="./js/adaptive.js"></script>
-	<link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/weui.min.css">
-    <link rel="stylesheet" href="./js/plugins/swiper/swiper.min.css">
-    <link rel="stylesheet" href="./css/all.css">
-    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/app.css">
 </head>
 <body class="page-bg">
     <div class="container">
         <div class="user-box">
             <a href="#" class="sign"><span></span>签到</a>
-            <!--<a href="#" class="sign done"><span></span>已签</a>-->
+            <!-- <a href="#" class="sign done"><span></span>已签</a> -->
             <a href="#" class="user-set"><span>设置</span></a>
             <a href="#" class="user-msg"><span></span></a>
             <a href="#" class="user-pic">
@@ -54,12 +52,14 @@
                 <a href="#">
                     <img src="img/icon/ic_unpay.png" width="24" height="24">
                     <p>已发货</p>
+                    <span class="wei-badge">8</span>
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <img src="img/icon/ic_uncomm.png" width="24" height="24">
-                    <p>待评价</p>
+                    <img src="img/icon/ic_return.png" width="24" height="24">
+                    <p>退换货</p>
+                    <span class="wei-badge">10</span>
                 </a>
             </li>
         </ul>
@@ -83,7 +83,21 @@
             <a href="#">
                 <div class="wei-cell wei-cell_access">
                     <div class="wei-cell__bd">
-                        <span>优惠券</span>
+                        <span>我的优惠券</span>
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="wei-cell wei-cell_access">
+                    <div class="wei-cell__bd">
+                        <span>我的收益</span>
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="wei-cell wei-cell_access">
+                    <div class="wei-cell__bd">
+                        <span>我的发布</span>
                     </div>
                     <div class="wei-cell__ft"></div>
                 </div>
@@ -95,6 +109,17 @@
                     <div class="wei-cell__bd">
                         <span class="mall-g-icon"></span>
                         <span>积分商城</span>
+                    </div>
+                    <div class="wei-cell__ft"></div>
+                </div>
+            </a>
+        </div>
+        <div class="wei-cells">
+            <a href="#">
+                <div class="wei-cell wei-cell_access">
+                    <div class="wei-cell__bd">
+                        <span class="help-g-icon"></span>
+                        <span>帮助中心</span>
                     </div>
                     <div class="wei-cell__ft"></div>
                 </div>
@@ -124,12 +149,9 @@
     <script type="text/javascript" src="./js/weui.min.js"></script>
     <script type="text/javascript" src="./js/plugins/swiper/swiper.jquery.min.js"></script>
     <script>
-    $('#tab1').on('tap', '.wei-tab-item', function () {
-        $('.wei-tab-item').removeClass('tab-active');
-        $(this).addClass('tab-active');
-    });
+    $('.container').css('padding-bottom', '60px');
     // 底部tab切换
-    
+
     </script>
 </body>
 </html>

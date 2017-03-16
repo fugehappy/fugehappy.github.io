@@ -9,204 +9,220 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <script type="text/javascript" src="./js/adaptive.js"></script>
-	<link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/weui.min.css">
-    <link rel="stylesheet" href="./js/plugins/swiper/swiper.min.css">
-    <link rel="stylesheet" href="./css/all.css">
-    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./js/area/LArea.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
-    <div class="search-box">
-        <div class="search-page">
-            <div class="search-page-header">
-                <div class="search-zone">
-                    <a href="#" class="pop_back icon icon-109"></a>
-                    <div class="search-wrap">
-                        <i class="wei-icon-search"></i>
-                        <input type="search" class="wei-search-input" id="search-input" placeholder="蒙顶山雪茶" required>
-                        <i class="icons-clear hide"></i>
+    <div class="container">
+        <div class="search-box">
+            <div class="search-page">
+                <div class="search-page-header">
+                    <div class="search-zone">
+                        <a href="#" class="pop_back icon icon-109"></a>
+                        <div class="search-wrap">
+                            <i class="wei-icon-search"></i>
+                            <input type="search" class="wei-search-input" id="search-input" placeholder="蒙顶山雪茶" required>
+                            <i class="icons-clear hide"></i>
+                        </div>
+                        <div class="wei-header-icon">
+                            <a class="icon icon-81 fz20" href="javascript:void(0)" onclick="showSiderBar()"></a>
+                        </div>
+                        <a href="#" class="search-btn">搜索</a>
                     </div>
-                    <div class="wei-header-icon">
-                        <a class="icon icon-81 fz20" href="javascript:void(0)" onclick="showSiderBar()"></a>
+                </div>
+                <div class="search-page-cons">
+                    <!-- 联想词开始 -->
+                    <ul class="association">
+                        <li><a href="#">峨眉雪芽</a></li>
+                        <li><a href="#">泉州铁观音</a></li>
+                        <li><a href="#">蒙顶山</a></li>
+                        <li><a href="#">普洱</a></li>
+                    </ul>
+                    <!-- 联想词结束 -->
+                    <div class="search-land">
+                        <div class="hot-search-box">
+                            <h5>热搜</h5>
+                            <div class="hot-search-word">
+                                <a href="#">顶上茶</a>
+                                <a href="#">蒙顶山茶</a>
+                                <a href="#">顶上茶</a>
+                                <a href="#">泉州铁观音</a>
+                                <a href="#">泉州铁观音</a>
+                                <a href="#">泉州铁观音</a>
+                            </div>
+                        </div>
+                        <div class="floor search-history">
+                            <h5>历史搜索</h5>
+                            <ul>
+                                <li><a href="#">峨眉雪芽</a></li>
+                                <li><a href="#">泉州铁观音</a></li>
+                                <li><a href="#">蒙顶山</a></li>
+                                <li><a href="#">普洱</a></li>
+                            </ul>
+                            <div class="no_search hide">
+                                <span>没有历史搜索记录</span>
+                            </div>
+                            <a class="loginout-btn" href="javascript:;">清空搜索记录</a>
+                        </div>
                     </div>
-                    <a href="#" class="search-btn">搜索</a>
                 </div>
             </div>
-            <div class="search-page-cons">
-                <!-- 联想词开始 -->
-                <ul class="association">
-                    <li><a href="#">峨眉雪芽</a></li>
-                    <li><a href="#">泉州铁观音</a></li>
-                    <li><a href="#">蒙顶山</a></li>
-                    <li><a href="#">普洱</a></li>
+        </div>
+        <!-- search-box end -->
+        <div class="store-header">
+            <div class="store-header-pic">
+                <img class="bg" src="img/pro/img07.png">
+                <div class="store-header-mask"></div>
+                <div class="store-header-cont">
+                    <img src="img/pro/img10.png" width="64" height="42">
+                    <h2>福建仙岳茶业有限公司</h2>
+                    <p>主营品牌：仙岳</p>
+                    <a href="#" class="contact"></a>
+                </div>
+            </div>
+            <div class="store-h-sort">
+                <ul class="search-select">
+                    <li class="active">综合</li>
+                    <li>销量</li>
+                    <li>价格<span class="iconfont icon-order-down"></span></li>
                 </ul>
-                <!-- 联想词结束 -->
-                <div class="search-land">
-                    <div class="hot-search-box">
-                        <h5>热搜</h5>
-                        <div class="hot-search-word">
-                            <a href="#">顶上茶</a>
-                            <a href="#">蒙顶山茶</a>
-                            <a href="#">顶上茶</a>
-                            <a href="#">泉州铁观音</a>
-                            <a href="#">泉州铁观音</a>
-                            <a href="#">泉州铁观音</a>
-                        </div>
-                    </div>
-                    <div class="floor search-history">
-                        <h5>历史搜索</h5>
-                        <ul>
-                            <li><a href="#">峨眉雪芽</a></li>
-                            <li><a href="#">泉州铁观音</a></li>
-                            <li><a href="#">蒙顶山</a></li>
-                            <li><a href="#">普洱</a></li>
-                        </ul>
-                        <div class="no_search hide">
-                            <span>没有历史搜索记录</span>
-                        </div>
-                        <a class="loginout-btn" href="javascript:;">清空搜索记录</a>
-                    </div>
+                <div class="search-select-icon">
+                    <a class="icon icon-81 fz20"></a>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="store-header">
-        <div class="store-header-pic">
-            <a href="#">
-                <img src="img/pro/img07.png">
-            </a>
-        </div>
-        <div class="store-h-sort">
-            <ul class="search-select">
-                <li class="active">综合</li>
-                <li>销量</li>
-                <li>价格<span class="iconfont icon-order-down"></span></li>
-            </ul>
-            <div class="search-select-icon">
-                <a class="icon icon-81 fz20"></a>
+        <div class="container">
+            <div class="product-wrapper not-pd">
+                <ul class="prod-box">
+                    <li>
+                        <a href="#">
+                            <div class="prod-wrap">
+                                <div class="prod-pic">
+                                    <img src="img/pro/t01.png">
+                                </div>
+                                <h4 class="prod-title">皇茗园 蒙顶甘露 雅安蒙</h4>
+                                <div class="prod-price-wrap">
+                                    <span class="prod-price-yuan">￥</span>
+                                    <span class="prod-price-mun">2,469</span>
+                                    <span class="prod-price-quan">券</span>
+                                    <span class="prod-price-discount">满1000-50</span>
+                                </div>
+                                <p class="sales">销量:23167</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="prod-wrap">
+                                <div class="prod-pic">
+                                    <img src="img/pro/t02.png">
+                                </div>
+                                <h4 class="prod-title">皇茗园 蒙顶甘露 雅安蒙</h4>
+                                <div class="prod-price-wrap">
+                                    <span class="prod-price-yuan">￥</span>
+                                    <span class="prod-price-mun">2,469</span>
+                                    <span class="prod-price-quan">券</span>
+                                    <span class="prod-price-discount">满1000-50</span>
+                                </div>
+                                <p class="sales">销量:23167</p>
+                            </div>
+                            <span class="prod-t-tips">超值消费</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="prod-wrap">
+                                <div class="prod-pic">
+                                    <img src="img/pro/t01.png">
+                                </div>
+                                <h4 class="prod-title">皇茗园 蒙顶甘露 雅安蒙</h4>
+                                <div class="prod-price-wrap">
+                                    <span class="prod-price-yuan">￥</span>
+                                    <span class="prod-price-mun">2,469</span>
+                                    <span class="prod-price-quan">券</span>
+                                    <span class="prod-price-discount">满1000-50</span>
+                                </div>
+                                <p class="sales">销量:23167</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="prod-wrap">
+                                <div class="prod-pic">
+                                    <img src="img/pro/t02.png">
+                                </div>
+                                <h4 class="prod-title">皇茗园 蒙顶甘露 雅安蒙</h4>
+                                <div class="prod-price-wrap">
+                                    <span class="prod-price-yuan">￥</span>
+                                    <span class="prod-price-mun">2,469</span>
+                                    <span class="prod-price-quan">券</span>
+                                    <span class="prod-price-discount">满1000-50</span>
+                                </div>
+                                <p class="sales">销量:23167</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="prod-wrap">
+                                <div class="prod-pic">
+                                    <img src="img/pro/t01.png">
+                                </div>
+                                <h4 class="prod-title">皇茗园 蒙顶甘露 雅安蒙</h4>
+                                <div class="prod-price-wrap">
+                                    <span class="prod-price-yuan">￥</span>
+                                    <span class="prod-price-mun">2,469</span>
+                                    <span class="prod-price-quan">券</span>
+                                    <span class="prod-price-discount">满1000-50</span>
+                                </div>
+                                <p class="sales">销量:23167</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="prod-wrap">
+                                <div class="prod-pic">
+                                    <img src="img/pro/t02.png">
+                                </div>
+                                <h4 class="prod-title">皇茗园 蒙顶甘露 雅安蒙</h4>
+                                <div class="prod-price-wrap">
+                                    <span class="prod-price-yuan">￥</span>
+                                    <span class="prod-price-mun">2,469</span>
+                                    <span class="prod-price-quan">券</span>
+                                    <span class="prod-price-discount">满1000-50</span>
+                                </div>
+                                <p class="sales">销量:23167</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="prod-wrap">
+                                <div class="prod-pic">
+                                    <img src="img/pro/t01.png">
+                                </div>
+                                <h4 class="prod-title">皇茗园 蒙顶甘露 雅安蒙</h4>
+                                <div class="prod-price-wrap">
+                                    <span class="prod-price-yuan">￥</span>
+                                    <span class="prod-price-mun">2,469</span>
+                                    <span class="prod-price-quan">券</span>
+                                    <span class="prod-price-discount">满1000-50</span>
+                                </div>
+                                <p class="sales">销量:23167</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- gotop -->
+            <div class="gotop">
+                <span class="icon icon-7"></span>
             </div>
         </div>
-    </div>
-    <div class="product-wrapper not-pd">
-        <ul class="prod-box">
-            <li>
-                <a href="#">
-                    <div class="prod-wrap">
-                        <div class="prod-pic">
-                            <img src="img/home/pro/swiper-img01.png">
-                        </div>
-                        <h4 class="prod-title">皇茗园 蒙顶甘露 雅安蒙</h4>
-                        <div class="prod-price-wrap">
-                            <span class="prod-price-yuan">￥</span>
-                            <span class="prod-price-mun">2,469</span>
-                            <span class="prod-price-quan">券</span>
-                            <span class="prod-price-discount">满1000-50</span>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="prod-wrap">
-                        <div class="prod-pic">
-                            <img src="img/home/pro/img01.png">
-                        </div>
-                        <h4 class="prod-title">皇茗园 蒙顶甘露 雅安蒙</h4>
-                        <div class="prod-price-wrap">
-                            <span class="prod-price-yuan">￥</span>
-                            <span class="prod-price-mun">2,469</span>
-                            <span class="prod-price-quan">券</span>
-                            <span class="prod-price-discount">满1000-50</span>
-                        </div>
-                    </div>
-                    <span class="prod-t-tips">超值消费</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="prod-wrap">
-                        <div class="prod-pic">
-                            <img src="img/home/pro/img01.png">
-                        </div>
-                        <h4 class="prod-title">皇茗园 蒙顶甘露 雅安蒙</h4>
-                        <div class="prod-price-wrap">
-                            <span class="prod-price-yuan">￥</span>
-                            <span class="prod-price-mun">2,469</span>
-                            <span class="prod-price-quan">券</span>
-                            <span class="prod-price-discount">满1000-50</span>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="prod-wrap">
-                        <div class="prod-pic">
-                            <img src="img/home/pro/img01.png">
-                        </div>
-                        <h4 class="prod-title">皇茗园 蒙顶甘露 雅安蒙</h4>
-                        <div class="prod-price-wrap">
-                            <span class="prod-price-yuan">￥</span>
-                            <span class="prod-price-mun">2,469</span>
-                            <span class="prod-price-quan">券</span>
-                            <span class="prod-price-discount">满1000-50</span>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="prod-wrap">
-                        <div class="prod-pic">
-                            <img src="img/home/pro/img01.png">
-                        </div>
-                        <h4 class="prod-title">皇茗园 蒙顶甘露 雅安蒙</h4>
-                        <div class="prod-price-wrap">
-                            <span class="prod-price-yuan">￥</span>
-                            <span class="prod-price-mun">2,469</span>
-                            <span class="prod-price-quan">券</span>
-                            <span class="prod-price-discount">满1000-50</span>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="prod-wrap">
-                        <div class="prod-pic">
-                            <img src="img/home/pro/img01.png">
-                        </div>
-                        <h4 class="prod-title">皇茗园 蒙顶甘露 雅安蒙</h4>
-                        <div class="prod-price-wrap">
-                            <span class="prod-price-yuan">￥</span>
-                            <span class="prod-price-mun">2,469</span>
-                            <span class="prod-price-quan">券</span>
-                            <span class="prod-price-discount">满1000-50</span>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="prod-wrap">
-                        <div class="prod-pic">
-                            <img src="img/home/pro/img01.png">
-                        </div>
-                        <h4 class="prod-title">皇茗园 蒙顶甘露 雅安蒙</h4>
-                        <div class="prod-price-wrap">
-                            <span class="prod-price-yuan">￥</span>
-                            <span class="prod-price-mun">2,469</span>
-                            <span class="prod-price-quan">券</span>
-                            <span class="prod-price-discount">满1000-50</span>
-                        </div>
-                    </div>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <!-- gotop -->
-    <div class="gotop">
-        <span class="icon icon-7"></span>
     </div>
     <!-- sidebar -->
     <div class="sidebar-mask hide"></div>

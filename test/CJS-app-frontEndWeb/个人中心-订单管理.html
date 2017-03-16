@@ -9,29 +9,42 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <script type="text/javascript" src="./js/adaptive.js"></script>
-	<link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/weui.min.css">
     <link rel="stylesheet" href="./js/plugins/swiper/swiper.min.css">
-    <link rel="stylesheet" href="./css/all.css">
-    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
     <div class="myorder-page">
         <div class="container">
-            <ul class="myorder-tab">
-                <li class="active">
-                   <span>全部</span> 
-                </li>
-                <li>
-                   <span>待支付</span> 
-                </li>
-                <li>
-                   <span>待收货</span> 
-                </li>
-                <li>
-                   <span>已完成</span> 
-                </li>
-            </ul>
+            <div class="myorder-header">
+                <div class="myorder-header-wrap">
+                    <ul class="myorder-tab">
+                        <li class="active">
+                           <span>全部</span>
+                        </li>
+                        <li>
+                           <span>待支付</span>
+                        </li>
+                        <li>
+                           <span>待收货</span>
+                        </li>
+                        <li>
+                           <span>已完成</span>
+                        </li>
+                    </ul>
+                    <div class="myorder-type">订单类型<span class="icon icon-74"></span></div>
+                </div>
+                <div class="myorder-type-item clearfix">
+                    <ul>
+                        <li class="active">全部</li>
+                        <li>普通订单</li>
+                        <li>团购订单</li>
+                        <li>一键开店</li>
+                        <li>超值消费</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
     <div class="container">
@@ -85,7 +98,67 @@
             <div class="myorder-cell">
                 <div class="myorder-hd">
                     <h4>八马茶业官方自营店</h4>
-                    <a href="#" class="orange">已完成</a>
+                    <a href="#">已完成</a>
+                </div>
+                <div class="myorder-pic">
+                    <div class="myorder-pic-swiper">
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide"><a href="#"><img src="img/home/pro/swiper-img01.png"></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="img/home/pro/swiper-img02.png"></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="img/home/pro/swiper-img01.png"></a></div>
+                        </div>
+                    </div>
+                </div>
+                <p class="myorder-desc">共5件商品，实付款：<span class="orange">¥1560</span></p>
+                <div class="myorder-ft">
+                    <a href="#">评价</a>
+                </div>
+            </div>
+            <div class="myorder-cell">
+                <div class="myorder-hd">
+                    <h4>八马茶业官方自营店</h4>
+                    <a href="#">已完成</a>
+                </div>
+                <div class="myorder-pic">
+                    <div class="myorder-pic-swiper">
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide"><a href="#"><img src="img/home/pro/swiper-img01.png"></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="img/home/pro/swiper-img02.png"></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="img/home/pro/swiper-img01.png"></a></div>
+                        </div>
+                    </div>
+                </div>
+                <p class="myorder-desc">共5件商品，实付款：<span class="orange">¥1560</span></p>
+                <div class="myorder-ft">
+                    <a href="#">评价</a>
+                </div>
+            </div>
+            <div class="myorder-cell">
+                <div class="myorder-hd">
+                    <h4>八马茶业官方自营店</h4>
+                    <a href="#">已完成</a>
+                </div>
+                <div class="myorder-pic">
+                    <div class="myorder-pic-swiper">
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide"><a href="#"><img src="img/home/pro/swiper-img01.png"></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="img/home/pro/swiper-img02.png"></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="img/home/pro/swiper-img01.png"></a></div>
+                        </div>
+                    </div>
+                </div>
+                <p class="myorder-desc">共5件商品，实付款：<span class="orange">¥1560</span></p>
+                <div class="myorder-ft">
+                    <a href="#">评价</a>
+                </div>
+            </div>
+            <div class="myorder-cell">
+                <div class="myorder-hd">
+                    <h4>八马茶业官方自营店</h4>
+                    <a href="#">已完成</a>
                 </div>
                 <div class="myorder-pic">
                     <div class="myorder-pic-swiper">
@@ -109,11 +182,22 @@
     <script type="text/javascript" src="./js/plugins/swiper/swiper.jquery.min.js"></script>
     <script>
     $('body').addClass('page-bg');
-    
+
     new Swiper('.myorder-pic-swiper', {
         slidesPerView: 'auto',
         spaceBetween: 10,
         slidesOffsetBefore: 10
+    });
+    $('.myorder-type').click(function() {
+        var obj = $(this).find('.icon');
+        if (obj.hasClass('icon-74')) {
+            obj.removeClass('icon-74').addClass('icon-35');
+            $('.myorder-type-item ').show();
+        }
+        else {
+            obj.removeClass('icon-35').addClass('icon-74');
+            $('.myorder-type-item ').hide();
+        }
     });
     </script>
 </body>

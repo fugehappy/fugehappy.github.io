@@ -9,11 +9,9 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <script type="text/javascript" src="./js/adaptive.js"></script>
-	<link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/weui.min.css">
-    <link rel="stylesheet" href="./js/plugins/swiper/swiper.min.css">
-    <link rel="stylesheet" href="./css/all.css">
-    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
     <div class="container">
@@ -70,7 +68,7 @@
     <script>
     $('body').addClass('page-bg');
     $(function() {
-        //页数 
+        //页数
         var page = 0;
         // 每页展示10个
         var size = 10;
@@ -137,7 +135,7 @@
                                 },
                                 error: function(el) {}
                             });
-                            // 
+                            //
                             // 每次数据加载完，必须重置
                             me.resetload();
                         }, 1000);

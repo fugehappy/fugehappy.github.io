@@ -9,14 +9,14 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <script type="text/javascript" src="./js/adaptive.js"></script>
-	<link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/weui.min.css">
     <link rel="stylesheet" href="./js/plugins/swiper/swiper.min.css">
-    <link rel="stylesheet" href="./css/all.css">
-    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
     <div class="search-box search-bg">
+        <div class="search-bg-mask"></div>
         <div class="search-page-header">
             <div class="search-zone">
                 <a href="#" class="pop_back icon icon-109"></a>
@@ -79,7 +79,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="container">
         <!-- search-bar -->
         <div style="height: 52px;" class="hide"></div>
@@ -318,7 +318,7 @@
             <div class="tab-panel"></div>
         </div>-->
         <div class="">
-            
+
         </div>
     </div>
     <div class="bottom-tab clearfix" id="tab2">
@@ -370,9 +370,11 @@
 		if (scroolFlag) return false;
         var scrollTop = document.body.scrollTop||document.documentElement.scrollTop;
         if (scrollTop > 50) {
+            $('.search-bg-mask').hide();
             $('.search-box').removeClass('search-bg');
         }
         else {
+            $('.search-bg-mask').show();
             $('.search-box').addClass('search-bg');
         }
     });
@@ -386,14 +388,15 @@
 		$('.search-page-cons').show();
 		$('.wei-header-icon').hide();
 		$('.container').hide();
-		$('.bottom-tab').hide();
+        $('.bottom-tab').hide();
+         $('.search-bg-mask').hide();
 		$('.search-box').removeClass('search-bg').addClass('search-bg1');
-		
         return false;
 	});
     // 返回
     $('.pop_back').click(function () {
         scroolFlag = false;
+        window.scrollTo(0,0);
         $('.container').show();
         $('.wei-header-icon').show();
         $('.bottom-tab').show();

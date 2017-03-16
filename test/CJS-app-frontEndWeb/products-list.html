@@ -9,11 +9,10 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <script type="text/javascript" src="./js/adaptive.js"></script>
-	<link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/weui.min.css">
     <link rel="stylesheet" href="./js/plugins/swiper/swiper.min.css">
-    <link rel="stylesheet" href="./css/all.css">
-    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
     <div class="container">
@@ -74,11 +73,12 @@
                 <ul>
                     <li class="active">综合</li>
                     <li>销量</li>
-                    <li>价格<span class="iconfont icon-order-down"></span></li>
+                    <li>价格<span class="iconfont icon-paixu1"></span></li>
+                    <!-- <li>价格<span class="iconfont icon-paixu2"></span></li> -->
                 </ul>
                 <div class="filter-box" onclick="showSiderBar()">筛选<span class="iconfont icon-shaixuan"></span></div>
             </div>
-        </div>    
+        </div>
         <div class="product-list-wrapper">
             <ul>
                 <li>
@@ -107,7 +107,7 @@
                                 <img src="img/home/pro/img01.png">
                             </div>
                             <div class="prod-list-detail">
-                                <h4 class="title">皇茗园 蒙顶甘露 雅安蒙</h4>
+                                <h4 class="title">川黄 蒙顶甘露 蒙顶山甄选绿茶 {非遗珍华级} 礼盒装 188g</h4>
                                 <div class="prod-price-w">
                                     <span class="prod-price-yuan">￥</span>
                                     <span class="prod-price-mun">2,469</span>
@@ -139,6 +139,9 @@
         $('.sidebar-mask').addClass('hide');
         $('.sidebar').addClass('hide');
     });
+    $(function() {
+        $('.product-list-wrapper').css('padding-top', '93px');
+    })
     </script>
 </body>
 </html>

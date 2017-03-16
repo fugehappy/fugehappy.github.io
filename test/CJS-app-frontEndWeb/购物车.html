@@ -9,10 +9,9 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <script type="text/javascript" src="./js/adaptive.js"></script>
-	<link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/weui.min.css">
-    <link rel="stylesheet" href="./css/all.css">
-    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
     <div class="container">
@@ -35,7 +34,9 @@
                             </div>
                             <div class="shop-cart-item-core clearfix">
                                 <a href="#">
-                                   <img> 
+                                    <div class="pic">
+                                        <img src="img/pro/img08.png">
+                                    </div>
                                 </a>
                                 <div class="cart-product-cell">
                                     <div class="cart-product-name">
@@ -63,7 +64,9 @@
                             </div>
                             <div class="shop-cart-item-core clearfix">
                                 <a href="#">
-                                   <img> 
+                                    <div class="pic">
+                                        <img src="img/pro/img08.png">
+                                    </div>
                                 </a>
                                 <div class="cart-product-cell">
                                     <div class="cart-product-name">
@@ -86,7 +89,7 @@
                     </li>
                 </ul>
             </div>
-            
+
             <div class="shop-group-item">
                 <div class="shop-title">
                     <div class="check-wrapper">
@@ -105,7 +108,9 @@
                             </div>
                             <div class="shop-cart-item-core clearfix">
                                 <a href="#">
-                                   <img> 
+                                    <div class="pic">
+                                        <img src="img/pro/img08.png">
+                                    </div>
                                 </a>
                                 <div class="cart-product-cell">
                                     <div class="cart-product-name">
@@ -133,7 +138,9 @@
                             </div>
                             <div class="shop-cart-item-core clearfix">
                                 <a href="#">
-                                   <img> 
+                                    <div class="pic">
+                                        <img src="img/pro/img08.png">
+                                    </div>
                                 </a>
                                 <div class="cart-product-cell">
                                     <div class="cart-product-name">
@@ -157,11 +164,16 @@
                     <li>
                         <div class="items">
                             <div class="check-wrapper">
-                                <span class="state">下架</span>
+                                <span class="cart-checkbox prod-checked"></span>
                             </div>
                             <div class="shop-cart-item-core clearfix">
                                 <a href="#">
-                                   <img> 
+                                    <div class="pic">
+                                        <img src="img/pro/img08.png">
+                                        <div class="goods-off">
+                                            <span>缺货</span>
+                                        </div>
+                                    </div>
                                 </a>
                                 <div class="cart-product-cell">
                                     <div class="cart-product-name">
@@ -185,11 +197,16 @@
                     <li>
                         <div class="items">
                             <div class="check-wrapper">
-                                <span class="state">缺货</span>
+                                <span class="cart-checkbox prod-checked"></span>
                             </div>
                             <div class="shop-cart-item-core clearfix">
                                 <a href="#">
-                                   <img> 
+                                    <div class="pic">
+                                        <img src="img/pro/img08.png">
+                                        <div class="goods-off">
+                                            <span>下架</span>
+                                        </div>
+                                    </div>
                                 </a>
                                 <div class="cart-product-cell">
                                     <div class="cart-product-name">
@@ -212,7 +229,7 @@
                     </li>
                 </ul>
             </div>
-            
+
         </div>
     </div>
     <div class="cart-footer">
@@ -236,11 +253,11 @@
             <span class="tb-icon i-tb-home"></span>
             <p class="tabbar-label">首页</p>
         </a>
-        <a class="tab-b-item tab-b-active" href="javascript:void(0)">
+        <a class="tab-b-item" href="javascript:void(0)">
             <span class="tb-icon i-tb-sort"></span>
             <p class="tabbar-label">分类</p>
         </a>
-        <a class="tab-b-item" href="#">
+        <a class="tab-b-item tab-b-active" href="#">
         <span class="tb-icon i-tb-cart"></span>
             <p class="tabbar-label">购物车</p>
         </a>
@@ -253,15 +270,16 @@
     <script type="text/javascript" src="./js/plugins/layer/layer.js"></script>
     <script>
     $('body').addClass('page-bg');
+    $('.shop-group').css('padding-bottom', '120px');
 
     /*选中商品*/
     $('.prod-checked').on('click', function(){
         var price = ($(this).parent().next().find('.shp-cart-item-price').text()).slice(1);
-        var numOnly = $(this).parent().next().find('.quantity').val(); 
+        var numOnly = $(this).parent().next().find('.quantity').val();
         var ownNum = price * numOnly;
         var allMiCON = parseInt($('#allMoney').text().slice(1));
-        if($(this).hasClass('checked') == true) { 
-            $(this).removeClass('checked');  
+        if($(this).hasClass('checked') == true) {
+            $(this).removeClass('checked');
             $(this).closest('ul').prev().find('.shop-checked').removeClass('checked');
             $('.all-checked').removeClass('checked');
             $('#allMoney').text("¥" + (allMiCON - ownNum).toFixed(2));
@@ -272,11 +290,11 @@
                 $(this).closest('ul').prev().find('.shop-checked').addClass('checked');
             }
             $('#allMoney').text("¥" + (allMiCON + ownNum).toFixed(2));
-        }           
+        }
     });
 
     /*选中店铺*/
-    $('.shop-checked').on('click', function(){  
+    $('.shop-checked').on('click', function(){
         var checkCart = $(this).parents('.shop-title').next('ul').find('.prod-checked');
         var allAllMo = 0;
         var allAllMoOth = 0;  //未选中的值
@@ -297,18 +315,18 @@
             $('#allMoney').text("¥" + (allMiCON - allAllMo).toFixed(2));
         }else {
             $(this).addClass('checked');
-            checkCart.addClass('checked'); 
+            checkCart.addClass('checked');
             $('#allMoney').text("¥" + (allMiCON + allAllMoOth).toFixed(2));
         }
     });
 
     /*全选*/
     $('.all-checked').on('click', function() {
-        if($(this).hasClass('checked') == true) { 
+        if($(this).hasClass('checked') == true) {
             $(this).removeClass('checked');
             $('.shop-group-item .cart-checkbox').removeClass('checked');
             $('#allMoney').text('¥0.00');
-        }else { 
+        }else {
             $(this).addClass('checked');
             $('.shop-group-item .cart-checkbox').addClass('checked');
             var checkCart = $('.prod-checked');
@@ -320,7 +338,7 @@
                 allAllMo += ownAddSub;
             }
             $('#allMoney').text("¥" + allAllMo.toFixed(2));
-        }           
+        }
     });
 
     /*加减法*/
@@ -332,9 +350,9 @@
         }
         obj.val(parseInt(obj.val()) - 1);
         var checkHas = $(this).closest('.shop-cart-item-core').prev().children('.prod-checked');
-        var priceSpan = $(this).parent().prev().text().slice(1); 
+        var priceSpan = $(this).parent().prev().text().slice(1);
         var allMiCON = parseInt($('#allMoney').text().slice(1));
-        if(checkHas.hasClass('checked') == true) {                  
+        if(checkHas.hasClass('checked') == true) {
             $('#allMoney').text("¥" + (parseInt(allMiCON) - parseInt(priceSpan)).toFixed(2));
         }
     });
@@ -342,13 +360,13 @@
         var obj = $(this).siblings('.quantity');
         obj.val(parseInt(obj.val()) + 1);
         var checkHas = $(this).closest('.shop-cart-item-core').prev().children('.prod-checked');
-        var priceSpan = $(this).parent().prev().text().slice(1); 
+        var priceSpan = $(this).parent().prev().text().slice(1);
         var allMiCON = parseInt($('#allMoney').text().slice(1));
         if(checkHas.hasClass('checked') == true) {
             $('#allMoney').text("¥" + (parseInt(allMiCON) + parseInt(priceSpan)).toFixed(2));
         }
     });
-        
+
      // 领取优惠券
     $('.get-coupons').click(function () {
         var content = ''

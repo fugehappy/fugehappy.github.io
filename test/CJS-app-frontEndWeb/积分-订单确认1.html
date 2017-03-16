@@ -9,38 +9,9 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <script type="text/javascript" src="./js/adaptive.js"></script>
-	<link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/weui.min.css">
-    <link rel="stylesheet" href="./js/area/LArea.min.css">
-    <link rel="stylesheet" href="./css/all.css">
-    <link rel="stylesheet" href="./css/home.css">
-    <style type="text/css">
-        .layui-m-layercont {
-            padding: 0 30px 10px 30px !important;           
-        }
-        .layui-m-layercont>div {
-            font-size:.13rem;
-        }
-        .layui-m-layerchild h3 {
-            height:50px !important;
-        }
-        .layui-m-layercont span.time {
-            color: #c58630;
-        }
-        .layui-m-layercont input {
-            height: 34px;
-            width: 90%;
-            margin-top: 10px;
-            background:#fff;
-            border:1px solid #ddd;
-        } 
-        .layui-m-layerbtn {
-            background: #fcfcfc !important;
-        }
-        .layui-m-layerbtn span {
-            font-size:.17rem !important;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
     <div class="container">
@@ -91,20 +62,53 @@
             <a href="#" class="wei-btn-r">确认兑换</a>
         </div>
     </div>
-
+    <style type="text/css">
+    .layer-w-score .title {
+        font-size: 17px;
+        color: #030303;
+        text-align: center;
+        padding-top: 20px;
+        margin-bottom: 10px;
+    }
+    .layer-w-score p {
+        font-size: 13px;
+        color: #030303;
+        text-align: center;
+    }
+    .layer-w-score .time {
+        color: #C58630;
+    }
+    .layer-w-score .yzm {
+        height: 28px;
+        width: 80%;
+        padding: 0 10px;
+        background:#fff;
+        border:1px solid #ddd;
+        display: block;
+        margin: 10px auto 20px;
+    }
+    .layui-m-layerbtn {
+        background-color: #fcfcfc;
+    }
+    .layui-m-layerbtn span[no],.layui-m-layerbtn span[no] {
+        color: #C58630;
+    }
+    </style>
     <script type="text/javascript" src="./js/zepto.min.js"></script>
     <script type="text/javascript" src="./js/plugins/layer/layer.js"></script>
     <script type="text/javascript" src="./js/weui.min.js"></script>
     <script>
-        $('body').addClass('page-bg');  
+        $('body').addClass('page-bg');
         $('.wei-btn-r').click(function () {
+            var content = ''
+            + '<div class="layer-w-score">'
+            + '<h4 class="title">验证</h4>'
+            + '<p>已发送短信到<span>186****8888</span> <span class="time">43s</span>.</p>'
+            + '<input type="number" class="yzm" placeholder="输入收到的短信验证码">'
+            + '</div>'
             layer.open({
-                title: [
-                    '验证',
-                    'color:#030303; font-size: .17rem;'
-                ]
-                ,content: ['<div>已发送短信到<span>186****8888</span> <span class="time">43s</span>.</div> <input type="number" class="weui-input" placeholder="输入收到的短信验证码">']
-                ,style: 'background: #fcfcfc;width:80%;'
+                content: content
+                ,style: 'background: #fcfcfc; width:80%;'
                 ,shade: 'background-color: rgba(27,27,27,0.5);'
                 ,btn: ['确定', '取消']
                 ,yes: function(index){
@@ -112,7 +116,6 @@
                 }
             });
         });
-
     </script>
 </body>
 </html>

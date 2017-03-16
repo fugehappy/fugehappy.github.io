@@ -9,10 +9,10 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <script type="text/javascript" src="./js/adaptive.js"></script>
-	<link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/weui.min.css">
-    <link rel="stylesheet" href="./css/picker.css">
-    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./js/area/LArea.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
     <div class="container">
@@ -25,13 +25,13 @@
         </div>
         -->
         <div class="wei-cells">
-            <div class="wei-cell wei-cell_access" id="info-user">
+            <div class="wei-cell wei-cell_access">
                 <div class="wei-cell__bd">
                     <span>转帐到银行卡</span>
                 </div>
                 <div class="wei-cell__ft">建设银行（7895）李丽娟</div>
             </div>
-            <div class="wei-cell">
+            <div class="wei-cell wei-cell_access wei-left">
                 <div class="wei-cell__hd">
                     <span class="wei_label">提现金额:</span>
                 </div>
@@ -44,7 +44,10 @@
             <span>可提现：¥998.5</span>
             <a href="#" class="t-yellow">全部提现</a>
         </p>
-        <a class="wei-btn-gray" href="javascript:;">申请提现</a>
+        <div class="fix-bottom1">
+            <a class="submit-btn submit-btn-disable" href="javascript:;">申请提现</a>
+            <!-- <a class="submit-btn submit-btn-active" href="javascript:;">提 交</a> -->
+        </div>
     </div>
     <!-- 相册 -->
     <div id="img-sheet" class="wei-primary">
@@ -64,7 +67,7 @@
     <script type="text/javascript" src="./js/weui.min.js"></script>
     <script>
     $('body').addClass('page-bg');
-    // 修改头像  
+    // 修改头像
     $(function(){
         var $iosActionsheet = $('#iosActionsheet');
         var $iosMask = $('#iosMask');
@@ -103,7 +106,7 @@
             }
         });
     });
-    
+
     // 修改日期
     $('#showDatePicker').on('click', function () {
         weui.datePicker({
@@ -123,7 +126,7 @@
             }
         });
     });
-    
+
     // 修改行业
     $('#showWorkPicker').on('click', function () {
         weui.picker([{
@@ -148,7 +151,7 @@
             }
         });
     });
-    
+
     // 修改用户名
     /*$('#info-user').on('click', function () {
         var config = ''
@@ -161,11 +164,11 @@
                     + '</div>'
         newPage(config);
     });*/
-    
+
     /**
      * 公用弹出组件 newPage
      * config string
-     */ 
+     */
     /*function newPage(config) {
         var height = document.body.clientHeight + 'px';
         var content = ''
@@ -179,7 +182,7 @@
                         + '</div>'
                     + '</div>';
         $('body').append(content);
-        
+
         $('.weui-picker-self').css('height', height);
     }*/
     </script>
