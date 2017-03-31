@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>chart</title>
+</head>
+<body>
+<div id="main"></div> 
+<script src='js/jquery.min.js'></script>
+<script src='js/echarts.min.js'></script>
+<script>  
+var url = 'https://fugehappy.github.io/test/json/test.json'
+var myChart = echarts.init(document.getElementById('main'))
+$.getJSON(url, function(res) {
+	if (res.code = 200) {
+		console.log(res)
+	} else {
+		console.log('fail');
+	}
+})
+</script>
+</body>
+</html>
