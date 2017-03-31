@@ -10,12 +10,64 @@
 <script src='js/echarts.min.js'></script>
 <script>  
 var url = 'https://fugehappy.github.io/test/json/chart.json'
-var myChart = echarts.init(document.getElementById('main'))
+// 基于准备好的dom，初始化echarts实例
+var myChart = echarts.init(document.getElementById('main'));
+// 指定图表的配置项和数据
+myChart.setOption({
+	tooltip: {
+        trigger: 'axis'
+    },
+    toolbox: {
+		
+    },
+    legend: {
+        data: ['水量','气量']
+    },
+    xAxis: {
+        {
+            type: 'category',
+			boundaryGap : false,
+            data: []
+        }
+    },
+    yAxis: {
+		type: 'value',
+		name: '量',
+		min: 0,
+		max: 250,
+		interval: 50,
+		axisLabel: {
+			formatter: '{value} ml'
+		}
+	},
+    series: [{
+        name: '水量',
+        type: 'bar',
+        data: []
+    },
+	{
+        name: '气量',
+        type: 'bar',
+        data: []
+    }]
+});
+
 $.getJSON(url, function(res) {
 	if (res.code = 200) {
-		console.log(res.data.categories)
-		console.log(res.data.water)
-		console.log(res.data.gas)
+		// 填入数据
+		var data = res.data;
+		myChart.setOption({
+			xAxis: {
+				data: data.categories
+			},
+			series: [{
+				name: '水量',
+				data: data.water
+			},{
+				name: '水量',
+				data: data.gas
+			}]
+		});
 	} else {
 		console.log('fail');
 	}
