@@ -13,7 +13,9 @@ var url = 'https://fugehappy.github.io/test/json/test.json'
 var myChart = echarts.init(document.getElementById('main'))
 $.getJSON(url, function(res) {
 	if (res.code = 200) {
-		console.log(res)
+		console.log(res.categories)
+		console.log(res.water)
+		console.log(res.gas)
 	} else {
 		console.log('fail');
 	}
