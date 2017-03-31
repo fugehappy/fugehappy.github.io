@@ -57,13 +57,17 @@ $.getJSON(url, function(res) {
 		var data = res.data;
 		myChart.setOption({
 			xAxis: {
+				type: 'category',
+				boundaryGap : false,
 				data: data.categories
 			},
 			series: [{
 				name: '水量',
+				type: 'bar',
 				data: data.water
 			},{
-				name: '水量',
+				name: '气量',
+				type: 'bar',
 				data: data.gas
 			}]
 		});
