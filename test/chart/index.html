@@ -27,30 +27,34 @@ $.getJSON(url, function(res) {
 				
 			},
 			legend: {
-				data: ['水量','气量']
+				data: ['水量', '气量']
 			},
-			xAxis: {
-				type: 'category',
-				boundaryGap : false,
-				data: data.categories
-			},
-			yAxis: {
-				type: 'value',
-				name: '量',
-				min: 0,
-				max: 250,
-				interval: 50,
-				axisLabel: {
-					formatter: '{value} ml'
+			xAxis: [
+				{
+					type: 'category',
+					boundaryGap : false,
+					data: data.categories
 				}
-			},
+			],
+			yAxis: [
+				{
+					type: 'value',
+					name: '量kg',
+					min: 0,
+					max: 250,
+					interval: 50,
+					axisLabel: {
+						formatter: '{value} ml'
+					}
+				}
+			],
 			series: [{
 				name: '水量',
-				type: 'bar',
+				type: 'line',
 				data: data.water
 			},{
 				name: '气量',
-				type: 'bar',
+				type: 'line',
 				data: data.gas
 			}]
 		});
