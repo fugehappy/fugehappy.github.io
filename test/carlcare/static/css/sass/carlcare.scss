@@ -268,9 +268,11 @@
   display: table;
   .slick-slide {
     width: 100%;
-    -height: 100vh;
     position: relative;
-    overflow: hidden;
+    background-image: url(../../images/banner-1920.jpg);
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: cover;
     &:first-child {
       display: block;
     }
@@ -317,31 +319,29 @@
       }
     }
   }
-  .cover-image {
+  .slick-blur {
     width: 100%;
-  }
-  .cover-blur {
+    height: 100%;
     position: absolute;
-    left: 0;
-    right: 0;
     bottom: 0;
-    width: 100%;
-    height: 160px;
-    overflow: hidden;
-  }
-  .blur {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    left: 0;
+    background-image: url(../../images/banner-1920.jpg);
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: cover;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
-    filter: url(images/svg/blur-5px.svg#blur);
-    -webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    filter: blur(5px);
-    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=5, MakeShadow=false);
-    left: -5px\0;
+    filter: url(../../images/svg/blur-5px.svg#blur);
+    -webkit-filter: blur(8px);
+    -moz-filter: blur(8px);
+    filter: blur(8px);
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=8, MakeShadow=false);
+  }
+  .slick-blur-wrap {
+    height: 160px;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
   }
   .mask {
     position: absolute;

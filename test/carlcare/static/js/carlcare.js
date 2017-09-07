@@ -2,6 +2,20 @@
     var Site = window.Site;
     $(document).ready(function($) {
         Site.run();
+        // 首页全屏
+        function screenBanner() {
+            var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+　　　　    var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+            $('.slick-slide, .slick-blur').css({
+                width: w + 'px',
+                height: h + 'px'
+            })
+        }
+        screenBanner();
+        $(window).resize(function () {
+            screenBanner();
+        });
+        // 点击更多加载
         $('.carl-product-plus-cont').click(function () {
             var obj = $('.carl-product-more');
             if (obj.hasClass('expand')) {

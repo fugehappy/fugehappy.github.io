@@ -64,7 +64,8 @@ html {
 }
 body {
   color: $baseColor;
-  font-family: 'HelveticaNeue-Light'
+  font-family: 'HelveticaNeue-Light';
+  overflow-x: hidden;
 }
 ul,
 li {
