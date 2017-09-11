@@ -3,3 +3,18 @@ $white: #fff;
 $blue: #0c5aa3;
 $green: #149848;
 $gray: #6c6c6c;
+
+@mixin transition-motion($duration: .95s, $delay: 0) {
+  transform: translateY(0);
+  opacity: 1;
+  transition-duration: $duration;
+  transition-property: transform, opacity;
+  transition-delay: $delay;
+  transition-timing-function: ease-in-out;
+}
+
+@mixin animation-mode($name: fadeInUp, $duration: .95s, $delay: 0s) {
+  opacity: 0;
+  animation: $name $duration ease-in-out $delay;
+  animation-fill-mode: both;
+}

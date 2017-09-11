@@ -51,9 +51,9 @@
         <div class="slick-blur-wrap">
             <div class="slick-blur"></div>
         </div>
-        <div class="banner-text p-1">
-            <div class='container'>
-                <div class='banner-text-con'>
+        <div class="banner-text">
+            <div class="container">
+                <div class="banner-text-con">
                     <div class="banner-text-first animation-slide-left">
                         <span>YES!</span>
                     </div>
@@ -72,13 +72,12 @@
                 <div class="tabin">
                     <p class="tt">
                         <span>GET TO KNOW YOUR</span>
-                        <span>Product</span>
+                        <span>PRODUCT</span>
                     </p>
                     <p class="tx">
                         Choose your product and find  service
                     </p>
                 </div>
-                <div class="hover-item"></div>
             </li>
             <li>
                 <div class="tabin">
@@ -90,7 +89,6 @@
                         Check warranty date,repair status and spare parts price
                     </p>
                 </div>
-                <div class="hover-item"></div>
             </li>
             <li>
                 <div class="tabin">
@@ -102,7 +100,6 @@
                         You can reach us via Phone，chat，email，or ask the community.
                     </p>
                 </div>
-                <div class="hover-item"></div>
             </li>
         </ul>
     </div>
@@ -110,7 +107,7 @@
 </section>
 <section id="tab-area" class="carl-product">
     <div class="tab-area active">
-        <div class="container carl-product-list sp-effect1">
+        <div class="container carl-product-list custom-load">
             <ul>
                 <li>
                     <div>
@@ -144,7 +141,7 @@
                 </li>
             </ul>
         </div>
-        <div class="carl-product-plus sp-effect1">
+        <div class="carl-product-plus custom-load">
             <div class="carl-product-plus-bg"></div>
             <div class="carl-product-plus-cont">
                 <span>More Products</span>
@@ -177,13 +174,15 @@
         </div>
         <div class="container carl-product-detail">
             <div class="carl-product-detail-list active">
-                <div>
-                    <img src="static/images/products/mobiles.jpg" alt="Mobiles" class="sp-effect1">
-                    <p class="fz-24 sp-effect1">To be the customers’ most trusted choice for<br/>
-                        service through continual improvement, positive actions and commitment to achieve highest <br/>levels of customer satisfaction.</p>
+                <div class="carl-product-detail-cont custom-load">
+                    <img src="static/images/products/mobiles.jpg" alt="Mobiles"/>
+                    <p class="fz-24">
+                        To be the customers’ most trusted choice for<br/>
+                        service through continual improvement, positive actions and commitment to achieve highest <br/>levels of customer satisfaction.
+                    </p>
                 </div>
-                <div class="carl-product-more-btn sp-effect1">
-                    <a href="#">
+                <div class="carl-product-more-btn custom-load">
+                    <a href="#" class="carl-btn">
                         <span>Learn More</span>
                     </a>
                 </div>
@@ -198,56 +197,123 @@
     <div class="tab-area">
         <div class="container carl-service-items">
             <div class="col-md-4 carl-service-item">
-                <img src="static/images/s-warranty.png" class="sp-effect2" />
-                <h3 class="sp-effect2">Warranty Check</h3>
-                <p class="sp-effect2">Check if your device is still under warranty</p>
-                <a class="carl-btn sp-effect3">
+                <div class="pic">
+                    <img src="static/images/s-warranty.png" />
+                </div>
+                <h3>Warranty Check</h3>
+                <p>Check if your device is still under warranty</p>
+                <a class="carl-btn">
                     <span>Query Status</span>
                 </a>
             </div>
             <div class="col-md-4 carl-service-item">
-                <img src="static/images/s-repair.png" class="sp-effect2"/>
-                <h3 class="sp-effect2">Repair Status Track</h3>
-                <p class="sp-effect2">Track your devices repair status by the work order number or IMEI</p>
-                <a class="carl-btn sp-effect3">
+                <div class="pic">
+                    <img src="static/images/s-repair.png" />
+                </div>
+
+                <h3>Repair Status Track</h3>
+                <p>Track your devices repair status by the work order number or IMEI</p>
+                <a class="carl-btn">
                     <span>Query Status</span>
                 </a>
             </div>
             <div class="col-md-4 carl-service-item">
-                <img src="static/images/s-price.png" class="sp-effect2" />
-                <h3 class="sp-effect2">Spare Parts Price</h3>
-                <p class="sp-effect2">Check the spare parts price by device brand and model</p>
-                <a class="carl-btn sp-effect3">
+                <div class="pic">
+                    <img src="static/images/s-price.png" />
+                </div>
+                <h3>Spare Parts Price</h3>
+                <p>Check the spare parts price by device brand and model</p>
+                <a class="carl-btn">
                     <span>Inquiry Price</span>
                 </a>
             </div>
             <div class="col-md-4 carl-service-item">
-                <img src="static/images/s-faq.png" class="sp-effect2" />
-                <h3 class="sp-effect2">FAQ</h3>
-                <p class="sp-effect2">Find solutions to your device problem</p>
-                <a class="carl-btn sp-effect3">
+                <div class="pic">
+                    <img src="static/images/s-faq.png" />
+                </div>
+                <h3>FAQ</h3>
+                <p>Find solutions to your device problem</p>
+                <a class="carl-btn">
                     <span>Query Problem</span>
                 </a>
             </div>
             <div class="col-md-4 carl-service-item">
-                <img src="static/images/s-query.png" class="sp-effect2" />
-                <h3 class="sp-effect2">Service Center Query</h3>
-                <p class="sp-effect2">Find the service centre near you</p>
-                <a class="carl-btn sp-effect3">
+                <div class="pic">
+                    <img src="static/images/s-query.png" />
+                </div>
+                <h3 >Service Center Query</h3>
+                <p>Find the service centre near you</p>
+                <a class="carl-btn">
                     <span>Service Query</span>
                 </a>
             </div>
             <div class="col-md-4 carl-service-item">
-                <img src="static/images/s-policy.png" class="sp-effect2" />
-                <h3 class="sp-effect2">Service Policy</h3>
-                <p class="sp-effect2">Find the service policy of your device</p>
-                <a class="carl-btn sp-effect3">
+                <div class="pic">
+                    <img src="static/images/s-policy.png" />
+                </div>
+                <h3>Service Policy</h3>
+                <p>Find the service policy of your device</p>
+                <a class="carl-btn">
                     <span>Inquiry Policy</span>
                 </a>
             </div>
         </div>
     </div>
-    <div class="tab-area"></div>
+    <div class="tab-area">
+      <div class="container carl-contact-items">
+        <h2>You can reach us via Phone，chat，email，or ask the community.</h2>
+        <div class="col-md-4 carl-contact-item">
+          <div class="pic">
+            <img src="static/images/follow-us.png" alt="">
+          </div>
+          <h3>Follow us</h3>
+          <p>Contact us on Facebook  or Twitter YouTube and we'll reply with an answer to your question or issue.</p>
+          <div class="chat-tools">
+            <a href="#">
+                <svg class="icon-svg" aria-hidden="true">
+                    <use xlink:href="#icon-Facebook"></use>
+                </svg>
+            </a>
+            <a href="#">
+                <svg class="icon-svg" aria-hidden="true">
+                    <use xlink:href="#icon-tuitetwitter43"></use>
+                </svg>
+            </a>
+            <a href="#">
+                <svg class="icon-svg" aria-hidden="true">
+                    <use xlink:href="#icon-youtube"></use>
+                </svg>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4 carl-contact-item">
+          <div class="pic">
+            <img src="static/images/email-us.png" alt="">
+          </div>
+          <h3>Email us</h3>
+          <p>We’ll respond within 24 hours of your request.</p>
+          <div>
+            <a href="#" class="carl-btn">
+              <span>EMAIL SUPPORT</span>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4 carl-contact-item">
+          <div class="pic">
+            <img src="static/images/more-help.png" alt="">
+          </div>
+          <h3>More help</h3>
+          <p>For technical support or advice, we provide more comprehensive services on official app</p>
+          <div class="platform">
+              <img src="static/images/payoff.jpg" alt="android, google play" class="platform-pic"/>
+              <div class="android-zone"></div>
+              <div class="google-zone"></div>
+              <div class="android"></div>
+              <div class="google-play"></div>
+          </div>
+        </div>
+      </div>
+    </div>
 </section>
 <section class="carl-map">
     <img src="static/images/map.jpg" alt="map">
@@ -256,7 +322,7 @@
             <div class="carl-map-cont">
                 <h3>WE CARE</h3>
                 <h3>ABOUT THE WORLD</h3>
-                <p>80%Technical Engineers 5% Experts 15% Senior Managers</p>
+                <p>80%TECHNICAL ENGINEERS   5% EXPERTS  15% SENIOR MANAGERS</p>
             </div>
             <div class="statistics">
                 <ul>
@@ -266,7 +332,7 @@
                             <hr class="n0"/>
                         </strong>
                         <font>+</font>
-                        <span>Countries</span>
+                        <span>COUNTRIES</span>
                     </li>
                     <li>
                         <strong>
@@ -276,7 +342,7 @@
                             <hr class="n0"/>
                         </strong>
                         <font>+</font>
-                        <span>Professionals</span>
+                        <span>PROFESSIONALS</span>
                     </li>
                 </ul>
                 <ul>
@@ -288,7 +354,7 @@
                             <hr class="n0"/>
                         </strong>
                         <font>+</font>
-                        <span>Service centres</span>
+                        <span>SERVICE CENTRES</span>
                     </li>
                     <li>
                         <strong>
@@ -301,17 +367,61 @@
                             <hr class="n0"/>
                         </strong>
                         <font>+</font>
-                        <span>Products processed per year</span>
+                        <span>PRODUCTS PROCESSED PER YEAR</span>
                     </li>
                 </ul>
             </div>
+            <!-- <div class="statistics">
+                <ul>
+                    <li>
+                        <h4 class="timer">50</h4>
+                        <span>Countries</span>
+                    </li>
+                    <li>
+                        <h4 class="timer">1200</h4>
+                        <span>Professionals</span>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <h4 class="timer">1500</h4>
+                        <span>Service centres</span>
+                    </li>
+                    <li>
+                        <h4 class="timer">1500000</h4>
+                        <span>Products processed per year</span>
+                    </li>
+                </ul>
+            </div> -->
+            <!-- <div class="statistics">
+                <ul>
+                    <li>
+                        <p id="myTargetElement1" style="font-size: 40px;"></p>
+                        <span>Countries</span>
+                    </li>
+                    <li>
+                        <p id="myTargetElement2" style="font-size: 40px;"></p>
+                        <span>Professionals</span>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <p id="myTargetElement3" style="font-size: 40px;"></p>
+                        <span>Service centres</span>
+                    </li>
+                    <li>
+                        <p id="myTargetElement4" style="font-size: 40px;"></p>
+                        <span>Products processed per year</span>
+                    </li>
+                </ul>
+            </div> -->
         </div>
     </div>
 </section>
-<footer class="footer">
-    <nav class="ft-directory container">
-        <div class="ft-sns-link sp-effect1">
-            <div>
+<footer class="footer custom-load">
+    <nav class="container ft-directory">
+        <div class="ft-sns-link">
+            <div class="logo">
                 <a href="/">
                     <img src="static/images/logo.png" alt="logo">
                 </a>
@@ -338,7 +448,7 @@
             </address>
         </div>
         <div class="ft-r-directory">
-            <div class="ft-priduct-link ft-directory-col sp-effect1">
+            <div class="ft-priduct-link ft-directory-col">
                 <h3>PRODUCT</h3>
                 <span class="line"></span>
                 <ul>
@@ -349,7 +459,7 @@
                     <li><a href="#">Computer</a></li>
                 </ul>
             </div>
-            <div class="ft-service-link ft-directory-col sp-effect1">
+            <div class="ft-service-link ft-directory-col">
                 <h3>SERVICE</h3>
                 <span class="line"></span>
                 <ul>
@@ -361,7 +471,7 @@
                     <li><a href="#">FAQ</a></li>
                 </ul>
             </div>
-            <div class="ft-about-link ft-directory-col sp-effect1">
+            <div class="ft-about-link ft-directory-col">
                 <h3>ABOUT US</h3>
                 <span class="line"></span>
                 <ul>
@@ -373,8 +483,12 @@
                     <img src="static/images/payoff.jpg" alt="android, google play" class="platform-pic"/>
                     <div class="android-zone"></div>
                     <div class="google-zone"></div>
-                    <div class="android"></div>
-                    <div class="google-play"></div>
+                    <div class="android">
+                        <img src="static/images/qcode.png" />
+                    </div>
+                    <div class="google-play">
+                        <img src="static/images/qcode.png" />
+                    </div>
                 </div>
             </div>
         </div>
