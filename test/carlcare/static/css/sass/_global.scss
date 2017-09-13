@@ -64,6 +64,12 @@
   font-size: 24px;
   position: relative;
   cursor: pointer;
+  text-align: center;
+  background: transparent;
+  &.active {
+    color: #fff;
+    background: linear-gradient(90deg,#00b852,#026bc8);
+  }
   &:after {
     content: '';
     position: absolute;

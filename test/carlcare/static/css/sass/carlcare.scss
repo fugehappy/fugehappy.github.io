@@ -695,3 +695,141 @@
 @media all and (orientation : portrait){
 
 }
+
+/*
+ *================Email-us===========
+ */
+.mail-page {
+  font-family: 'HelveticaNeue-HeavyCond';
+  padding-bottom: 100px;
+  .mail-header {
+    border-bottom: 1px solid $baseColor;
+    h2 {
+      font-size: 60px;
+      color: $green;
+      span {
+         color: $blue;
+      }
+    }
+  }
+  .mail-floor {
+    font-size: 24px;
+    padding-top: 50px;
+    h3 {
+      font-size: 30px;
+      margin-bottom: 40px;
+    }
+    label {
+      color: #999;
+      width: 180px;
+    }
+    .upload-tips-info {
+      margin-left: 180px;
+      font-size: 18px;
+      font-family: 'HelveticaNeue-Light';
+    }
+  }
+  .form-box {
+    display: flex;
+    margin-bottom: 30px;
+    lable {
+      display: block;
+    }
+    input {
+      display: block;
+      flex: 1;
+    }
+    & > div {
+      flex: 1;
+    }
+    textarea {
+      width: 100%;
+    }
+    sup {
+      color: #ff0000;
+    }
+  }
+  .mail-submit {
+    text-align: right;
+    margin-top: 110px;
+  }
+}
+
+/*
+ *================warranty check===========
+ */
+.carl-nav.nav-primary {
+  position: relative;
+}
+.service-wrapper {
+  margin-top: 180px;
+  padding-bottom: 100px;
+  .service-detail {
+    text-align: center;
+    margin-bottom: 150px;
+    h2 {
+      font-size: 60px;
+      line-height: 1;
+      color: $blue;
+      font-family: 'HelveticaNeue-HeavyCond';
+      margin-bottom: 40px;
+    }
+    .pic {
+      margin-top: 60px;
+      margin-bottom: 50px;
+    }
+    p {
+      font-size: 2.4rem;
+      > span {
+        font-family: 'HelveticaNeue-HeavyCond';
+      }
+    }
+  }
+  .service-items {
+    width: 70%;
+    margin: 0 auto;
+    dl {
+      padding-left: 100px;
+      background-image: url(../../images/service-icon.png);
+      background-repeat: no-repeat;
+      margin-bottom: 80px;
+      &:nth-child(1) {
+        background-position: 0 16px;
+      }
+      &:nth-child(2) {
+        background-position: 0 -140px;
+      }
+      &:nth-child(3) {
+        background-position: 0 -316px;
+      }
+      dt {
+        font-family: 'HelveticaNeue-HeavyCond';
+        font-size: 3.6rem;
+        > span {
+          color: $blue;
+        }
+      }
+      dd {
+        font-size: 2.4rem;
+      }
+    }
+  }
+  .service-inquiry-form {
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+    .form-control {
+      width: 100%;
+      height: 48px;
+    }
+    div {
+      &:nth-child(1) {
+        flex: 1;
+      }
+      &:nth-child(2) {
+        width: 300px;
+        margin-left: 20px;
+      }
+    }
+  }
+}

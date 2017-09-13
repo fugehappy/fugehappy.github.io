@@ -7,60 +7,115 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <link rel="stylesheet" href="static/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="static/css/bootstrap-validator.css"/>
-    <link rel="stylesheet" href="static/css/animate.css"/>
-    <link rel="stylesheet" href="static/css/css/index.css"/>
+    <link rel="stylesheet" href="static/css/css/carlcare.css"/>
     <script src="static/js/base.js"></script>
-    <script src="static/js/bootstrap-validator.js"></script>
     <script src="static/fonts/iconfont.js"></script>
     <script src="static/js/carlcare.js"></script>
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="page-header">
+    <section class="container mail-page">
+        <div class="mail-header">
+            <div class="row">
                 <h2><span>Thank you for</span> sending us the mail</h2>
             </div>
-            <div class="">
-                <div>
-                    <h3>Your information</h3>
+        </div>
+        <div class="mail-floor">
+            <div class="row">
+                <h3>Your information</h3>
+            </div>
+            <div class="row">
+                <div class="col-sm-5 ">
+                    <div class="form-box">
+                        <label>First name<sup>*</sup></label>
+                        <input type="text" class="form-control" / >
+                    </div>
+
                 </div>
-                <div>
-                    <div class="col-sm-5">
-                        <label>First name</label>
-                        <input type="text"/ >
-                    </div>
-                    <div class="col-sm-5">
-                        <label>Last name</label>
-                        <input type="text"/ >
-                    </div>
-                </div>
-                <div>
-                    <div class="col-sm-5">
-                        <label>E-mail address</label>
-                        <input type="text"/ >
-                    </div>
-                    <div class="col-sm-5">
-                        <label>Phone no</label>
-                        <input type="text"/ >
+                <div class="col-sm-5 col-sm-offset-2">
+                    <div class="form-box">
+                        <label>Last name<sup>*</sup></label>
+                        <input type="text" class="form-control" / >
                     </div>
                 </div>
             </div>
-            <div class="">
-                <h3>Service infomation</h3>
-                <div></div>
-            </div>
-            <div class="">
-                <h3>Upload files</h3>
-                <div>
-                    <div>
-                        <label>Attach files</label>
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="form-box">
+                        <label>E-mail address<sup>*</sup></label>
+                        <input type="text" class="form-control" / >
                     </div>
-                    <span>You can attach a max of</span>
+                </div>
+                <div class="col-sm-5 col-sm-offset-2">
+                    <div class="form-box">
+                        <label>Phone no<sup>*</sup></label>
+                        <input type="text" class="form-control" / >
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+        <div class="mail-floor">
+            <div class="row">
+                <h3>Service infomation</h3>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-box">
+                        <label>Question type<sup>*</sup></label>
+                        <div>
+                            <a class="carl-btn active">
+                                <span>Product problems</span>
+                            </a>
+                            <a class="carl-btn">
+                                <span>Service problem</span>
+                            </a>
+                            <a class="carl-btn">
+                                <span>Other problems</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="form-box">
+                        <label>Product type<sup>*</sup></label>
+                        <div class="select-wrap">
+                            <select class="selectpicker" data-width="100%">
+                              <option>Select</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-box">
+                        <label>Content<sup>*</sup></label>
+                        <div>
+                            <textarea></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mail-floor">
+            <div class="row">
+                <h3>Upload files</h3>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-box">
+                        <label>Attach files</label>
+                    </div>
+                    <span class="upload-tips-info">You can attach a maximum of 5 files. Recommended file size is less than 10MB</span>
+                </div>
+            </div>
+        </div>
+        <div class="mail-floor mail-submit">
+            <a class="carl-btn">
+                <span>send</span>
+            </a>
+        </div>
+    </section>
 </body>
 </html>

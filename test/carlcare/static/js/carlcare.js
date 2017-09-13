@@ -82,7 +82,6 @@
         }, function () {
             $('.google-play').css({ 'top': '-200px'})
         })
-
         // 效果
         $('.custom-load').waypoint(function(){
             $(this).toggleClass('loaded');
@@ -90,6 +89,10 @@
             offset: '50%',
             triggerOnce: true
         });
+
+        // selectpicker
+        $('.selectpicker').selectpicker();
+
     })
 
 
